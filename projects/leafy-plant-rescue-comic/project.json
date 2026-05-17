@@ -1,0 +1,38 @@
+{
+  "slug": "leafy-plant-rescue-comic",
+  "title": "Leafy Plant Rescue Comic",
+  "status": "example",
+  "width": 960,
+  "height": 620,
+  "fps": 12,
+  "totalFrames": 96,
+  "grid": {
+    "columns": 3,
+    "rows": 4
+  },
+  "storyboard": {
+    "sourceImage": "image/storyboard_input.png",
+    "framesDir": "storyboard"
+  },
+  "prompt": {
+    "requirements": "storyboard/requirements.md",
+    "agentPrompt": "prompt/user-prompt.md"
+  },
+  "tracks": {
+    "speechBubbles": "storyboard/speech-bubbles.json",
+    "captions": null
+  },
+  "renderer": "renderer.js",
+  "outputs": {
+    "frames": "outputs/frames",
+    "video": "outputs/leafy-plant-rescue-comic.mp4",
+    "videoBySpeed": {
+      "0.5": "outputs/leafy-plant-rescue-comic-0.5x.mp4",
+      "0.75": "outputs/leafy-plant-rescue-comic-0.75x.mp4",
+      "1": "outputs/leafy-plant-rescue-comic.mp4",
+      "1.25": "outputs/leafy-plant-rescue-comic-1.25x.mp4",
+      "1.5": "outputs/leafy-plant-rescue-comic-1.5x.mp4",
+      "2": "outputs/leafy-plant-rescue-comic-2x.mp4"
+    }
+  }
+}

@@ -6,8 +6,13 @@ The final artwork must be drawn in code. The reference image can guide decisions
 
 ## App Behavior
 
-- The first screen is the animation canvas, not a landing page.
-- The timeline controls sit below the canvas.
+- Inky starts with no active animation.
+- A project becomes active only when the user creates or selects one.
+- The first screen is the new storyboard animation setup, not an example project.
+- After a project is selected or built, the animation canvas becomes the preview surface.
+- No project query param means Create Project mode.
+- `?project=<project-slug>` means Preview Project mode and must load that project's manifest and renderer.
+- The timeline controls sit below the canvas when an animation is loaded.
 - Controls must be real HTML buttons and inputs:
   - Play
   - Pause
@@ -44,6 +49,47 @@ Draw in this order:
 8. Dense hatching and texture.
 9. Final clarity pass.
 
+## Project Manifest
+
+Each project has one source of truth at `projects/<project-name>/project.json`. The app and tools should read that manifest instead of guessing frame counts, dimensions, renderer filenames, export paths, or an active project name.
+
+The manifest includes:
+
+```json
+{
+  "slug": "cat-yarn-watercolor",
+  "title": "Cat Yarn Watercolor",
+  "status": "draft",
+  "width": 960,
+  "height": 620,
+  "fps": 12,
+  "totalFrames": 96,
+  "grid": {
+    "columns": 3,
+    "rows": 4
+  },
+  "storyboard": {
+    "sourceImage": "image/storyboard.png",
+    "framesDir": "storyboard"
+  },
+  "prompt": {
+    "requirements": "storyboard/requirements.md",
+    "agentPrompt": "prompt/agent-prompt.md"
+  },
+  "tracks": {
+    "speechBubbles": null,
+    "captions": null
+  },
+  "renderer": "renderer.js",
+  "outputs": {
+    "frames": "outputs/frames",
+    "video": null
+  }
+}
+```
+
+`src/main.js` must stay generic. It should not import project-specific JSON, project-specific renderers, or hard-code export paths. Project renderers live at `projects/<project-name>/renderer.js` and export `project` metadata plus `drawFrame(ctx, frame, helpers)`.
+
 ## Polish Pass
 
 The first draw or first full render is a draft. Use `animation-polish-pass` after risky frames and before final export.
@@ -75,7 +121,7 @@ npm run storyboard:polish -- projects/<project-name>
 
 Use `src/material-tools.js` when drawing canvas frames. It provides reusable brush presets such as `technical-pen`, `dip-ink`, `brush-pen`, `fountain-pen`, `ballpoint-pen`, `marker`, `graphite-pencil`, `colored-pencil`, `wax-crayon`, `oil-crayon`, `pastel`, `charcoal`, `watercolor`, `ink-wash`, `salt-watercolor`, `gouache`, `acrylic`, `oil-paint`, `airbrush`, `sponge`, and `screen-tone`.
 
-Pick a small material kit for the active project. For example, `blond-fruit-salad-crayon-ink` uses dip-ink / brush-pen outlines with wax-crayon and oil-crayon pattern strokes plus light graphite shadow, not watercolor washes.
+Pick a small material kit for the selected project. For example, `blond-fruit-salad-crayon-ink` uses dip-ink / brush-pen outlines with wax-crayon and oil-crayon pattern strokes plus light graphite shadow, not watercolor washes.
 
 Material fills should use actual procedural stroke systems, not only flat color plus speckles. Use `drawMaterialScumble`, `drawMaterialBrushStroke`, `drawBristleStroke`, `drawDryMediaFill`, `drawMaterialWash`, `fillClippedMaterial`, and `fillMaterialGradient` for visible brush direction, wax gaps, bristle dabs, graphite scratches, charcoal dust, watercolor blooms, wet-edge pooling, gradient glazes, or oil-paint streaks.
 
@@ -126,16 +172,9 @@ Use `src/speech-bubble-tools.js` for comic dialogue balloons, thought bubbles, a
 
 Speech bubbles are artwork, not subtitle controls. Draw them in the frame when they are part of the comic story, keep their tails attached to the correct speaker, and keep them clear of faces, hands, and punchline props.
 
-## Current App
+## New Project State
 
-Active project:
+Inky starts with no active animation.
+A project becomes active only when the user creates or selects one.
 
-```text
-projects/stickman-tax-writeoffs-comic/
-```
-
-Rendered MP4:
-
-```text
-pending; build from the stickman tax comic project after speech-bubble tooling is validated
-```
+Example projects can live in docs, samples, or `projects/`, but the app must not automatically load an example project, import project-specific JSON, or hard-code project export paths at startup.

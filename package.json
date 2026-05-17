@@ -5,7 +5,10 @@
   "description": "Canvas animation app for turning storyboard references into hand-drawn animated videos by a coding agent.",
   "type": "module",
   "scripts": {
+    "new": "node tools/create-animation-project.mjs",
     "dev": "vite --host 127.0.0.1",
+    "preview": "vite --host 127.0.0.1",
+    "render": "node tools/render-project.mjs",
     "build": "vite build",
     "check": "node tools/check-js-syntax.mjs",
     "extract:storyboard": "node tools/extract-storyboard-frames.mjs",
@@ -21,7 +24,7 @@
     "storyboard:semantic": "node tools/make-semantic-review-board.mjs",
     "storyboard:review": "node tools/make-adjacent-review-sheets.mjs",
     "storyboard:materials": "node tools/render-material-preview.mjs",
-    "preview": "vite preview --host 127.0.0.1"
+    "vite:preview": "vite preview --host 127.0.0.1"
   },
   "keywords": [
     "animation",

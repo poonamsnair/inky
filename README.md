@@ -67,13 +67,13 @@ The agent should work through the animation like a tiny 2D animation pipeline:
 
 The source image should guide pose, silhouette, timing, and texture direction. It should not be pasted into the final animation.
 
-## Preview In The Browser
+## Start In The Browser
 
 Install and run the app:
 
 ```bash
 npm install
-npm run dev -- --port 5176
+npm run preview -- --port 5176
 ```
 
 Open:
@@ -82,7 +82,20 @@ Open:
 http://127.0.0.1:5176/
 ```
 
-The first screen is the animation canvas. The controls sit below it:
+Inky opens with no active animation. The first screen helps you create a new storyboard project:
+
+1. Add a 12-panel storyboard image.
+2. Choose grid: `3x4`, `4x3`, or custom.
+3. Describe the animation style and fixes.
+4. Create the project scaffold.
+5. Use the generated project files with a coding agent.
+6. Preview/export the finished animation.
+
+After a project has been created or selected, the animation canvas and controls are the preview surface:
+
+```text
+http://127.0.0.1:5176/?project=cat-yarn-watercolor
+```
 
 <img src="docs/assets/browser-ui-annotated.svg" alt="Annotated Inky browser controls" width="900">
 
@@ -175,10 +188,28 @@ Each animation project should live here:
 
 ```text
 projects/<project-name>/
+├── project.json  # source of truth for browser preview and render tools
 ├── image/       # original storyboard reference
 ├── prompt/      # user request and follow-up corrections
 ├── storyboard/  # extracted frames, requirements, ledgers, blueprints, in-betweens
+├── renderer.js   # project-specific drawing code
 └── outputs/     # rendered frames, contact sheets, reviews, videos
+```
+
+Create a project from the command line:
+
+```bash
+npm run new -- \
+  --image ./storyboards/cat.png \
+  --name cat-yarn-watercolor \
+  --grid 3x4 \
+  --prompt "Animate this cat playing with yarn in ink and watercolor."
+```
+
+Render a selected project after the preview app is running:
+
+```bash
+npm run render -- --project cat-yarn-watercolor --url http://127.0.0.1:5176/
 ```
 
 ## Contributing

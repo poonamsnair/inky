@@ -16,7 +16,7 @@ Always start here:
    - `animation-polish-pass`
    - `caption-subtitle-tooling` when captions, subtitles, scripts, or timed text are requested
    - `comic-speech-bubble-tooling` when comic speech bubbles, thought bubbles, or character dialogue are requested
-4. Read the active project brief at `projects/<project-name>/storyboard/requirements.md`.
+4. If the user has created or selected a project, read `projects/<project-name>/project.json` and its brief at `projects/<project-name>/storyboard/requirements.md`.
 5. Run the app from this `inky/` folder, not the older parent experiment folder.
 
 Use plain-language progress updates. Explain what you are trying to do in nontechnical terms each step of the way.

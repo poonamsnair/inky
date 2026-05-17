@@ -3,66 +3,172 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Leafy Plant Rescue Comic Animation</title>
+    <title>Inky</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
   <body>
-    <main class="viewer-shell">
-      <section class="stage-shell" aria-label="Full 12 scene Leafy plant rescue comic animation">
-        <canvas id="whiteboard" width="960" height="620" aria-label="Hand-drawn Leafy plant rescue comic animation canvas"></canvas>
-        <div class="controls timeline-controls" aria-label="Animation timeline controls">
-          <div class="control-group playback-group" aria-label="Playback">
-            <button id="play" class="tool-button" type="button" aria-label="Play" title="Play">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-              <span class="button-text">Play</span>
-            </button>
-            <button id="pause" class="tool-button" type="button" aria-label="Pause" title="Pause">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M7 5v14" />
-                <path d="M17 5v14" />
-              </svg>
-              <span class="button-text">Pause</span>
-            </button>
+    <main class="app-shell">
+      <section id="newProjectPanel" class="creator-shell" aria-labelledby="creatorTitle">
+        <header class="intro">
+          <div class="intro-topline">
+            <p class="brand">Inky</p>
           </div>
-          <div class="timeline-group">
-            <label class="timeline-wrap">
-              <span class="visually-hidden">Timeline</span>
-              <input id="timeline" type="range" min="0" max="89" value="0" step="1" />
+          <div class="intro-copy-block">
+            <h1 id="creatorTitle">Create a new animation</h1>
+            <p class="intro-copy">
+              Start with a storyboard, then hand the generated project plan to a coding agent. No example animation loads unless you select one.
+            </p>
+          </div>
+        </header>
+
+        <form id="newProjectForm" class="setup-form" autocomplete="off">
+          <label class="field-label">
+            Storyboard image
+            <input id="storyboardImage" class="file-input" type="file" accept="image/*" />
+          </label>
+          <p id="imageMeta" class="image-meta" aria-live="polite">No storyboard image selected.</p>
+          <img id="imagePreview" class="image-preview" alt="" hidden />
+
+          <label class="field-label">
+            Project name
+            <input id="projectName" class="text-input" type="text" placeholder="cat-yarn-watercolor" autocomplete="off" />
+          </label>
+
+          <label class="field-label">
+            Grid
+            <select id="storyboardGrid" class="select-input">
+              <option value="3x4">3 x 4</option>
+              <option value="4x3">4 x 3</option>
+              <option value="custom">Custom</option>
+            </select>
+          </label>
+
+          <div id="customGridFields" class="custom-grid-fields" hidden>
+            <label class="field-label">
+              Columns
+              <input id="customColumns" class="number-input" type="number" min="1" max="12" value="3" disabled />
             </label>
-            <output id="frameCounter" class="frame-counter" aria-label="Current frame">1 / 96</output>
-            <label class="speed-wrap">
-              <span class="visually-hidden">Playback speed</span>
-              <select id="playbackSpeed" class="speed-select" aria-label="Playback speed" title="Playback speed">
-                <option value="0.5">0.5x</option>
-                <option value="0.75">0.75x</option>
-                <option value="1" selected>1x</option>
-                <option value="1.25">1.25x</option>
-                <option value="1.5">1.5x</option>
-                <option value="2">2x</option>
-              </select>
+            <label class="field-label">
+              Rows
+              <input id="customRows" class="number-input" type="number" min="1" max="12" value="4" disabled />
             </label>
           </div>
-          <div class="control-group export-group" aria-label="Export">
-            <button id="exportPng" class="tool-button" type="button" aria-label="Export current frame as PNG" title="Export PNG">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 3v12" />
-                <path d="m7 10 5 5 5-5" />
-                <path d="M5 21h14" />
-              </svg>
-              <span class="button-text">PNG</span>
-            </button>
-            <button id="exportMp4" class="tool-button" type="button" aria-label="Export MP4" title="Export MP4">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 5h16v14H4z" />
-                <path d="m10 9 5 3-5 3z" />
-              </svg>
-              <span class="button-text">MP4</span>
-            </button>
+
+          <label class="field-label">
+            Style / animation request
+            <textarea
+              id="projectPrompt"
+              class="text-area"
+              autocomplete="off"
+              placeholder="Animate this cat playing with yarn in ink and watercolor."
+            ></textarea>
+          </label>
+
+          <button id="createProjectPlan" class="primary-action" type="submit">Create project plan</button>
+          <output id="setupStatus" class="status-output" aria-live="polite"></output>
+        </form>
+
+        <aside class="side-column" aria-label="Project creation output">
+          <section class="workflow-panel">
+            <h2>Workflow</h2>
+            <ol class="workflow-list">
+              <li><span>1</span>Add a 12-panel storyboard image</li>
+              <li><span>2</span>Choose grid: 3x4 / 4x3 / custom</li>
+              <li><span>3</span>Describe the animation style and fixes</li>
+              <li><span>4</span>Create project scaffold with the CLI</li>
+              <li><span>5</span>Use the generated project files with a coding agent</li>
+              <li><span>6</span>Preview and export the finished animation</li>
+            </ol>
+            <p class="workflow-route">
+              Preview route
+              <code>/?project=&lt;slug&gt;</code>
+            </p>
+            <figure class="workflow-logo">
+              <img src="/inky-banner.png" alt="Inky" />
+            </figure>
+          </section>
+
+          <section id="projectPlanOutput" class="output-panel" aria-label="Generated project plan" hidden>
+            <div class="output-header">
+              <h2>Project plan</h2>
+              <button id="copyProjectPlan" class="secondary-action" type="button">Copy</button>
+            </div>
+            <h3>CLI command</h3>
+            <pre id="commandOutput" class="code-output"></pre>
+            <h3>Agent prompt</h3>
+            <pre id="agentPromptOutput" class="code-output brief-output"></pre>
+          </section>
+        </aside>
+      </section>
+
+      <section id="previewPanel" class="preview-shell" aria-label="Animation preview" hidden>
+        <header class="preview-header">
+          <div>
+            <p class="brand">Inky Preview</p>
+            <h1 id="previewTitle">Untitled animation</h1>
           </div>
-          <output id="paintStatus" class="visually-hidden" aria-live="polite">Ready</output>
-        </div>
+          <a id="backToCreator" class="secondary-link" href="/">New project</a>
+        </header>
+
+        <section class="stage-shell">
+          <div class="viewer-frame">
+            <canvas id="whiteboard" width="960" height="620" aria-label="Animation canvas"></canvas>
+            <video id="mp4Preview" class="mp4-preview" preload="metadata" playsinline hidden></video>
+          </div>
+          <div class="controls timeline-controls" aria-label="Animation timeline controls">
+            <div class="control-group playback-group" aria-label="Playback">
+              <button id="play" class="tool-button" type="button" aria-label="Play" title="Play">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+                <span class="button-text">Play</span>
+              </button>
+              <button id="pause" class="tool-button" type="button" aria-label="Pause" title="Pause">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 5v14" />
+                  <path d="M17 5v14" />
+                </svg>
+                <span class="button-text">Pause</span>
+              </button>
+            </div>
+            <div class="timeline-group">
+              <label class="timeline-wrap">
+                <span class="visually-hidden">Timeline</span>
+                <input id="timeline" type="range" min="0" max="0" value="0" step="1" />
+              </label>
+              <output id="frameCounter" class="frame-counter" aria-label="Current frame">0 / 0</output>
+              <label class="speed-wrap">
+                <span class="visually-hidden">Playback speed</span>
+                <select id="playbackSpeed" class="speed-select" aria-label="Playback speed" title="Playback speed">
+                  <option value="0.5">0.5x</option>
+                  <option value="0.75">0.75x</option>
+                  <option value="1" selected>1x</option>
+                  <option value="1.25">1.25x</option>
+                  <option value="1.5">1.5x</option>
+                  <option value="2">2x</option>
+                </select>
+              </label>
+            </div>
+            <div class="control-group export-group" aria-label="Export">
+              <button id="exportPng" class="tool-button" type="button" aria-label="Export current frame as PNG" title="Export PNG">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3v12" />
+                  <path d="m7 10 5 5 5-5" />
+                  <path d="M5 21h14" />
+                </svg>
+                <span class="button-text">PNG</span>
+              </button>
+              <button id="exportMp4" class="tool-button" type="button" aria-label="Export MP4" title="Export MP4">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 5h16v14H4z" />
+                  <path d="m10 9 5 3-5 3z" />
+                </svg>
+                <span class="button-text">MP4</span>
+              </button>
+            </div>
+            <output id="paintStatus" class="visually-hidden" aria-live="polite">Ready</output>
+          </div>
+        </section>
       </section>
     </main>
     <script type="module" src="/src/main.js"></script>
