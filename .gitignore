@@ -9,6 +9,11 @@ outputs/
 .playwright-mcp/
 .firecrawl/
 
+# Paper working folder: keep only the final PDF in Git.
+paper/**
+!paper/
+!paper/paper.pdf
+
 # Rendered project output can be large; keep curated examples in docs/assets instead.
 projects/*/outputs/
 projects/*/image/
