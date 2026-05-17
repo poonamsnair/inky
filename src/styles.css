@@ -1,0 +1,306 @@
+:root {
+  color-scheme: light;
+  font-family:
+    "Avenir Next", "Trebuchet MS", Verdana, ui-sans-serif, system-ui, sans-serif;
+  --page: #0d0e0c;
+  --surface: rgba(247, 244, 235, 0.9);
+  --surface-strong: #fbf7ec;
+  --ink: #201b16;
+  --muted: rgba(32, 27, 22, 0.58);
+  --line: rgba(32, 27, 22, 0.14);
+  --accent: #24455c;
+  --accent-ink: #fff8e8;
+  --track: rgba(32, 27, 22, 0.18);
+  --track-active: #2e536b;
+  background: var(--page);
+  color: var(--ink);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+button {
+  font: inherit;
+}
+
+.viewer-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  cursor: default;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 248, 226, 0.07), transparent 38%),
+    linear-gradient(180deg, rgba(255, 246, 226, 0.04), rgba(0, 0, 0, 0.2)),
+    var(--page);
+}
+
+.stage-shell {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: minmax(0, auto) auto;
+  place-items: center;
+  align-content: center;
+  gap: 12px;
+  padding: 16px;
+  overflow: hidden;
+}
+
+#whiteboard {
+  display: block;
+  width: min(calc(100vw - 32px), calc((100vh - 106px) * 1.5483870968));
+  height: min(calc(100vh - 106px), calc((100vw - 32px) / 1.5483870968));
+  aspect-ratio: 48 / 31;
+  background: #ead8b4;
+  cursor: default;
+  box-shadow:
+    0 18px 72px rgba(0, 0, 0, 0.46),
+    0 0 0 1px rgba(255, 244, 213, 0.12),
+    inset 0 0 0 1px rgba(60, 42, 27, 0.18);
+}
+
+.controls {
+  width: min(960px, calc(100vw - 32px));
+  display: grid;
+  grid-template-columns: auto minmax(180px, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow:
+    0 10px 32px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.54);
+  backdrop-filter: blur(18px) saturate(1.08);
+  cursor: default;
+}
+
+.control-group,
+.timeline-group {
+  display: flex;
+  align-items: center;
+}
+
+.control-group {
+  gap: 4px;
+}
+
+.timeline-group {
+  min-width: 0;
+  gap: 10px;
+}
+
+.tool-button {
+  width: 38px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.tool-button:hover {
+  transform: translateY(-1px);
+  background: rgba(32, 27, 22, 0.07);
+  border-color: var(--line);
+}
+
+.tool-button:disabled {
+  opacity: 0.48;
+  transform: none;
+  cursor: default;
+}
+
+.tool-button[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: rgba(18, 31, 42, 0.32);
+}
+
+.button-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.tool-button:focus-visible,
+#timeline:focus-visible,
+.speed-select:focus-visible {
+  outline: 3px solid rgba(47, 104, 135, 0.28);
+  outline-offset: 2px;
+}
+
+.tool-button svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.timeline-wrap {
+  flex: 1 1 auto;
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+}
+
+#timeline {
+  width: 100%;
+  height: 24px;
+  accent-color: var(--track-active);
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+#timeline::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 999px;
+  background: var(--track);
+}
+
+#timeline::-webkit-slider-thumb {
+  width: 18px;
+  height: 18px;
+  margin-top: -7px;
+  border: 2px solid var(--surface-strong);
+  border-radius: 50%;
+  appearance: none;
+  background: var(--track-active);
+  box-shadow: 0 2px 8px rgba(21, 30, 35, 0.24);
+}
+
+#timeline::-moz-range-track {
+  height: 4px;
+  border-radius: 999px;
+  background: var(--track);
+}
+
+#timeline::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--surface-strong);
+  border-radius: 50%;
+  background: var(--track-active);
+  box-shadow: 0 2px 8px rgba(21, 30, 35, 0.24);
+}
+
+.frame-counter {
+  min-width: 54px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.speed-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.speed-select {
+  height: 32px;
+  min-width: 66px;
+  padding: 0 26px 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background:
+    linear-gradient(45deg, transparent 50%, var(--muted) 50%) right 13px center / 5px 5px no-repeat,
+    linear-gradient(135deg, var(--muted) 50%, transparent 50%) right 8px center / 5px 5px no-repeat,
+    rgba(255, 255, 255, 0.36);
+  color: var(--ink);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  appearance: none;
+  cursor: pointer;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+body.export-mode,
+body.export-mode .viewer-shell,
+body.export-mode .stage-shell {
+  width: 100vw;
+  height: 100vh;
+  min-width: 0;
+  min-height: 0;
+  background: #efe5d1;
+}
+
+body.export-mode #whiteboard {
+  width: 100vw;
+  height: 100vh;
+  box-shadow: none;
+  cursor: default;
+}
+
+body.export-mode .controls {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .controls {
+    grid-template-columns: auto 1fr;
+    gap: 8px;
+  }
+
+  .timeline-group {
+    grid-column: 1 / -1;
+    order: 3;
+  }
+
+  .export-group {
+    justify-self: end;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

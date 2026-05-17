@@ -1,0 +1,52 @@
+{
+  "default": [
+    {
+      "name": "face-hair-expression",
+      "x": 330,
+      "y": 95,
+      "w": 270,
+      "h": 170,
+      "checks": [
+        "woman reads as blond, not brunette",
+        "head connects to neck and shoulders",
+        "eyes, mouth, cheeks, and hair details stay attached to the face"
+      ]
+    },
+    {
+      "name": "hands-knife-board",
+      "x": 250,
+      "y": 245,
+      "w": 450,
+      "h": 190,
+      "checks": [
+        "knife has a handle and blade and is not a stray line",
+        "cutting hand connects through sleeve and wrist",
+        "guide hand holds fruit safely and does not merge into blade"
+      ]
+    },
+    {
+      "name": "fruit-and-bowl",
+      "x": 175,
+      "y": 330,
+      "w": 600,
+      "h": 220,
+      "checks": [
+        "fruit pieces read as fruit salad, not random confetti",
+        "large bowl rim and body are visible when bowl appears",
+        "falling or stirred fruit remains inside or clearly moving into the bowl"
+      ]
+    },
+    {
+      "name": "set-and-storyboard-cleanup",
+      "x": 20,
+      "y": 25,
+      "w": 920,
+      "h": 555,
+      "checks": [
+        "no panel numbers or black storyboard borders are visible",
+        "kitchen window, shelf, sink, counter, and plant remain stable",
+        "waxy crayon strokes are visible without hiding body/prop construction"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "source": "projects/stickman-tax-writeoffs-comic/image/storyboard_input.png",
+  "columns": 4,
+  "rows": 3,
+  "count": 12,
+  "frames": [
+    {
+      "index": 0,
+      "row": 0,
+      "column": 0,
+      "path": "projects/stickman-tax-writeoffs-comic/storyboard/frame-00.png"
+    },
+    {
+      "index": 1,
+      "row": 0,
+      "column": 1,
+      "path": "projects/stickman-tax-writeoffs-comic/storyboard/frame-01.png"
+    },
+    {
+      "index": 2,
+      "row": 0,
+      "column": 2,
+      "path": "projects/stickman-tax-writeoffs-comic/storyboard/frame-02.png"
+    },
+    {
+      "index": 3,
+      "row": 0,
+      "column": 3,
+      "path": "projects/stickman-tax-writeoffs-comic/storyboard/frame-03.png"
+    },
+    {
+      "index": 4,
+      "row": 1,
+      "column": 0,
+      "path": "projects/stickman-tax-writeoffs-comic/storyboard/frame-04.png"
+    },
+    {
+      "index": 5,
+      "row": 1,
+      "column": 1,
+      "path": "projects/stickman-tax-writeoffs-comic/storyboard/frame-05.png"
+    },
+    {
+      "index": 6,
+      "row": 1,
+      "column": 2,
+      "path": "projects/stickman-tax-writeoffs-comic/storyboard/frame-06.png"
+    },
+    {
+      "index": 7,
+      "row": 1,
+      "column": 3,
+      "path": "projects/stickman-tax-writeoffs-comic/storyboard/frame-07.png"
+    },
+    {
+      "index": 8,
+      "row": 2,
+      "column": 0,
+      "path": "projects/stickman-tax-writeoffs-comic/storyboard/frame-08.png"
+    },
+    {
+      "index": 9,
+      "row": 2,
+      "column": 1,
+      "path": "projects/stickman-tax-writeoffs-comic/storyboard/frame-09.png"
+    },
+    {
+      "index": 10,
+      "row": 2,
+      "column": 2,
+      "path": "projects/stickman-tax-writeoffs-comic/storyboard/frame-10.png"
+    },
+    {
+      "index": 11,
+      "row": 2,
+      "column": 3,
+      "path": "projects/stickman-tax-writeoffs-comic/storyboard/frame-11.png"
+    }
+  ]
+}

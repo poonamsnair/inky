@@ -1,0 +1,311 @@
+{
+  "name": "woman-cat-reading",
+  "source": "projects/woman-cat-reading/image/storyboard_input.png",
+  "outputDir": "projects/woman-cat-reading/storyboard",
+  "requirements": "Create a clean animated video from the storyboard: a woman relaxes on a cream sofa reading a green book, notices her orange-and-white cat entering, the cat walks closer, crouches, jumps onto the sofa, sits beside her, then curls on her lap while she keeps reading. Use the storyboard as a lighthouse only; do not show, paste, trace, sample, or hide the source bitmap in the final canvas. Remove panel numbers, comic borders, labels, and storyboard-only motion marks from the animated frame. Use ink-style outlines with dry textured color, not watercolor washes.",
+  "requirementsDocument": "projects/woman-cat-reading/storyboard/requirements.md",
+  "columns": 3,
+  "rows": 4,
+  "frames": [
+    {
+      "index": 0,
+      "sourceFrame": "projects/woman-cat-reading/storyboard/frame-00.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: a woman relaxes on a cream sofa reading a green book, notices her orange-and-white cat entering, the cat walks closer, crouches, jumps onto the sofa, sits beside her, then curls on her lap while she keeps reading. Use the storyboard as a lighthouse only; do not show, paste, trace, sample, or hide the source bitmap in the final canvas. Remove panel numbers, comic borders, labels, and storyboard-only motion marks from the animated frame. Use ink-style outlines with dry textured color, not watercolor washes.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "first-frame-anchor"
+    },
+    {
+      "index": 1,
+      "sourceFrame": "projects/woman-cat-reading/storyboard/frame-01.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: a woman relaxes on a cream sofa reading a green book, notices her orange-and-white cat entering, the cat walks closer, crouches, jumps onto the sofa, sits beside her, then curls on her lap while she keeps reading. Use the storyboard as a lighthouse only; do not show, paste, trace, sample, or hide the source bitmap in the final canvas. Remove panel numbers, comic borders, labels, and storyboard-only motion marks from the animated frame. Use ink-style outlines with dry textured color, not watercolor washes.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 2,
+      "sourceFrame": "projects/woman-cat-reading/storyboard/frame-02.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: a woman relaxes on a cream sofa reading a green book, notices her orange-and-white cat entering, the cat walks closer, crouches, jumps onto the sofa, sits beside her, then curls on her lap while she keeps reading. Use the storyboard as a lighthouse only; do not show, paste, trace, sample, or hide the source bitmap in the final canvas. Remove panel numbers, comic borders, labels, and storyboard-only motion marks from the animated frame. Use ink-style outlines with dry textured color, not watercolor washes.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 3,
+      "sourceFrame": "projects/woman-cat-reading/storyboard/frame-03.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: a woman relaxes on a cream sofa reading a green book, notices her orange-and-white cat entering, the cat walks closer, crouches, jumps onto the sofa, sits beside her, then curls on her lap while she keeps reading. Use the storyboard as a lighthouse only; do not show, paste, trace, sample, or hide the source bitmap in the final canvas. Remove panel numbers, comic borders, labels, and storyboard-only motion marks from the animated frame. Use ink-style outlines with dry textured color, not watercolor washes.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 4,
+      "sourceFrame": "projects/woman-cat-reading/storyboard/frame-04.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: a woman relaxes on a cream sofa reading a green book, notices her orange-and-white cat entering, the cat walks closer, crouches, jumps onto the sofa, sits beside her, then curls on her lap while she keeps reading. Use the storyboard as a lighthouse only; do not show, paste, trace, sample, or hide the source bitmap in the final canvas. Remove panel numbers, comic borders, labels, and storyboard-only motion marks from the animated frame. Use ink-style outlines with dry textured color, not watercolor washes.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 5,
+      "sourceFrame": "projects/woman-cat-reading/storyboard/frame-05.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: a woman relaxes on a cream sofa reading a green book, notices her orange-and-white cat entering, the cat walks closer, crouches, jumps onto the sofa, sits beside her, then curls on her lap while she keeps reading. Use the storyboard as a lighthouse only; do not show, paste, trace, sample, or hide the source bitmap in the final canvas. Remove panel numbers, comic borders, labels, and storyboard-only motion marks from the animated frame. Use ink-style outlines with dry textured color, not watercolor washes.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 6,
+      "sourceFrame": "projects/woman-cat-reading/storyboard/frame-06.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: a woman relaxes on a cream sofa reading a green book, notices her orange-and-white cat entering, the cat walks closer, crouches, jumps onto the sofa, sits beside her, then curls on her lap while she keeps reading. Use the storyboard as a lighthouse only; do not show, paste, trace, sample, or hide the source bitmap in the final canvas. Remove panel numbers, comic borders, labels, and storyboard-only motion marks from the animated frame. Use ink-style outlines with dry textured color, not watercolor washes.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 7,
+      "sourceFrame": "projects/woman-cat-reading/storyboard/frame-07.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: a woman relaxes on a cream sofa reading a green book, notices her orange-and-white cat entering, the cat walks closer, crouches, jumps onto the sofa, sits beside her, then curls on her lap while she keeps reading. Use the storyboard as a lighthouse only; do not show, paste, trace, sample, or hide the source bitmap in the final canvas. Remove panel numbers, comic borders, labels, and storyboard-only motion marks from the animated frame. Use ink-style outlines with dry textured color, not watercolor washes.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 8,
+      "sourceFrame": "projects/woman-cat-reading/storyboard/frame-08.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: a woman relaxes on a cream sofa reading a green book, notices her orange-and-white cat entering, the cat walks closer, crouches, jumps onto the sofa, sits beside her, then curls on her lap while she keeps reading. Use the storyboard as a lighthouse only; do not show, paste, trace, sample, or hide the source bitmap in the final canvas. Remove panel numbers, comic borders, labels, and storyboard-only motion marks from the animated frame. Use ink-style outlines with dry textured color, not watercolor washes.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 9,
+      "sourceFrame": "projects/woman-cat-reading/storyboard/frame-09.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: a woman relaxes on a cream sofa reading a green book, notices her orange-and-white cat entering, the cat walks closer, crouches, jumps onto the sofa, sits beside her, then curls on her lap while she keeps reading. Use the storyboard as a lighthouse only; do not show, paste, trace, sample, or hide the source bitmap in the final canvas. Remove panel numbers, comic borders, labels, and storyboard-only motion marks from the animated frame. Use ink-style outlines with dry textured color, not watercolor washes.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 10,
+      "sourceFrame": "projects/woman-cat-reading/storyboard/frame-10.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: a woman relaxes on a cream sofa reading a green book, notices her orange-and-white cat entering, the cat walks closer, crouches, jumps onto the sofa, sits beside her, then curls on her lap while she keeps reading. Use the storyboard as a lighthouse only; do not show, paste, trace, sample, or hide the source bitmap in the final canvas. Remove panel numbers, comic borders, labels, and storyboard-only motion marks from the animated frame. Use ink-style outlines with dry textured color, not watercolor washes.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 11,
+      "sourceFrame": "projects/woman-cat-reading/storyboard/frame-11.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: a woman relaxes on a cream sofa reading a green book, notices her orange-and-white cat entering, the cat walks closer, crouches, jumps onto the sofa, sits beside her, then curls on her lap while she keeps reading. Use the storyboard as a lighthouse only; do not show, paste, trace, sample, or hide the source bitmap in the final canvas. Remove panel numbers, comic borders, labels, and storyboard-only motion marks from the animated frame. Use ink-style outlines with dry textured color, not watercolor washes.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    }
+  ]
+}

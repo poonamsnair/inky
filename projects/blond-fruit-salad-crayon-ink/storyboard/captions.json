@@ -1,0 +1,63 @@
+{
+  "fps": 12,
+  "totalFrames": 90,
+  "style": {
+    "position": "top"
+  },
+  "cues": [
+    {
+      "id": "caption-01",
+      "frameStart": 0,
+      "frameEnd": 14,
+      "start": 0,
+      "end": 1.25,
+      "text": "Fresh fruit waits on the kitchen counter.",
+      "position": "top"
+    },
+    {
+      "id": "caption-02",
+      "frameStart": 15,
+      "frameEnd": 29,
+      "start": 1.25,
+      "end": 2.5,
+      "text": "She rinses the berries and sets up the board.",
+      "position": "top"
+    },
+    {
+      "id": "caption-03",
+      "frameStart": 30,
+      "frameEnd": 44,
+      "start": 2.5,
+      "end": 3.75,
+      "text": "Strawberries, orange, and apple are sliced.",
+      "position": "top"
+    },
+    {
+      "id": "caption-04",
+      "frameStart": 45,
+      "frameEnd": 59,
+      "start": 3.75,
+      "end": 5,
+      "text": "Kiwi rounds and watermelon cubes join in.",
+      "position": "top"
+    },
+    {
+      "id": "caption-05",
+      "frameStart": 60,
+      "frameEnd": 74,
+      "start": 5,
+      "end": 6.25,
+      "text": "Grapes tumble into the big salad bowl.",
+      "position": "top"
+    },
+    {
+      "id": "caption-06",
+      "frameStart": 75,
+      "frameEnd": 89,
+      "start": 6.25,
+      "end": 7.5,
+      "text": "She stirs, tastes, and presents the fruit salad.",
+      "position": "top"
+    }
+  ]
+}

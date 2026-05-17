@@ -1,0 +1,311 @@
+{
+  "name": "stickman-tax-writeoffs-comic",
+  "source": "projects/stickman-tax-writeoffs-comic/image/storyboard_input.png",
+  "outputDir": "projects/stickman-tax-writeoffs-comic/storyboard",
+  "requirements": "Create a stick man comic animation about a tax write-off misunderstanding in an accountant office. Preserve comic speech bubbles as animated artwork using the reusable speech-bubble tools. Use the storyboard as a lighthouse only; do not paste or trace the source image into the final canvas.",
+  "requirementsDocument": "projects/stickman-tax-writeoffs-comic/storyboard/requirements.md",
+  "columns": 4,
+  "rows": 3,
+  "frames": [
+    {
+      "index": 0,
+      "sourceFrame": "projects/stickman-tax-writeoffs-comic/storyboard/frame-00.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a stick man comic animation about a tax write-off misunderstanding in an accountant office. Preserve comic speech bubbles as animated artwork using the reusable speech-bubble tools. Use the storyboard as a lighthouse only; do not paste or trace the source image into the final canvas.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "first-frame-anchor"
+    },
+    {
+      "index": 1,
+      "sourceFrame": "projects/stickman-tax-writeoffs-comic/storyboard/frame-01.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a stick man comic animation about a tax write-off misunderstanding in an accountant office. Preserve comic speech bubbles as animated artwork using the reusable speech-bubble tools. Use the storyboard as a lighthouse only; do not paste or trace the source image into the final canvas.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 2,
+      "sourceFrame": "projects/stickman-tax-writeoffs-comic/storyboard/frame-02.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a stick man comic animation about a tax write-off misunderstanding in an accountant office. Preserve comic speech bubbles as animated artwork using the reusable speech-bubble tools. Use the storyboard as a lighthouse only; do not paste or trace the source image into the final canvas.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 3,
+      "sourceFrame": "projects/stickman-tax-writeoffs-comic/storyboard/frame-03.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a stick man comic animation about a tax write-off misunderstanding in an accountant office. Preserve comic speech bubbles as animated artwork using the reusable speech-bubble tools. Use the storyboard as a lighthouse only; do not paste or trace the source image into the final canvas.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 4,
+      "sourceFrame": "projects/stickman-tax-writeoffs-comic/storyboard/frame-04.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a stick man comic animation about a tax write-off misunderstanding in an accountant office. Preserve comic speech bubbles as animated artwork using the reusable speech-bubble tools. Use the storyboard as a lighthouse only; do not paste or trace the source image into the final canvas.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 5,
+      "sourceFrame": "projects/stickman-tax-writeoffs-comic/storyboard/frame-05.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a stick man comic animation about a tax write-off misunderstanding in an accountant office. Preserve comic speech bubbles as animated artwork using the reusable speech-bubble tools. Use the storyboard as a lighthouse only; do not paste or trace the source image into the final canvas.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 6,
+      "sourceFrame": "projects/stickman-tax-writeoffs-comic/storyboard/frame-06.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a stick man comic animation about a tax write-off misunderstanding in an accountant office. Preserve comic speech bubbles as animated artwork using the reusable speech-bubble tools. Use the storyboard as a lighthouse only; do not paste or trace the source image into the final canvas.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 7,
+      "sourceFrame": "projects/stickman-tax-writeoffs-comic/storyboard/frame-07.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a stick man comic animation about a tax write-off misunderstanding in an accountant office. Preserve comic speech bubbles as animated artwork using the reusable speech-bubble tools. Use the storyboard as a lighthouse only; do not paste or trace the source image into the final canvas.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 8,
+      "sourceFrame": "projects/stickman-tax-writeoffs-comic/storyboard/frame-08.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a stick man comic animation about a tax write-off misunderstanding in an accountant office. Preserve comic speech bubbles as animated artwork using the reusable speech-bubble tools. Use the storyboard as a lighthouse only; do not paste or trace the source image into the final canvas.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 9,
+      "sourceFrame": "projects/stickman-tax-writeoffs-comic/storyboard/frame-09.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a stick man comic animation about a tax write-off misunderstanding in an accountant office. Preserve comic speech bubbles as animated artwork using the reusable speech-bubble tools. Use the storyboard as a lighthouse only; do not paste or trace the source image into the final canvas.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 10,
+      "sourceFrame": "projects/stickman-tax-writeoffs-comic/storyboard/frame-10.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a stick man comic animation about a tax write-off misunderstanding in an accountant office. Preserve comic speech bubbles as animated artwork using the reusable speech-bubble tools. Use the storyboard as a lighthouse only; do not paste or trace the source image into the final canvas.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 11,
+      "sourceFrame": "projects/stickman-tax-writeoffs-comic/storyboard/frame-11.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a stick man comic animation about a tax write-off misunderstanding in an accountant office. Preserve comic speech bubbles as animated artwork using the reusable speech-bubble tools. Use the storyboard as a lighthouse only; do not paste or trace the source image into the final canvas.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    }
+  ]
+}

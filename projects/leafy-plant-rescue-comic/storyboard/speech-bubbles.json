@@ -1,0 +1,208 @@
+{
+  "fps": 12,
+  "totalFrames": 96,
+  "style": {
+    "font": "700 24px Avenir Next, Trebuchet MS, Verdana, sans-serif",
+    "maxWidth": 330
+  },
+  "bubbles": [
+    {
+      "id": "gasp",
+      "frameStart": 0,
+      "frameEnd": 7,
+      "start": 0,
+      "end": 0.6666666666666666,
+      "text": "GASP!",
+      "x": 540,
+      "y": 42,
+      "width": 190,
+      "tail": {
+        "x": 462,
+        "y": 126
+      },
+      "type": "speech",
+      "speaker": "hero",
+      "layer": 0
+    },
+    {
+      "id": "stay-with-me",
+      "frameStart": 16,
+      "frameEnd": 23,
+      "start": 1.3333333333333333,
+      "end": 2,
+      "text": "Noooo! Stay with me, Leafy!",
+      "x": 112,
+      "y": 46,
+      "width": 380,
+      "tail": {
+        "x": 628,
+        "y": 184
+      },
+      "type": "speech",
+      "speaker": "hero",
+      "layer": 0
+    },
+    {
+      "id": "one-drop",
+      "frameStart": 24,
+      "frameEnd": 31,
+      "start": 2,
+      "end": 2.6666666666666665,
+      "text": "Just... one drop... very carefully...",
+      "x": 508,
+      "y": 34,
+      "width": 268,
+      "tail": {
+        "x": 472,
+        "y": 188
+      },
+      "type": "speech",
+      "speaker": "hero",
+      "layer": 0
+    },
+    {
+      "id": "nothing-happened",
+      "frameStart": 32,
+      "frameEnd": 39,
+      "start": 2.6666666666666665,
+      "end": 3.3333333333333335,
+      "text": "Um... I don't think anything happened.",
+      "x": 525,
+      "y": 46,
+      "width": 330,
+      "tail": {
+        "x": 480,
+        "y": 172
+      },
+      "type": "speech",
+      "speaker": "hero",
+      "layer": 0
+    },
+    {
+      "id": "more-water",
+      "frameStart": 40,
+      "frameEnd": 47,
+      "start": 3.3333333333333335,
+      "end": 4,
+      "text": "MORE WATER! WAKE UP!!",
+      "x": 92,
+      "y": 28,
+      "width": 360,
+      "tail": {
+        "x": 632,
+        "y": 146
+      },
+      "type": "speech",
+      "speaker": "hero",
+      "layer": 0
+    },
+    {
+      "id": "sunlight",
+      "frameStart": 56,
+      "frameEnd": 63,
+      "start": 4.666666666666667,
+      "end": 5.333333333333333,
+      "text": "Sunlight! We need sunlight!",
+      "x": 92,
+      "y": 44,
+      "width": 280,
+      "tail": {
+        "x": 410,
+        "y": 170
+      },
+      "type": "speech",
+      "speaker": "hero",
+      "layer": 0
+    },
+    {
+      "id": "believe",
+      "frameStart": 64,
+      "frameEnd": 71,
+      "start": 5.333333333333333,
+      "end": 6,
+      "text": "You're strong, Leafy! You've got this! I BELIEVE!",
+      "x": 102,
+      "y": 36,
+      "width": 420,
+      "tail": {
+        "x": 790,
+        "y": 176
+      },
+      "type": "speech",
+      "speaker": "hero",
+      "layer": 0
+    },
+    {
+      "id": "tried-everything",
+      "frameStart": 72,
+      "frameEnd": 79,
+      "start": 6,
+      "end": 6.666666666666667,
+      "text": "I tried everything.",
+      "x": 380,
+      "y": 42,
+      "width": 250,
+      "tail": {
+        "x": 340,
+        "y": 160
+      },
+      "type": "speech",
+      "speaker": "hero",
+      "layer": 0
+    },
+    {
+      "id": "wait-sprout",
+      "frameStart": 80,
+      "frameEnd": 87,
+      "start": 6.666666666666667,
+      "end": 7.333333333333333,
+      "text": "...wait. Is that...?",
+      "x": 456,
+      "y": 44,
+      "width": 292,
+      "tail": {
+        "x": 190,
+        "y": 182
+      },
+      "type": "speech",
+      "speaker": "hero",
+      "layer": 0
+    },
+    {
+      "id": "victory",
+      "frameStart": 88,
+      "frameEnd": 95,
+      "start": 7.333333333333333,
+      "end": 8,
+      "text": "WE DID IT!!!",
+      "x": 260,
+      "y": 40,
+      "width": 310,
+      "tail": {
+        "x": 250,
+        "y": 146
+      },
+      "type": "speech",
+      "speaker": "hero",
+      "layer": 0
+    },
+    {
+      "id": "leafy-meh",
+      "frameStart": 90,
+      "frameEnd": 95,
+      "start": 7.5,
+      "end": 8,
+      "text": "...meh.",
+      "x": 765,
+      "y": 236,
+      "width": 150,
+      "tail": {
+        "x": 680,
+        "y": 318
+      },
+      "type": "speech",
+      "speaker": "leafy",
+      "layer": 0
+    }
+  ]
+}
