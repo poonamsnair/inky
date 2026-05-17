@@ -4,13 +4,13 @@
   <img src="docs/assets/inky-banner.png" alt="Inky ink bottle banner" width="180">
 </p>
 
-Start by generating a 12-panel storyboard from Imagen in Codex, ChatGPT image generation, or another image tool, then save it as the reference image for your animation.
+Start by generating a 12-panel storyboard from ChatGPT Images 2.0, or another image tool, then save it as the reference image for your animation.
 
 Inky is a small canvas animation app for turning storyboard references into hand-drawn animated videos by a coding agent.
 
 ## Start With A 12-Panel Storyboard
 
-First, generate a 12-panel storyboard from Imagen in Codex, ChatGPT image generation, or another image tool. Save that image as your reference image.
+First, generate a 12-panel storyboard from ChatGPT Images 2.0, or another image tool. Save that image as your reference image.
 
 A good reference is usually:
 
