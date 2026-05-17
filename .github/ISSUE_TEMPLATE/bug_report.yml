@@ -1,0 +1,42 @@
+name: Bug Report
+description: Report something broken or visually incorrect.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping improve Inky. Screenshots are especially useful for visual bugs.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the bug in plain language.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should have happened?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Run ...
+        2. Open ...
+        3. Click ...
+    validations:
+      required: true
+  - type: textarea
+    id: media
+    attributes:
+      label: Screenshots or video
+      description: Add screenshots, frame numbers, or a short video if this is a visual issue.
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: "macOS, Chrome, Node 22"

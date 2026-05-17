@@ -1,0 +1,32 @@
+{
+  "default": {
+    "intent": "Clown juggling frame with readable costume, hands, balls, and final accents",
+    "mustReadAs": [
+      "clown face, hat, bow tie, hands, arms, pants, legs, shoes, and juggling balls read without the source image",
+      "baggy yellow pants read as clothing with two trouser lobes, seams, cuffs, and attached shoes, not as a ball or skirt",
+      "juggling balls are separate props with no long visible connector lines, guide paths, panel marks, or accidental strings"
+    ],
+    "regions": [
+      {
+        "name": "face-hat-bow",
+        "box": [300, 105, 385, 445],
+        "expect": "face, hat, hair, nose, mouth, and bow tie are attached and readable"
+      },
+      {
+        "name": "hands-arms-body",
+        "box": [145, 380, 700, 360],
+        "expect": "hands connect through wrists, sleeves, elbows, and shoulders"
+      },
+      {
+        "name": "pants-legs-shoes",
+        "box": [235, 635, 555, 430],
+        "expect": "baggy pants show waistband, separate trouser lobes, seams, cuffs, visible leg exits, and attached shoes"
+      },
+      {
+        "name": "balls-and-motion-accents",
+        "box": [190, 35, 610, 520],
+        "expect": "red, blue, and yellow balls read as balls; any motion accents are short/local and not connector lines"
+      }
+    ]
+  }
+}

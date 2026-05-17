@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Local/generated previews
+outputs/
+.playwright-mcp/
+.firecrawl/
+
+# Rendered project output can be large; keep curated examples in docs/assets instead.
+projects/*/outputs/
+projects/*/image/
+projects/*/prompt/
+projects/*/storyboard/*.png
+projects/*/storyboard/blueprints/
+
+# Local machine files
+.DS_Store
+*.log
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Root-level scratch screenshots and rendered frame checks
+/*.png
+/*.jpg
+/*.jpeg

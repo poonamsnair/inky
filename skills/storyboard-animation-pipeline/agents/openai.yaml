@@ -1,0 +1,4 @@
+interface:
+  display_name: "Storyboard Animation Pipeline"
+  short_description: "Frame-by-frame storyboard drawing and animation workflow."
+  default_prompt: "Turn this storyboard into a consistent pen-and-watercolor frame sequence and animation."

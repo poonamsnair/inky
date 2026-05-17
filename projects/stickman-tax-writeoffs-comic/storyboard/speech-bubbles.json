@@ -1,0 +1,172 @@
+{
+  "fps": 12,
+  "totalFrames": 91,
+  "style": {
+    "font": "700 24px Avenir Next, Trebuchet MS, Verdana, sans-serif",
+    "maxWidth": 330
+  },
+  "bubbles": [
+    {
+      "id": "client-help",
+      "frameStart": 0,
+      "frameEnd": 7,
+      "start": 0,
+      "end": 0.6666666666666666,
+      "text": "I NEED HELP WITH MY TAXES.",
+      "x": 90,
+      "y": 32,
+      "width": 330,
+      "tail": {
+        "x": 310,
+        "y": 210
+      },
+      "type": "speech",
+      "speaker": "client",
+      "layer": 0
+    },
+    {
+      "id": "accountant-goal",
+      "frameStart": 8,
+      "frameEnd": 15,
+      "start": 0.6666666666666666,
+      "end": 1.3333333333333333,
+      "text": "NO PROBLEM. WHAT'S THE GOAL?",
+      "x": 240,
+      "y": 30,
+      "width": 340,
+      "tail": {
+        "x": 610,
+        "y": 190
+      },
+      "type": "speech",
+      "speaker": "accountant",
+      "layer": 0
+    },
+    {
+      "id": "client-writeoffs",
+      "frameStart": 16,
+      "frameEnd": 23,
+      "start": 1.3333333333333333,
+      "end": 2,
+      "text": "MY FRIEND SAID I NEED MORE WRITE-OFFS.",
+      "x": 70,
+      "y": 28,
+      "width": 390,
+      "tail": {
+        "x": 300,
+        "y": 210
+      },
+      "type": "speech",
+      "speaker": "client",
+      "layer": 0
+    },
+    {
+      "id": "accountant-thinking",
+      "frameStart": 24,
+      "frameEnd": 31,
+      "start": 2,
+      "end": 2.6666666666666665,
+      "text": "MORE... WRITE-OFFS?",
+      "x": 570,
+      "y": 35,
+      "width": 280,
+      "tail": {
+        "x": 650,
+        "y": 190
+      },
+      "type": "thought",
+      "speaker": "accountant",
+      "layer": 0
+    },
+    {
+      "id": "client-many",
+      "frameStart": 32,
+      "frameEnd": 39,
+      "start": 2.6666666666666665,
+      "end": 3.3333333333333335,
+      "text": "YES. AS MANY AS POSSIBLE.",
+      "x": 70,
+      "y": 32,
+      "width": 320,
+      "tail": {
+        "x": 284,
+        "y": 210
+      },
+      "type": "speech",
+      "speaker": "client",
+      "layer": 0
+    },
+    {
+      "id": "client-uh",
+      "frameStart": 64,
+      "frameEnd": 71,
+      "start": 5.333333333333333,
+      "end": 6,
+      "text": "UH...",
+      "x": 45,
+      "y": 35,
+      "width": 150,
+      "tail": {
+        "x": 165,
+        "y": 220
+      },
+      "type": "speech",
+      "speaker": "client",
+      "layer": 0
+    },
+    {
+      "id": "client-correction",
+      "frameStart": 72,
+      "frameEnd": 79,
+      "start": 6,
+      "end": 6.666666666666667,
+      "text": "I DON'T THINK THAT'S WHAT A WRITE-OFF IS.",
+      "x": 90,
+      "y": 25,
+      "width": 430,
+      "tail": {
+        "x": 250,
+        "y": 220
+      },
+      "type": "speech",
+      "speaker": "client",
+      "layer": 0
+    },
+    {
+      "id": "accountant-why",
+      "frameStart": 80,
+      "frameEnd": 87,
+      "start": 6.666666666666667,
+      "end": 7.333333333333333,
+      "text": "THEN WHY IS IT CALLED A WRITE-OFF?",
+      "x": 160,
+      "y": 25,
+      "width": 390,
+      "tail": {
+        "x": 540,
+        "y": 205
+      },
+      "type": "speech",
+      "speaker": "accountant",
+      "layer": 0
+    },
+    {
+      "id": "accountant-punchline",
+      "frameStart": 88,
+      "frameEnd": 90,
+      "start": 7.333333333333333,
+      "end": 7.583333333333333,
+      "text": "I'M WRITING THIS OFFICE OFF.",
+      "x": 430,
+      "y": 28,
+      "width": 390,
+      "tail": {
+        "x": 705,
+        "y": 218
+      },
+      "type": "speech",
+      "speaker": "accountant",
+      "layer": 0
+    }
+  ]
+}

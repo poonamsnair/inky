@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leafy Plant Rescue Comic Animation</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <main class="viewer-shell">
+      <section class="stage-shell" aria-label="Full 12 scene Leafy plant rescue comic animation">
+        <canvas id="whiteboard" width="960" height="620" aria-label="Hand-drawn Leafy plant rescue comic animation canvas"></canvas>
+        <div class="controls timeline-controls" aria-label="Animation timeline controls">
+          <div class="control-group playback-group" aria-label="Playback">
+            <button id="play" class="tool-button" type="button" aria-label="Play" title="Play">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+              <span class="button-text">Play</span>
+            </button>
+            <button id="pause" class="tool-button" type="button" aria-label="Pause" title="Pause">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 5v14" />
+                <path d="M17 5v14" />
+              </svg>
+              <span class="button-text">Pause</span>
+            </button>
+          </div>
+          <div class="timeline-group">
+            <label class="timeline-wrap">
+              <span class="visually-hidden">Timeline</span>
+              <input id="timeline" type="range" min="0" max="89" value="0" step="1" />
+            </label>
+            <output id="frameCounter" class="frame-counter" aria-label="Current frame">1 / 96</output>
+            <label class="speed-wrap">
+              <span class="visually-hidden">Playback speed</span>
+              <select id="playbackSpeed" class="speed-select" aria-label="Playback speed" title="Playback speed">
+                <option value="0.5">0.5x</option>
+                <option value="0.75">0.75x</option>
+                <option value="1" selected>1x</option>
+                <option value="1.25">1.25x</option>
+                <option value="1.5">1.5x</option>
+                <option value="2">2x</option>
+              </select>
+            </label>
+          </div>
+          <div class="control-group export-group" aria-label="Export">
+            <button id="exportPng" class="tool-button" type="button" aria-label="Export current frame as PNG" title="Export PNG">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v12" />
+                <path d="m7 10 5 5 5-5" />
+                <path d="M5 21h14" />
+              </svg>
+              <span class="button-text">PNG</span>
+            </button>
+            <button id="exportMp4" class="tool-button" type="button" aria-label="Export MP4" title="Export MP4">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5h16v14H4z" />
+                <path d="m10 9 5 3-5 3z" />
+              </svg>
+              <span class="button-text">MP4</span>
+            </button>
+          </div>
+          <output id="paintStatus" class="visually-hidden" aria-live="polite">Ready</output>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

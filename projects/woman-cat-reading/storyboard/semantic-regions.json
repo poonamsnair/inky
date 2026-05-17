@@ -1,0 +1,52 @@
+{
+  "default": [
+    {
+      "name": "face-book-hands",
+      "x": 300,
+      "y": 145,
+      "w": 270,
+      "h": 210,
+      "checks": [
+        "head connects to neck and sweater",
+        "hands attach through sleeves and visibly hold the green book",
+        "book is not floating and face details stay attached"
+      ]
+    },
+    {
+      "name": "trousers-legs-shoes",
+      "x": 250,
+      "y": 335,
+      "w": 330,
+      "h": 220,
+      "checks": [
+        "wide trousers read as two connected legs, not a single blob",
+        "ankles and mustard flats exit from cuffs clearly",
+        "cat overlap does not erase the lap or knee structure"
+      ]
+    },
+    {
+      "name": "cat-body-tail-paws",
+      "x": 435,
+      "y": 285,
+      "w": 360,
+      "h": 250,
+      "checks": [
+        "cat has a clear head to body to tail chain",
+        "paws touch floor, sofa cushion, or lap depending on the beat",
+        "orange patches do not turn the cat into an unclear blob"
+      ]
+    },
+    {
+      "name": "set-and-guide-mark-cleanup",
+      "x": 30,
+      "y": 45,
+      "w": 870,
+      "h": 505,
+      "checks": [
+        "no panel numbers, comic borders, labels, or long jump arcs are visible",
+        "plant, sofa, wall art, and floor shadow stay stable",
+        "only short local accents appear where they clarify motion"
+      ]
+    }
+  ]
+}

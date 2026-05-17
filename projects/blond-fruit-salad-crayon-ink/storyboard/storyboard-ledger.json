@@ -1,0 +1,311 @@
+{
+  "name": "blond-fruit-salad-crayon-ink",
+  "source": "projects/blond-fruit-salad-crayon-ink/image/storyboard_input.jpg",
+  "outputDir": "projects/blond-fruit-salad-crayon-ink/storyboard",
+  "requirements": "brand new animated project: blond woman cutting and preparing a fruit salad in a bright kitchen; use storyboard as lighthouse only; remove panel borders and numbers; use waxy crayon fills and black ink outlines with actual procedural brush strokes",
+  "requirementsDocument": "projects/blond-fruit-salad-crayon-ink/storyboard/requirements.md",
+  "columns": 4,
+  "rows": 3,
+  "frames": [
+    {
+      "index": 0,
+      "sourceFrame": "projects/blond-fruit-salad-crayon-ink/storyboard/frame-00.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "brand new animated project: blond woman cutting and preparing a fruit salad in a bright kitchen; use storyboard as lighthouse only; remove panel borders and numbers; use waxy crayon fills and black ink outlines with actual procedural brush strokes",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "first-frame-anchor"
+    },
+    {
+      "index": 1,
+      "sourceFrame": "projects/blond-fruit-salad-crayon-ink/storyboard/frame-01.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "brand new animated project: blond woman cutting and preparing a fruit salad in a bright kitchen; use storyboard as lighthouse only; remove panel borders and numbers; use waxy crayon fills and black ink outlines with actual procedural brush strokes",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 2,
+      "sourceFrame": "projects/blond-fruit-salad-crayon-ink/storyboard/frame-02.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "brand new animated project: blond woman cutting and preparing a fruit salad in a bright kitchen; use storyboard as lighthouse only; remove panel borders and numbers; use waxy crayon fills and black ink outlines with actual procedural brush strokes",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 3,
+      "sourceFrame": "projects/blond-fruit-salad-crayon-ink/storyboard/frame-03.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "brand new animated project: blond woman cutting and preparing a fruit salad in a bright kitchen; use storyboard as lighthouse only; remove panel borders and numbers; use waxy crayon fills and black ink outlines with actual procedural brush strokes",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 4,
+      "sourceFrame": "projects/blond-fruit-salad-crayon-ink/storyboard/frame-04.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "brand new animated project: blond woman cutting and preparing a fruit salad in a bright kitchen; use storyboard as lighthouse only; remove panel borders and numbers; use waxy crayon fills and black ink outlines with actual procedural brush strokes",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 5,
+      "sourceFrame": "projects/blond-fruit-salad-crayon-ink/storyboard/frame-05.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "brand new animated project: blond woman cutting and preparing a fruit salad in a bright kitchen; use storyboard as lighthouse only; remove panel borders and numbers; use waxy crayon fills and black ink outlines with actual procedural brush strokes",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 6,
+      "sourceFrame": "projects/blond-fruit-salad-crayon-ink/storyboard/frame-06.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "brand new animated project: blond woman cutting and preparing a fruit salad in a bright kitchen; use storyboard as lighthouse only; remove panel borders and numbers; use waxy crayon fills and black ink outlines with actual procedural brush strokes",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 7,
+      "sourceFrame": "projects/blond-fruit-salad-crayon-ink/storyboard/frame-07.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "brand new animated project: blond woman cutting and preparing a fruit salad in a bright kitchen; use storyboard as lighthouse only; remove panel borders and numbers; use waxy crayon fills and black ink outlines with actual procedural brush strokes",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 8,
+      "sourceFrame": "projects/blond-fruit-salad-crayon-ink/storyboard/frame-08.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "brand new animated project: blond woman cutting and preparing a fruit salad in a bright kitchen; use storyboard as lighthouse only; remove panel borders and numbers; use waxy crayon fills and black ink outlines with actual procedural brush strokes",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 9,
+      "sourceFrame": "projects/blond-fruit-salad-crayon-ink/storyboard/frame-09.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "brand new animated project: blond woman cutting and preparing a fruit salad in a bright kitchen; use storyboard as lighthouse only; remove panel borders and numbers; use waxy crayon fills and black ink outlines with actual procedural brush strokes",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 10,
+      "sourceFrame": "projects/blond-fruit-salad-crayon-ink/storyboard/frame-10.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "brand new animated project: blond woman cutting and preparing a fruit salad in a bright kitchen; use storyboard as lighthouse only; remove panel borders and numbers; use waxy crayon fills and black ink outlines with actual procedural brush strokes",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 11,
+      "sourceFrame": "projects/blond-fruit-salad-crayon-ink/storyboard/frame-11.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "brand new animated project: blond woman cutting and preparing a fruit salad in a bright kitchen; use storyboard as lighthouse only; remove panel borders and numbers; use waxy crayon fills and black ink outlines with actual procedural brush strokes",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    }
+  ]
+}

@@ -1,0 +1,311 @@
+{
+  "name": "clown-juggling",
+  "source": "projects/clown-juggling/image/storyboard_input.png",
+  "outputDir": "projects/clown-juggling/storyboard",
+  "requirements": "Create a clean animated video from the storyboard: a cheerful curly-haired clown on a small circus stage juggles red, blue, and yellow balls, briefly drops one, recovers it, and finishes with a celebratory bow. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers out of the animated frame. Keep clown identity, ball colors, stage curtains, bunting, paper texture, and ink-watercolor style consistent.",
+  "requirementsDocument": "projects/clown-juggling/storyboard/requirements.md",
+  "columns": 4,
+  "rows": 3,
+  "frames": [
+    {
+      "index": 0,
+      "sourceFrame": "projects/clown-juggling/storyboard/frame-00.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: a cheerful curly-haired clown on a small circus stage juggles red, blue, and yellow balls, briefly drops one, recovers it, and finishes with a celebratory bow. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers out of the animated frame. Keep clown identity, ball colors, stage curtains, bunting, paper texture, and ink-watercolor style consistent.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "first-frame-anchor"
+    },
+    {
+      "index": 1,
+      "sourceFrame": "projects/clown-juggling/storyboard/frame-01.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: a cheerful curly-haired clown on a small circus stage juggles red, blue, and yellow balls, briefly drops one, recovers it, and finishes with a celebratory bow. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers out of the animated frame. Keep clown identity, ball colors, stage curtains, bunting, paper texture, and ink-watercolor style consistent.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 2,
+      "sourceFrame": "projects/clown-juggling/storyboard/frame-02.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: a cheerful curly-haired clown on a small circus stage juggles red, blue, and yellow balls, briefly drops one, recovers it, and finishes with a celebratory bow. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers out of the animated frame. Keep clown identity, ball colors, stage curtains, bunting, paper texture, and ink-watercolor style consistent.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 3,
+      "sourceFrame": "projects/clown-juggling/storyboard/frame-03.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: a cheerful curly-haired clown on a small circus stage juggles red, blue, and yellow balls, briefly drops one, recovers it, and finishes with a celebratory bow. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers out of the animated frame. Keep clown identity, ball colors, stage curtains, bunting, paper texture, and ink-watercolor style consistent.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 4,
+      "sourceFrame": "projects/clown-juggling/storyboard/frame-04.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: a cheerful curly-haired clown on a small circus stage juggles red, blue, and yellow balls, briefly drops one, recovers it, and finishes with a celebratory bow. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers out of the animated frame. Keep clown identity, ball colors, stage curtains, bunting, paper texture, and ink-watercolor style consistent.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 5,
+      "sourceFrame": "projects/clown-juggling/storyboard/frame-05.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: a cheerful curly-haired clown on a small circus stage juggles red, blue, and yellow balls, briefly drops one, recovers it, and finishes with a celebratory bow. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers out of the animated frame. Keep clown identity, ball colors, stage curtains, bunting, paper texture, and ink-watercolor style consistent.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 6,
+      "sourceFrame": "projects/clown-juggling/storyboard/frame-06.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: a cheerful curly-haired clown on a small circus stage juggles red, blue, and yellow balls, briefly drops one, recovers it, and finishes with a celebratory bow. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers out of the animated frame. Keep clown identity, ball colors, stage curtains, bunting, paper texture, and ink-watercolor style consistent.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 7,
+      "sourceFrame": "projects/clown-juggling/storyboard/frame-07.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: a cheerful curly-haired clown on a small circus stage juggles red, blue, and yellow balls, briefly drops one, recovers it, and finishes with a celebratory bow. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers out of the animated frame. Keep clown identity, ball colors, stage curtains, bunting, paper texture, and ink-watercolor style consistent.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 8,
+      "sourceFrame": "projects/clown-juggling/storyboard/frame-08.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: a cheerful curly-haired clown on a small circus stage juggles red, blue, and yellow balls, briefly drops one, recovers it, and finishes with a celebratory bow. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers out of the animated frame. Keep clown identity, ball colors, stage curtains, bunting, paper texture, and ink-watercolor style consistent.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 9,
+      "sourceFrame": "projects/clown-juggling/storyboard/frame-09.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: a cheerful curly-haired clown on a small circus stage juggles red, blue, and yellow balls, briefly drops one, recovers it, and finishes with a celebratory bow. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers out of the animated frame. Keep clown identity, ball colors, stage curtains, bunting, paper texture, and ink-watercolor style consistent.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 10,
+      "sourceFrame": "projects/clown-juggling/storyboard/frame-10.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: a cheerful curly-haired clown on a small circus stage juggles red, blue, and yellow balls, briefly drops one, recovers it, and finishes with a celebratory bow. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers out of the animated frame. Keep clown identity, ball colors, stage curtains, bunting, paper texture, and ink-watercolor style consistent.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 11,
+      "sourceFrame": "projects/clown-juggling/storyboard/frame-11.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: a cheerful curly-haired clown on a small circus stage juggles red, blue, and yellow balls, briefly drops one, recovers it, and finishes with a celebratory bow. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers out of the animated frame. Keep clown identity, ball colors, stage curtains, bunting, paper texture, and ink-watercolor style consistent.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    }
+  ]
+}

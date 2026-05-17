@@ -1,0 +1,311 @@
+{
+  "name": "woman-cat-reading-crayon-ink",
+  "source": "projects/woman-cat-reading-crayon-ink/image/storyboard_input.png",
+  "outputDir": "projects/woman-cat-reading-crayon-ink/storyboard",
+  "requirements": "new crayon and ink version of the woman reading with cat storyboard; use the source as a lighthouse only; remove panel numbers, borders, long jump arcs, guide marks; use chunky wax crayon texture with expressive black ink outlines",
+  "requirementsDocument": "projects/woman-cat-reading-crayon-ink/storyboard/requirements.md",
+  "columns": 3,
+  "rows": 4,
+  "frames": [
+    {
+      "index": 0,
+      "sourceFrame": "projects/woman-cat-reading-crayon-ink/storyboard/frame-00.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "new crayon and ink version of the woman reading with cat storyboard; use the source as a lighthouse only; remove panel numbers, borders, long jump arcs, guide marks; use chunky wax crayon texture with expressive black ink outlines",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "first-frame-anchor"
+    },
+    {
+      "index": 1,
+      "sourceFrame": "projects/woman-cat-reading-crayon-ink/storyboard/frame-01.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "new crayon and ink version of the woman reading with cat storyboard; use the source as a lighthouse only; remove panel numbers, borders, long jump arcs, guide marks; use chunky wax crayon texture with expressive black ink outlines",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 2,
+      "sourceFrame": "projects/woman-cat-reading-crayon-ink/storyboard/frame-02.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "new crayon and ink version of the woman reading with cat storyboard; use the source as a lighthouse only; remove panel numbers, borders, long jump arcs, guide marks; use chunky wax crayon texture with expressive black ink outlines",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 3,
+      "sourceFrame": "projects/woman-cat-reading-crayon-ink/storyboard/frame-03.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "new crayon and ink version of the woman reading with cat storyboard; use the source as a lighthouse only; remove panel numbers, borders, long jump arcs, guide marks; use chunky wax crayon texture with expressive black ink outlines",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 4,
+      "sourceFrame": "projects/woman-cat-reading-crayon-ink/storyboard/frame-04.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "new crayon and ink version of the woman reading with cat storyboard; use the source as a lighthouse only; remove panel numbers, borders, long jump arcs, guide marks; use chunky wax crayon texture with expressive black ink outlines",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 5,
+      "sourceFrame": "projects/woman-cat-reading-crayon-ink/storyboard/frame-05.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "new crayon and ink version of the woman reading with cat storyboard; use the source as a lighthouse only; remove panel numbers, borders, long jump arcs, guide marks; use chunky wax crayon texture with expressive black ink outlines",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 6,
+      "sourceFrame": "projects/woman-cat-reading-crayon-ink/storyboard/frame-06.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "new crayon and ink version of the woman reading with cat storyboard; use the source as a lighthouse only; remove panel numbers, borders, long jump arcs, guide marks; use chunky wax crayon texture with expressive black ink outlines",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 7,
+      "sourceFrame": "projects/woman-cat-reading-crayon-ink/storyboard/frame-07.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "new crayon and ink version of the woman reading with cat storyboard; use the source as a lighthouse only; remove panel numbers, borders, long jump arcs, guide marks; use chunky wax crayon texture with expressive black ink outlines",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 8,
+      "sourceFrame": "projects/woman-cat-reading-crayon-ink/storyboard/frame-08.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "new crayon and ink version of the woman reading with cat storyboard; use the source as a lighthouse only; remove panel numbers, borders, long jump arcs, guide marks; use chunky wax crayon texture with expressive black ink outlines",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 9,
+      "sourceFrame": "projects/woman-cat-reading-crayon-ink/storyboard/frame-09.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "new crayon and ink version of the woman reading with cat storyboard; use the source as a lighthouse only; remove panel numbers, borders, long jump arcs, guide marks; use chunky wax crayon texture with expressive black ink outlines",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 10,
+      "sourceFrame": "projects/woman-cat-reading-crayon-ink/storyboard/frame-10.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "new crayon and ink version of the woman reading with cat storyboard; use the source as a lighthouse only; remove panel numbers, borders, long jump arcs, guide marks; use chunky wax crayon texture with expressive black ink outlines",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 11,
+      "sourceFrame": "projects/woman-cat-reading-crayon-ink/storyboard/frame-11.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "new crayon and ink version of the woman reading with cat storyboard; use the source as a lighthouse only; remove panel numbers, borders, long jump arcs, guide marks; use chunky wax crayon texture with expressive black ink outlines",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    }
+  ]
+}

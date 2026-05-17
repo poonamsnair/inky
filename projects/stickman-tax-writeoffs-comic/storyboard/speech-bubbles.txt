@@ -1,0 +1,9 @@
+0-7 | I NEED HELP WITH MY TAXES. | 90,32,330 | 310,210 | speech | client-help | client
+8-15 | NO PROBLEM. WHAT'S THE GOAL? | 240,30,340 | 610,190 | speech | accountant-goal | accountant
+16-23 | MY FRIEND SAID I NEED MORE WRITE-OFFS. | 70,28,390 | 300,210 | speech | client-writeoffs | client
+24-31 | MORE... WRITE-OFFS? | 570,35,280 | 650,190 | thought | accountant-thinking | accountant
+32-39 | YES. AS MANY AS POSSIBLE. | 70,32,320 | 284,210 | speech | client-many | client
+64-71 | UH... | 45,35,150 | 165,220 | speech | client-uh | client
+72-79 | I DON'T THINK THAT'S WHAT A WRITE-OFF IS. | 90,25,430 | 250,220 | speech | client-correction | client
+80-87 | THEN WHY IS IT CALLED A WRITE-OFF? | 160,25,390 | 540,205 | speech | accountant-why | accountant
+88-90 | I'M WRITING THIS OFFICE OFF. | 430,28,390 | 705,218 | speech | accountant-punchline | accountant

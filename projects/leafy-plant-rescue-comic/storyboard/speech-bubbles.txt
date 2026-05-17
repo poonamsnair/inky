@@ -1,0 +1,11 @@
+0-7 | GASP! | 540,42,190 | 462,126 | speech | gasp | hero
+16-23 | Noooo! Stay with me, Leafy! | 112,46,380 | 628,184 | speech | stay-with-me | hero
+24-31 | Just... one drop... very carefully... | 508,34,268 | 472,188 | speech | one-drop | hero
+32-39 | Um... I don't think anything happened. | 525,46,330 | 480,172 | speech | nothing-happened | hero
+40-47 | MORE WATER! WAKE UP!! | 92,28,360 | 632,146 | speech | more-water | hero
+56-63 | Sunlight! We need sunlight! | 92,44,280 | 410,170 | speech | sunlight | hero
+64-71 | You're strong, Leafy! You've got this! I BELIEVE! | 102,36,420 | 790,176 | speech | believe | hero
+72-79 | I tried everything. | 380,42,250 | 340,160 | speech | tried-everything | hero
+80-87 | ...wait. Is that...? | 456,44,292 | 190,182 | speech | wait-sprout | hero
+88-95 | WE DID IT!!! | 260,40,310 | 250,146 | speech | victory | hero
+90-95 | ...meh. | 765,236,150 | 680,318 | speech | leafy-meh | leafy

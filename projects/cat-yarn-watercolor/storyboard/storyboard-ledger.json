@@ -1,0 +1,311 @@
+{
+  "name": "cat-yarn-watercolor",
+  "source": "/Users/poonamnairrmit/Downloads/ink-frame/app/dist/references/storyboard_input.png",
+  "outputDir": "storyboard-frames/cat-yarn-watercolor",
+  "requirements": "Create a clean animated video from the storyboard: black cat plays with a blue ball of yarn in ink and watercolor style. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers and handwritten captions out of the animated frame. Keep cat identity, yarn scale, floor line, watercolor background, and ink stroke style consistent. Final output should be a smooth 12-scene animation and rendered video.",
+  "requirementsDocument": "storyboard-frames/cat-yarn-watercolor/requirements.md",
+  "columns": 4,
+  "rows": 3,
+  "frames": [
+    {
+      "index": 0,
+      "sourceFrame": "storyboard-frames/cat-yarn-watercolor/frame-00.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: black cat plays with a blue ball of yarn in ink and watercolor style. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers and handwritten captions out of the animated frame. Keep cat identity, yarn scale, floor line, watercolor background, and ink stroke style consistent. Final output should be a smooth 12-scene animation and rendered video.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "first-frame-anchor"
+    },
+    {
+      "index": 1,
+      "sourceFrame": "storyboard-frames/cat-yarn-watercolor/frame-01.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: black cat plays with a blue ball of yarn in ink and watercolor style. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers and handwritten captions out of the animated frame. Keep cat identity, yarn scale, floor line, watercolor background, and ink stroke style consistent. Final output should be a smooth 12-scene animation and rendered video.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 2,
+      "sourceFrame": "storyboard-frames/cat-yarn-watercolor/frame-02.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: black cat plays with a blue ball of yarn in ink and watercolor style. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers and handwritten captions out of the animated frame. Keep cat identity, yarn scale, floor line, watercolor background, and ink stroke style consistent. Final output should be a smooth 12-scene animation and rendered video.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 3,
+      "sourceFrame": "storyboard-frames/cat-yarn-watercolor/frame-03.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: black cat plays with a blue ball of yarn in ink and watercolor style. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers and handwritten captions out of the animated frame. Keep cat identity, yarn scale, floor line, watercolor background, and ink stroke style consistent. Final output should be a smooth 12-scene animation and rendered video.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 4,
+      "sourceFrame": "storyboard-frames/cat-yarn-watercolor/frame-04.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: black cat plays with a blue ball of yarn in ink and watercolor style. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers and handwritten captions out of the animated frame. Keep cat identity, yarn scale, floor line, watercolor background, and ink stroke style consistent. Final output should be a smooth 12-scene animation and rendered video.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 5,
+      "sourceFrame": "storyboard-frames/cat-yarn-watercolor/frame-05.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: black cat plays with a blue ball of yarn in ink and watercolor style. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers and handwritten captions out of the animated frame. Keep cat identity, yarn scale, floor line, watercolor background, and ink stroke style consistent. Final output should be a smooth 12-scene animation and rendered video.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 6,
+      "sourceFrame": "storyboard-frames/cat-yarn-watercolor/frame-06.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: black cat plays with a blue ball of yarn in ink and watercolor style. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers and handwritten captions out of the animated frame. Keep cat identity, yarn scale, floor line, watercolor background, and ink stroke style consistent. Final output should be a smooth 12-scene animation and rendered video.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 7,
+      "sourceFrame": "storyboard-frames/cat-yarn-watercolor/frame-07.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: black cat plays with a blue ball of yarn in ink and watercolor style. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers and handwritten captions out of the animated frame. Keep cat identity, yarn scale, floor line, watercolor background, and ink stroke style consistent. Final output should be a smooth 12-scene animation and rendered video.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 8,
+      "sourceFrame": "storyboard-frames/cat-yarn-watercolor/frame-08.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: black cat plays with a blue ball of yarn in ink and watercolor style. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers and handwritten captions out of the animated frame. Keep cat identity, yarn scale, floor line, watercolor background, and ink stroke style consistent. Final output should be a smooth 12-scene animation and rendered video.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 9,
+      "sourceFrame": "storyboard-frames/cat-yarn-watercolor/frame-09.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: black cat plays with a blue ball of yarn in ink and watercolor style. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers and handwritten captions out of the animated frame. Keep cat identity, yarn scale, floor line, watercolor background, and ink stroke style consistent. Final output should be a smooth 12-scene animation and rendered video.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 10,
+      "sourceFrame": "storyboard-frames/cat-yarn-watercolor/frame-10.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: black cat plays with a blue ball of yarn in ink and watercolor style. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers and handwritten captions out of the animated frame. Keep cat identity, yarn scale, floor line, watercolor background, and ink stroke style consistent. Final output should be a smooth 12-scene animation and rendered video.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 11,
+      "sourceFrame": "storyboard-frames/cat-yarn-watercolor/frame-11.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create a clean animated video from the storyboard: black cat plays with a blue ball of yarn in ink and watercolor style. Use the storyboard as a lighthouse only; do not show, paste, trace, or hide the source bitmap in the final canvas. Keep panel numbers and handwritten captions out of the animated frame. Keep cat identity, yarn scale, floor line, watercolor background, and ink stroke style consistent. Final output should be a smooth 12-scene animation and rendered video.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    }
+  ]
+}
