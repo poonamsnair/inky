@@ -1,0 +1,154 @@
+{
+  "fps": 12,
+  "totalFrames": 90,
+  "style": {
+    "font": "700 24px Avenir Next, Trebuchet MS, Verdana, sans-serif",
+    "maxWidth": 330
+  },
+  "bubbles": [
+    {
+      "id": "fresh-fruit",
+      "frameStart": 0,
+      "frameEnd": 9,
+      "start": 0,
+      "end": 0.8333333333333334,
+      "text": "FRESH FRUIT DAY!",
+      "x": 48,
+      "y": 42,
+      "width": 250,
+      "tail": {
+        "x": 408,
+        "y": 154
+      },
+      "type": "speech",
+      "speaker": "woman",
+      "layer": 0
+    },
+    {
+      "id": "rinse-first",
+      "frameStart": 10,
+      "frameEnd": 18,
+      "start": 0.8333333333333334,
+      "end": 1.5833333333333333,
+      "text": "QUICK RINSE FIRST.",
+      "x": 566,
+      "y": 42,
+      "width": 286,
+      "tail": {
+        "x": 522,
+        "y": 156
+      },
+      "type": "speech",
+      "speaker": "woman",
+      "layer": 0
+    },
+    {
+      "id": "board-ready",
+      "frameStart": 19,
+      "frameEnd": 27,
+      "start": 1.5833333333333333,
+      "end": 2.3333333333333335,
+      "text": "BOARD'S READY.",
+      "x": 74,
+      "y": 42,
+      "width": 238,
+      "tail": {
+        "x": 430,
+        "y": 154
+      },
+      "type": "speech",
+      "speaker": "woman",
+      "layer": 0
+    },
+    {
+      "id": "slice-slice",
+      "frameStart": 28,
+      "frameEnd": 43,
+      "start": 2.3333333333333335,
+      "end": 3.6666666666666665,
+      "text": "SLICE, SLICE...",
+      "x": 606,
+      "y": 38,
+      "width": 242,
+      "tail": {
+        "x": 612,
+        "y": 142
+      },
+      "type": "speech",
+      "speaker": "woman",
+      "layer": 0
+    },
+    {
+      "id": "little-cubes",
+      "frameStart": 44,
+      "frameEnd": 58,
+      "start": 3.6666666666666665,
+      "end": 4.916666666666667,
+      "text": "LITTLE CUBES!",
+      "x": 58,
+      "y": 42,
+      "width": 228,
+      "tail": {
+        "x": 480,
+        "y": 150
+      },
+      "type": "speech",
+      "speaker": "woman",
+      "layer": 0
+    },
+    {
+      "id": "into-bowl",
+      "frameStart": 59,
+      "frameEnd": 68,
+      "start": 4.916666666666667,
+      "end": 5.75,
+      "text": "INTO THE BOWL!",
+      "x": 600,
+      "y": 40,
+      "width": 270,
+      "tail": {
+        "x": 530,
+        "y": 152
+      },
+      "type": "speech",
+      "speaker": "woman",
+      "layer": 0
+    },
+    {
+      "id": "tiny-taste",
+      "frameStart": 69,
+      "frameEnd": 78,
+      "start": 5.75,
+      "end": 6.583333333333333,
+      "text": "TINY TASTE...",
+      "x": 72,
+      "y": 42,
+      "width": 232,
+      "tail": {
+        "x": 508,
+        "y": 150
+      },
+      "type": "speech",
+      "speaker": "woman",
+      "layer": 0
+    },
+    {
+      "id": "fruit-salad",
+      "frameStart": 79,
+      "frameEnd": 89,
+      "start": 6.583333333333333,
+      "end": 7.5,
+      "text": "FRUIT SALAD!",
+      "x": 72,
+      "y": 40,
+      "width": 250,
+      "tail": {
+        "x": 506,
+        "y": 144
+      },
+      "type": "speech",
+      "speaker": "woman",
+      "layer": 0
+    }
+  ]
+}

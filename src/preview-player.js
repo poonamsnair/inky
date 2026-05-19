@@ -1,3 +1,5 @@
+import { renderMp4FromCanvasFrames } from "./mp4-exporter.js";
+
 const PLAYBACK_SPEEDS = [0.5, 0.75, 1, 1.25, 1.5, 2];
 
 export function createPreviewPlayer({ manifest, renderer, params = new URLSearchParams(), exportMode = false }) {
@@ -28,15 +30,16 @@ export function createPreviewPlayer({ manifest, renderer, params = new URLSearch
   let lastFrameTick = 0;
   let animationId = 0;
   let playbackSpeed = nearestPlaybackSpeed(requestedSpeed ?? Number(speedSelect.value));
-  const videoPath = mp4PathForSpeed(playbackSpeed);
-  const hasVideoPreview = !exportMode && Boolean(mp4Preview && videoPath);
+  let isExportingMp4 = false;
+  let previewVideo = mp4PreviewForSpeed(playbackSpeed);
+  const hasVideoPreview = !exportMode && Boolean(mp4Preview && previewVideo?.path);
 
   canvas.width = width;
   canvas.height = height;
   timeline.max = String(totalFrames - 1);
   timeline.value = String(currentFrame);
   speedSelect.value = String(playbackSpeed);
-  exportMp4Button.disabled = !manifest.outputs?.video;
+  exportMp4Button.disabled = false;
   stageShell?.classList.toggle("has-video-preview", hasVideoPreview);
   canvas.hidden = hasVideoPreview;
 
@@ -44,8 +47,8 @@ export function createPreviewPlayer({ manifest, renderer, params = new URLSearch
     mp4Preview.hidden = !hasVideoPreview;
     mp4Preview.loop = true;
     mp4Preview.muted = true;
-    mp4Preview.playbackRate = playbackSpeed;
-    if (hasVideoPreview) mp4Preview.src = projectAssetUrl(manifest.slug, videoPath);
+    mp4Preview.playbackRate = previewVideo?.playbackRate ?? playbackSpeed;
+    if (hasVideoPreview) mp4Preview.src = projectAssetUrl(manifest.slug, previewVideo.path);
     else mp4Preview.removeAttribute("src");
   }
 
@@ -54,17 +57,22 @@ export function createPreviewPlayer({ manifest, renderer, params = new URLSearch
     manifest,
   };
 
-  function drawFrame(frame = currentFrame) {
+  function paintFrame(targetCtx, frame = currentFrame) {
     const safeFrame = clamp(Math.round(frame), 0, totalFrames - 1);
-    currentFrame = safeFrame;
-    ctx.save();
-    ctx.clearRect(0, 0, width, height);
+    targetCtx.save();
+    targetCtx.clearRect(0, 0, width, height);
     if (typeof renderer.drawFrame === "function") {
-      renderer.drawFrame(ctx, safeFrame, helpers);
+      renderer.drawFrame(targetCtx, safeFrame, helpers);
     } else {
-      drawMissingRenderer(ctx, manifest, safeFrame);
+      drawMissingRenderer(targetCtx, manifest, safeFrame);
     }
-    ctx.restore();
+    targetCtx.restore();
+    return safeFrame;
+  }
+
+  function drawFrame(frame = currentFrame) {
+    const safeFrame = paintFrame(ctx, frame);
+    currentFrame = safeFrame;
     updateUi(safeFrame);
     return safeFrame;
   }
@@ -172,18 +180,88 @@ export function createPreviewPlayer({ manifest, renderer, params = new URLSearch
     statusOutput.textContent = "PNG frame exported";
   }
 
-  function exportMp4() {
-    const videoPath = mp4PathForSpeed(playbackSpeed);
+  async function exportMp4() {
+    if (isExportingMp4) return;
+
+    const videoPath = mp4ExportPathForSpeed(playbackSpeed);
     if (!videoPath) {
-      statusOutput.textContent = "No MP4 output is registered for this project yet.";
+      await renderAndSaveMp4();
       return;
     }
 
+    downloadProjectMp4(videoPath, playbackSpeed);
+    statusOutput.textContent = `MP4 export downloaded at ${formatSpeedLabel(playbackSpeed)}x`;
+  }
+
+  async function renderAndSaveMp4() {
+    const speedLabel = formatSpeedLabel(playbackSpeed);
+    const wasPlaying = isPlaying;
+    setMp4Exporting(true);
+    isPlaying = false;
+    pauseVideoPreview();
+    updateUi(currentFrame);
+
+    let exportResult;
+    try {
+      statusOutput.textContent = `Preparing MP4 at ${speedLabel}x...`;
+      exportResult = await renderMp4FromCanvasFrames({
+        width,
+        height,
+        fps,
+        totalFrames,
+        playbackSpeed,
+        drawFrame: (targetCtx, frame) => paintFrame(targetCtx, frame),
+        onProgress: ({ phase, frame, totalFrames: frameTotal }) => {
+          if (phase === "checking-codec") {
+            statusOutput.textContent = "Checking MP4 support...";
+          } else if (phase === "rendering") {
+            statusOutput.textContent = `Rendering MP4 frame ${frame} / ${frameTotal}`;
+          } else if (phase === "finalizing") {
+            statusOutput.textContent = "Finishing MP4...";
+          }
+        },
+      });
+    } catch (error) {
+      console.error("MP4 render failed", error);
+      statusOutput.textContent = error?.message || "MP4 export failed.";
+      setMp4Exporting(false);
+      if (wasPlaying && !hasVideoPreview) isPlaying = true;
+      updateUi(currentFrame);
+      return;
+    }
+
+    let savedExport = null;
+    let saveError = null;
+    try {
+      statusOutput.textContent = "Saving MP4 to project...";
+      savedExport = await saveMp4ToProject(exportResult.blob, playbackSpeed);
+      registerSavedOutputs(savedExport.outputs);
+      refreshVideoPreviewSource();
+    } catch (error) {
+      saveError = error;
+      console.warn("MP4 save endpoint unavailable", error);
+    }
+
+    if (savedExport?.path) {
+      downloadProjectMp4(savedExport.path, playbackSpeed);
+      statusOutput.textContent = `MP4 rendered, saved, and downloaded at ${speedLabel}x`;
+    } else {
+      downloadBlob(exportResult.blob, `${manifest.slug}-${speedLabel}x.mp4`);
+      statusOutput.textContent = saveError
+        ? `MP4 downloaded at ${speedLabel}x, but was not saved to the project.`
+        : `MP4 downloaded at ${speedLabel}x.`;
+    }
+
+    setMp4Exporting(false);
+    if (wasPlaying && !hasVideoPreview) isPlaying = true;
+    drawFrame(currentFrame);
+  }
+
+  function downloadProjectMp4(videoPath, speed) {
     const anchor = document.createElement("a");
-    anchor.href = `/projects/${manifest.slug}/${videoPath}`;
-    anchor.download = `${manifest.slug}-${formatSpeedLabel(playbackSpeed)}x.mp4`;
+    anchor.href = `${projectAssetUrl(manifest.slug, videoPath)}?v=${Date.now()}`;
+    anchor.download = `${manifest.slug}-${formatSpeedLabel(speed)}x.mp4`;
     anchor.click();
-    statusOutput.textContent = `MP4 export opened at ${formatSpeedLabel(playbackSpeed)}x`;
   }
 
   function updateUi(frame) {
@@ -198,15 +276,65 @@ export function createPreviewPlayer({ manifest, renderer, params = new URLSearch
   function setPlaybackSpeed(value) {
     playbackSpeed = nearestPlaybackSpeed(value);
     speedSelect.value = String(playbackSpeed);
-    if (hasVideoPreview) mp4Preview.playbackRate = playbackSpeed;
+    refreshVideoPreviewSource();
     lastFrameTick = 0;
     statusOutput.textContent = `Playback speed ${playbackSpeed}x`;
     return playbackSpeed;
   }
 
-  function mp4PathForSpeed(speed) {
+  async function saveMp4ToProject(blob, speed) {
+    const response = await fetch(`/api/projects/${manifest.slug}/outputs/mp4?speed=${formatSpeedLabel(speed)}`, {
+      method: "POST",
+      headers: { "Content-Type": "video/mp4" },
+      body: blob,
+    });
+    const payload = await readJsonResponse(response);
+    if (!response.ok || !payload?.ok || !payload.path) {
+      throw new Error(payload?.error || "The local app could not save the MP4.");
+    }
+    return payload;
+  }
+
+  function registerSavedOutputs(outputs) {
+    manifest.outputs = {
+      ...(manifest.outputs || {}),
+      ...(outputs || {}),
+      videoBySpeed: {
+        ...(manifest.outputs?.videoBySpeed || {}),
+        ...(outputs?.videoBySpeed || {}),
+      },
+    };
+  }
+
+  function mp4ExportPathForSpeed(speed) {
     const key = formatSpeedLabel(speed);
-    return manifest.outputs?.videoBySpeed?.[key] || manifest.outputs?.video || null;
+    if (key === "1") return manifest.outputs?.videoBySpeed?.[key] || manifest.outputs?.video || null;
+    return manifest.outputs?.videoBySpeed?.[key] || null;
+  }
+
+  function mp4PreviewForSpeed(speed) {
+    const key = formatSpeedLabel(speed);
+    const exactPath = manifest.outputs?.videoBySpeed?.[key];
+    if (exactPath) return { path: exactPath, playbackRate: 1 };
+    if (manifest.outputs?.video) return { path: manifest.outputs.video, playbackRate: nearestPlaybackSpeed(speed) };
+    return null;
+  }
+
+  function setMp4Exporting(exporting) {
+    isExportingMp4 = exporting;
+    exportMp4Button.disabled = exporting;
+    exportMp4Button.setAttribute("aria-busy", String(exporting));
+    exportMp4Button.title = exporting ? "Rendering MP4" : "Export MP4";
+  }
+
+  function refreshVideoPreviewSource() {
+    if (!hasVideoPreview || !mp4Preview) return;
+    previewVideo = mp4PreviewForSpeed(playbackSpeed);
+    if (!previewVideo?.path) return;
+
+    const previewUrl = projectAssetUrl(manifest.slug, previewVideo.path);
+    if (mp4Preview.getAttribute("src") !== previewUrl) mp4Preview.src = previewUrl;
+    mp4Preview.playbackRate = previewVideo.playbackRate;
   }
 
   function stop() {
@@ -219,8 +347,27 @@ export function createPreviewPlayer({ manifest, renderer, params = new URLSearch
     start,
     stop,
     setPlaybackSpeed,
-    mp4PathForSpeed,
+    mp4PathForSpeed: mp4ExportPathForSpeed,
   };
+}
+
+async function readJsonResponse(response) {
+  const text = await response.text();
+  if (!text) return {};
+  try {
+    return JSON.parse(text);
+  } catch {
+    return { ok: false, error: text };
+  }
+}
+
+function downloadBlob(blob, filename) {
+  const url = URL.createObjectURL(blob);
+  const anchor = document.createElement("a");
+  anchor.href = url;
+  anchor.download = filename;
+  anchor.click();
+  window.setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
 function playVideoPreview() {

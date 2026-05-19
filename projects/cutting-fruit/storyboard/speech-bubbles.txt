@@ -1,0 +1,8 @@
+0-9 | FRESH FRUIT DAY! | 48,42,250 | 408,154 | speech | fresh-fruit | woman
+10-18 | QUICK RINSE FIRST. | 566,42,286 | 522,156 | speech | rinse-first | woman
+19-27 | BOARD'S READY. | 74,42,238 | 430,154 | speech | board-ready | woman
+28-43 | SLICE, SLICE... | 606,38,242 | 612,142 | speech | slice-slice | woman
+44-58 | LITTLE CUBES! | 58,42,228 | 480,150 | speech | little-cubes | woman
+59-68 | INTO THE BOWL! | 600,40,270 | 530,152 | speech | into-bowl | woman
+69-78 | TINY TASTE... | 72,42,232 | 508,150 | speech | tiny-taste | woman
+79-89 | FRUIT SALAD! | 72,40,250 | 506,144 | speech | fruit-salad | woman

@@ -1,0 +1,34 @@
+{
+  "slug": "cutting-fruit",
+  "title": "Cutting Fruit",
+  "status": "draft",
+  "width": 960,
+  "height": 620,
+  "fps": 12,
+  "totalFrames": 90,
+  "grid": {
+    "columns": 4,
+    "rows": 3
+  },
+  "storyboard": {
+    "sourceImage": "image/storyboard.jpg",
+    "framesDir": "storyboard"
+  },
+  "prompt": {
+    "requirements": "storyboard/requirements.md",
+    "agentPrompt": "prompt/agent-prompt.md"
+  },
+  "tracks": {
+    "speechBubbles": "storyboard/speech-bubbles.json",
+    "captions": null
+  },
+  "renderer": "renderer.js",
+  "outputs": {
+    "frames": "outputs/frames",
+    "video": "outputs/cutting-fruit-1x.mp4",
+    "videoBySpeed": {
+      "1": "outputs/cutting-fruit-1x.mp4",
+      "2": "outputs/cutting-fruit-2x.mp4"
+    }
+  }
+}
