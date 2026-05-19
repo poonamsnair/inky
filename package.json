@@ -9,6 +9,7 @@
     "dev": "vite --host 127.0.0.1",
     "preview": "vite --host 127.0.0.1",
     "render": "node tools/render-project.mjs",
+    "inspect": "node tools/inspect-project.mjs",
     "build": "vite build",
     "check": "node tools/check-js-syntax.mjs",
     "extract:storyboard": "node tools/extract-storyboard-frames.mjs",
@@ -16,6 +17,7 @@
     "storyboard:blueprint": "node tools/make-construction-blueprints.mjs",
     "storyboard:capture": "node tools/capture-canvas-scenes.mjs",
     "storyboard:render-frames": "node tools/render-canvas-frames.mjs",
+    "storyboard:inspect": "node tools/inspect-project.mjs",
     "storyboard:inbetween": "node tools/make-inbetween-plan.mjs",
     "storyboard:captions": "node tools/make-caption-track.mjs",
     "storyboard:speech-bubbles": "node tools/make-speech-bubble-track.mjs",
@@ -50,5 +52,8 @@
     "roughjs": "^4.6.6",
     "simplex-noise": "^4.0.3",
     "vite": "^7.1.12"
+  },
+  "devDependencies": {
+    "playwright": "^1.60.0"
   }
 }

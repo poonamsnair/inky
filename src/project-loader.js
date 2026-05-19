@@ -22,6 +22,7 @@ async function loadRenderer(slug, manifest) {
     const rendererUrl = `/projects/${slug}/${manifest.renderer}`;
     const module = await import(/* @vite-ignore */ rendererUrl);
     return {
+      ...module,
       project: {
         ...manifest,
         ...(module.project || {}),

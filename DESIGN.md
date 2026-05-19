@@ -156,6 +156,16 @@ npm run storyboard:visual-diff -- projects/<project>/outputs/frames projects/<pr
 
 Use the diff report to find unwanted shimmer in locked backgrounds, popping props, drifting speech bubbles/captions, and frame-to-frame changes that are larger than the intended action. This is a detector; final approval still comes from the lighthouse and polish pass.
 
+## Project Inspector
+
+Run the inspector before handing off a rendered project:
+
+```bash
+npm run storyboard:inspect -- projects/<project-name>
+```
+
+The inspector checks the project manifest, registered MP4 paths, renderer determinism, speech-bubble text fit, caption bounds, preview/export console errors, and suspicious off-canvas drawing commands. Use `--sample` for a quicker start/middle/end plus text-cue spot check. Project renderers may export `inspectImportantBounds(frame)` or `getImportantBounds(frame)` when they have named story-critical shapes that should be checked against the canvas bounds.
+
 ## Export Library Note
 
 `mp4-muxer` remains in the dependency list for now, but it is deprecated upstream and is not the active final-video quality path. Do not expand new export work around it. When implementing real in-browser MP4 writing from canvas frames, migrate that export path to Mediabunny instead of adding another muxer.
