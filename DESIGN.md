@@ -166,6 +166,16 @@ npm run storyboard:inspect -- projects/<project-name>
 
 The inspector checks the project manifest, registered MP4 paths, renderer determinism, speech-bubble text fit, caption bounds, preview/export console errors, and suspicious off-canvas drawing commands. Use `--sample` for a quicker start/middle/end plus text-cue spot check. Project renderers may export `inspectImportantBounds(frame)` or `getImportantBounds(frame)` when they have named story-critical shapes that should be checked against the canvas bounds.
 
+## Annotation Fix Pipeline
+
+Browser annotations are targeted repair requests for the deterministic renderer. When a project has `storyboard/annotations.json`, generate the paste-ready agent prompt with:
+
+```bash
+npm run storyboard:annotation-prompt -- projects/<project-name>
+```
+
+The generated prompt should invoke `annotation-fix-pipeline`, list each active annotation's frame/time, selected bounds, screenshot path, and user comment, then require rerender, polish, visual diff, inspector, and browser preview verification. Annotation screenshots are evidence only; they must not be pasted, traced, or hidden in final artwork.
+
 ## Export Library Note
 
 `mp4-muxer` remains in the dependency list for now, but it is deprecated upstream and is not the active final-video quality path. Do not expand new export work around it. When implementing real in-browser MP4 writing from canvas frames, migrate that export path to Mediabunny instead of adding another muxer.

@@ -21,6 +21,7 @@
     "storyboard:inbetween": "node tools/make-inbetween-plan.mjs",
     "storyboard:captions": "node tools/make-caption-track.mjs",
     "storyboard:speech-bubbles": "node tools/make-speech-bubble-track.mjs",
+    "storyboard:annotation-prompt": "node tools/make-annotation-prompt.mjs",
     "storyboard:polish": "node tools/make-polish-pass.mjs",
     "storyboard:visual-diff": "node tools/make-visual-diff-review.mjs",
     "storyboard:semantic": "node tools/make-semantic-review-board.mjs",

@@ -14,6 +14,7 @@ Always start here:
    - `semantic-clarity-auditor`
    - `frame-consistency-auditor`
    - `animation-polish-pass`
+   - `annotation-fix-pipeline` when browser/video/canvas annotations, selected-frame comments, or annotation screenshots are pasted for repair
    - `caption-subtitle-tooling` when captions, subtitles, scripts, or timed text are requested
    - `comic-speech-bubble-tooling` when comic speech bubbles, thought bubbles, or character dialogue are requested
 4. If the user has created or selected a project, read `projects/<project-name>/project.json` and its brief at `projects/<project-name>/storyboard/requirements.md`.

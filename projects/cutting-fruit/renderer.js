@@ -19,11 +19,11 @@ export const project = {
 
 const INK = "#17120d";
 const SKIN = "#eeb889";
-const SKIN_SHADOW = "#c97e58";
 const SHIRT = "#668caa";
 const APRON = "#eadab6";
-const HAIR = "#3b2418";
-const HAIR_HI = "#6f4630";
+const HAIR = "#d7a84a";
+const HAIR_HI = "#f3d77a";
+const HAIR_SHADOW = "#8c6328";
 const WOOD = "#c79056";
 const BOARD = "#d9a15f";
 const BOWL = "#fff8e8";
@@ -671,14 +671,16 @@ function drawNeck(ctx, state) {
 
 function drawTorso(ctx, state, shoulderLeft, shoulderRight) {
   const t = state.torso;
-  const shirtBounds = { x: t.x - 118, y: t.y - 102, w: 236, h: 210 };
+  const shirtHem = 92;
+  const apronBottom = 76;
+  const shirtBounds = { x: t.x - 118, y: t.y - 102, w: 236, h: shirtHem + 104 };
   fillShape(
     ctx,
     (p) => {
       p.moveTo(shoulderLeft.x - 22, shoulderLeft.y + 6);
-      p.bezierCurveTo(t.x - 122, t.y - 38, t.x - 116, t.y + 68, t.x - 72, t.y + 108);
-      p.lineTo(t.x + 78, t.y + 108);
-      p.bezierCurveTo(t.x + 124, t.y + 58, t.x + 124, t.y - 42, shoulderRight.x + 22, shoulderRight.y + 6);
+      p.bezierCurveTo(t.x - 120, t.y - 38, t.x - 104, t.y + 54, t.x - 66, t.y + shirtHem);
+      p.quadraticCurveTo(t.x, t.y + shirtHem + 10, t.x + 68, t.y + shirtHem);
+      p.bezierCurveTo(t.x + 110, t.y + 52, t.x + 122, t.y - 42, shoulderRight.x + 22, shoulderRight.y + 6);
       p.bezierCurveTo(t.x + 54, t.y - 102, t.x - 54, t.y - 102, shoulderLeft.x - 22, shoulderLeft.y + 6);
       p.closePath();
     },
@@ -688,15 +690,15 @@ function drawTorso(ctx, state, shoulderLeft, shoulderRight) {
     { seed: 8020 + state.sceneIndex, patternAlpha: 0.44, scumble: 15, angle: -0.65 },
   );
 
-  const apronBounds = { x: t.x - 72, y: t.y - 74, w: 146, h: 205 };
+  const apronBounds = { x: t.x - 72, y: t.y - 74, w: 146, h: apronBottom + 98 };
   fillShape(
     ctx,
     (p) => {
       p.moveTo(t.x - 38, t.y - 84);
       p.lineTo(t.x + 38, t.y - 84);
-      p.bezierCurveTo(t.x + 80, t.y - 10, t.x + 72, t.y + 80, t.x + 56, t.y + 126);
-      p.lineTo(t.x - 58, t.y + 126);
-      p.bezierCurveTo(t.x - 72, t.y + 72, t.x - 82, t.y - 10, t.x - 38, t.y - 84);
+      p.bezierCurveTo(t.x + 70, t.y - 8, t.x + 56, t.y + 42, t.x + 43, t.y + apronBottom);
+      p.quadraticCurveTo(t.x, t.y + apronBottom + 8, t.x - 45, t.y + apronBottom);
+      p.bezierCurveTo(t.x - 56, t.y + 42, t.x - 70, t.y - 10, t.x - 38, t.y - 84);
       p.closePath();
     },
     apronBounds,
@@ -704,17 +706,23 @@ function drawTorso(ctx, state, shoulderLeft, shoulderRight) {
     "colored-pencil",
     { seed: 8030 + state.sceneIndex, patternAlpha: 0.38, scumble: 12, hatchCount: 6 },
   );
-  drawMaterialBrushStroke(ctx, [[t.x - 38, t.y - 84], [t.x - 8, t.y - 30], [t.x - 60, t.y + 110]], "dip-ink", {
+  drawMaterialBrushStroke(ctx, [[t.x - 38, t.y - 84], [t.x - 8, t.y - 30], [t.x - 42, t.y + apronBottom - 6]], "dip-ink", {
     color: INK,
     alpha: 0.42,
     tool: { size: 1.8 },
     seed: 8041 + state.sceneIndex,
   });
-  drawMaterialBrushStroke(ctx, [[t.x + 38, t.y - 84], [t.x + 8, t.y - 28], [t.x + 58, t.y + 112]], "dip-ink", {
+  drawMaterialBrushStroke(ctx, [[t.x + 38, t.y - 84], [t.x + 8, t.y - 28], [t.x + 42, t.y + apronBottom - 6]], "dip-ink", {
     color: INK,
     alpha: 0.42,
     tool: { size: 1.8 },
     seed: 8042 + state.sceneIndex,
+  });
+  drawMaterialBrushStroke(ctx, [[t.x - 42, t.y + apronBottom], [t.x - 4, t.y + apronBottom + 6], [t.x + 42, t.y + apronBottom]], "technical-pen", {
+    color: INK,
+    alpha: 0.28,
+    tool: { size: 1.2 },
+    seed: 8043 + state.sceneIndex,
   });
 }
 
@@ -781,7 +789,7 @@ function drawHairBack(ctx, state) {
         [bun.x + Math.cos(a + 0.45) * 36, bun.y + Math.sin(a + 0.45) * 42],
       ],
       "brush-pen",
-      { color: HAIR_HI, alpha: 0.32, tool: { size: 2.4 }, seed: 8510 + i + state.sceneIndex * 10 },
+      { color: i % 2 === 0 ? HAIR_HI : HAIR_SHADOW, alpha: 0.34, tool: { size: 2.4 }, seed: 8510 + i + state.sceneIndex * 10 },
     );
   }
 }
@@ -830,7 +838,7 @@ function drawHairFront(ctx, state) {
         [sx - 14 * h.scale + random() * 24, sy + 44 * h.scale],
       ],
       "brush-pen",
-      { color: i % 3 === 0 ? HAIR_HI : HAIR, alpha: 0.48, tool: { size: 1.9 }, seed: 8720 + i + state.sceneIndex * 11 },
+      { color: i % 3 === 0 ? HAIR_HI : HAIR_SHADOW, alpha: 0.46, tool: { size: 1.9 }, seed: 8720 + i + state.sceneIndex * 11 },
     );
   }
 }
@@ -887,22 +895,57 @@ function drawFace(ctx, state) {
 }
 
 function drawHand(ctx, x, y, angle = 0, scale = 1, seed = 0) {
-  const bounds = { x: x - 22 * scale, y: y - 18 * scale, w: 44 * scale, h: 36 * scale };
-  fillShape(ctx, (p) => ellipsePath(p, x, y, 20 * scale, 15 * scale, angle), bounds, SKIN, "wax-crayon", {
+  const bounds = { x: x - 30 * scale, y: y - 28 * scale, w: 66 * scale, h: 58 * scale };
+  const dir = { x: Math.cos(angle), y: Math.sin(angle) };
+  const normal = { x: -Math.sin(angle), y: Math.cos(angle) };
+  const palm = { x, y };
+
+  fillShape(ctx, (p) => ellipsePath(p, palm.x, palm.y, 18 * scale, 13.5 * scale, angle), bounds, SKIN, "wax-crayon", {
     seed,
     patternAlpha: 0.34,
     scumble: 4,
+    strokeWidth: 1.8,
   });
+
+  const fingerOffsets = [-8.5, -3, 3.2, 8.2];
+  fingerOffsets.forEach((offset, index) => {
+    const base = offsetPoint(palm, dir, normal, 8.5 * scale, offset * scale);
+    const tip = offsetPoint(palm, dir, normal, (23 + (index === 1 ? 3 : index === 2 ? 1 : -1)) * scale, (offset + (index - 1.5) * 0.7) * scale);
+    drawFinger(ctx, base, tip, (3.4 - index * 0.18) * scale, seed + 20 + index);
+  });
+
+  const thumbBase = offsetPoint(palm, dir, normal, -5 * scale, 11 * scale);
+  const thumbTip = offsetPoint(palm, dir, normal, 11 * scale, 23 * scale);
+  drawFinger(ctx, thumbBase, thumbTip, 4.7 * scale, seed + 30);
+
   ctx.save();
-  ctx.strokeStyle = SKIN_SHADOW;
-  ctx.lineWidth = 1.3;
+  ctx.strokeStyle = "#9b6045";
+  ctx.lineWidth = 1.15 * scale;
   ctx.lineCap = "round";
-  for (let i = -1; i <= 2; i += 1) {
-    const sx = x + Math.cos(angle) * (i * 5) - Math.sin(angle) * 4;
-    const sy = y + Math.sin(angle) * (i * 5) + Math.cos(angle) * 4;
-    line(ctx, sx, sy, sx + Math.cos(angle + 0.22) * 13, sy + Math.sin(angle + 0.22) * 13);
-  }
+  fingerOffsets.forEach((offset, index) => {
+    const crease = offsetPoint(palm, dir, normal, (13 + index * 0.7) * scale, offset * scale);
+    const creaseEnd = offsetPoint(palm, dir, normal, (16 + index * 0.7) * scale, (offset + 2) * scale);
+    line(ctx, crease.x, crease.y, creaseEnd.x, creaseEnd.y);
+  });
+  const wristA = offsetPoint(palm, dir, normal, -18 * scale, -7 * scale);
+  const wristB = offsetPoint(palm, dir, normal, -18 * scale, 7 * scale);
+  line(ctx, wristA.x, wristA.y, wristB.x, wristB.y);
   ctx.restore();
+}
+
+function drawFinger(ctx, start, end, radius, seed) {
+  const bounds = {
+    x: Math.min(start.x, end.x) - radius - 2,
+    y: Math.min(start.y, end.y) - radius - 2,
+    w: Math.abs(end.x - start.x) + radius * 2 + 4,
+    h: Math.abs(end.y - start.y) + radius * 2 + 4,
+  };
+  fillShape(ctx, (p) => capsulePath(p, start, end, radius), bounds, SKIN, "wax-crayon", {
+    seed,
+    patternAlpha: 0.28,
+    scumble: 2,
+    strokeWidth: 1.35,
+  });
 }
 
 function drawActionForeground(ctx, state, frame, anchors) {
@@ -1430,6 +1473,26 @@ function rotateAround(point, center, angle = 0) {
     x: center.x + dx * c - dy * s,
     y: center.y + dx * s + dy * c,
   };
+}
+
+function offsetPoint(origin, direction, normal, forward, side) {
+  return {
+    x: origin.x + direction.x * forward + normal.x * side,
+    y: origin.y + direction.y * forward + normal.y * side,
+  };
+}
+
+function capsulePath(ctx, start, end, radius) {
+  const angle = Math.atan2(end.y - start.y, end.x - start.x);
+  const normalAngle = angle + Math.PI / 2;
+  const nx = Math.cos(normalAngle) * radius;
+  const ny = Math.sin(normalAngle) * radius;
+  ctx.moveTo(start.x + nx, start.y + ny);
+  ctx.lineTo(end.x + nx, end.y + ny);
+  ctx.quadraticCurveTo(end.x + Math.cos(angle) * radius, end.y + Math.sin(angle) * radius, end.x - nx, end.y - ny);
+  ctx.lineTo(start.x - nx, start.y - ny);
+  ctx.quadraticCurveTo(start.x - Math.cos(angle) * radius, start.y - Math.sin(angle) * radius, start.x + nx, start.y + ny);
+  ctx.closePath();
 }
 
 function seededRandom(seed) {

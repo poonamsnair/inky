@@ -114,6 +114,9 @@
           <div class="viewer-frame">
             <canvas id="whiteboard" width="960" height="620" aria-label="Animation canvas"></canvas>
             <video id="mp4Preview" class="mp4-preview" preload="metadata" playsinline hidden></video>
+            <div id="annotationLayer" class="annotation-layer" aria-label="Annotation layer" hidden>
+              <div id="annotationDraft" class="annotation-draft" hidden></div>
+            </div>
           </div>
           <div class="controls timeline-controls" aria-label="Animation timeline controls">
             <div class="control-group playback-group" aria-label="Playback">
@@ -150,6 +153,22 @@
               </label>
             </div>
             <div class="control-group export-group" aria-label="Export">
+              <button
+                id="toggleAnnotations"
+                class="tool-button"
+                type="button"
+                aria-label="Annotate frame"
+                aria-pressed="false"
+                title="Annotate frame"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 5h16v14H4z" />
+                  <path d="M8 9h5" />
+                  <path d="M8 13h8" />
+                  <path d="m15 18 4 3v-3" />
+                </svg>
+                <span class="button-text">Annotate</span>
+              </button>
               <button id="exportPng" class="tool-button" type="button" aria-label="Export current frame as PNG" title="Export PNG">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 3v12" />
@@ -168,6 +187,26 @@
             </div>
             <output id="paintStatus" class="export-status" aria-live="polite">Ready</output>
           </div>
+          <section id="annotationPanel" class="annotation-panel" aria-label="Frame annotations" hidden>
+            <header class="annotation-panel-header">
+              <h2>Frame notes</h2>
+              <button id="copyAnnotationPrompt" class="secondary-action annotation-copy" type="button">Copy agent prompt</button>
+            </header>
+            <form id="annotationEditor" class="annotation-editor" autocomplete="off" hidden>
+              <p id="annotationEditorMeta" class="annotation-meta"></p>
+              <label class="field-label annotation-label">
+                Comment
+                <textarea id="annotationComment" class="text-area annotation-textarea" placeholder="Redraw this area..." required></textarea>
+              </label>
+              <div class="annotation-editor-actions">
+                <button id="saveAnnotation" class="primary-action annotation-save" type="submit">Save note</button>
+                <button id="cancelAnnotation" class="secondary-action" type="button">Cancel</button>
+              </div>
+            </form>
+            <ol id="annotationList" class="annotation-list"></ol>
+            <pre id="annotationPromptOutput" class="code-output annotation-prompt-output" hidden></pre>
+            <output id="annotationStatus" class="status-output annotation-status" aria-live="polite"></output>
+          </section>
         </section>
       </section>
     </main>

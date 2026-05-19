@@ -1,4 +1,5 @@
 import { renderMp4FromCanvasFrames } from "./mp4-exporter.js";
+import { createAnnotationReviewer } from "./annotation-reviewer.js";
 
 const PLAYBACK_SPEEDS = [0.5, 0.75, 1, 1.25, 1.5, 2];
 
@@ -33,6 +34,18 @@ export function createPreviewPlayer({ manifest, renderer, params = new URLSearch
   let isExportingMp4 = false;
   let previewVideo = mp4PreviewForSpeed(playbackSpeed);
   const hasVideoPreview = !exportMode && Boolean(mp4Preview && previewVideo?.path);
+  const annotationReviewer = exportMode
+    ? null
+    : createAnnotationReviewer({
+        manifest,
+        width,
+        height,
+        fps,
+        totalFrames,
+        goToFrame,
+        stopPlayback,
+        captureFrameDataUrl,
+      });
 
   canvas.width = width;
   canvas.height = height;
@@ -79,6 +92,7 @@ export function createPreviewPlayer({ manifest, renderer, params = new URLSearch
 
   function start() {
     bindControls();
+    annotationReviewer?.start();
     if (hasVideoPreview) {
       bindVideoEvents();
       isPlaying = false;
@@ -271,6 +285,39 @@ export function createPreviewPlayer({ manifest, renderer, params = new URLSearch
     frameCounter.setAttribute("aria-label", `Frame ${frame + 1} of ${totalFrames}`);
     playButton.setAttribute("aria-pressed", String(isPlaying));
     pauseButton.setAttribute("aria-pressed", String(!isPlaying));
+    annotationReviewer?.setFrame(frame);
+  }
+
+  function goToFrame(frame) {
+    isPlaying = false;
+    const safeFrame = clamp(Math.round(frame), 0, totalFrames - 1);
+    if (hasVideoPreview) {
+      pauseVideoPreview();
+      scrubVideoPreview(safeFrame);
+      currentFrame = safeFrame;
+      updateUi(safeFrame);
+      return safeFrame;
+    }
+    return drawFrame(safeFrame);
+  }
+
+  function stopPlayback() {
+    isPlaying = false;
+    pauseVideoPreview();
+    updateUi(currentFrame);
+  }
+
+  function captureFrameDataUrl() {
+    const captureCanvas = document.createElement("canvas");
+    captureCanvas.width = width;
+    captureCanvas.height = height;
+    const captureCtx = captureCanvas.getContext("2d", { alpha: false });
+    if (hasVideoPreview && mp4Preview.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+      captureCtx.drawImage(mp4Preview, 0, 0, width, height);
+    } else {
+      paintFrame(captureCtx, currentFrame);
+    }
+    return captureCanvas.toDataURL("image/png");
   }
 
   function setPlaybackSpeed(value) {
@@ -339,6 +386,7 @@ export function createPreviewPlayer({ manifest, renderer, params = new URLSearch
 
   function stop() {
     if (animationId) window.cancelAnimationFrame(animationId);
+    annotationReviewer?.stop();
   }
 
   return {

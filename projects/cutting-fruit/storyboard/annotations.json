@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "project": "cutting-fruit",
+  "updatedAt": "2026-05-19T12:22:11.000Z",
+  "annotations": [
+    {
+      "id": "ann-15eb2254-b91d-46fb-b685-3947d7fa337c",
+      "status": "done",
+      "frame": 0,
+      "time": 0,
+      "rect": {
+        "x": 354.111,
+        "y": 22.047,
+        "width": 167.63,
+        "height": 140.363
+      },
+      "comment": "make hair blonde"
+    },
+    {
+      "id": "ann-b5c34b3c-58ab-47a1-b096-5cf49291ae83",
+      "status": "done",
+      "frame": 62,
+      "time": 5.167,
+      "rect": {
+        "x": 345.188,
+        "y": 290.813,
+        "width": 77.277,
+        "height": 52.554
+      },
+      "comment": "fix hands to real human looking hands"
+    },
+    {
+      "id": "ann-49012ea9-269e-4928-a9c3-7d6e1f3c4520",
+      "status": "done",
+      "frame": 77,
+      "time": 6.417,
+      "rect": {
+        "x": 432.04,
+        "y": 399.774,
+        "width": 191.595,
+        "height": 81.831
+      },
+      "comment": "tummy is sticking out? looks odd"
+    }
+  ]
+}

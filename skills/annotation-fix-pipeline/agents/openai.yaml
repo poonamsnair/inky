@@ -1,0 +1,4 @@
+interface:
+  display_name: "Annotation Fix Pipeline"
+  short_description: "Turns frame annotations into verified Inky renderer fixes."
+  default_prompt: "Fix these saved Inky frame annotations, rerender the project, run quality checks, and open the updated preview."

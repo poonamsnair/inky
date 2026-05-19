@@ -414,7 +414,7 @@ h3 {
 
 .stage-shell {
   display: grid;
-  grid-template-rows: minmax(0, auto) auto;
+  grid-template-rows: minmax(0, auto) auto auto;
   place-items: center;
   align-content: center;
   gap: var(--space-sm);
@@ -422,11 +422,13 @@ h3 {
 }
 
 .viewer-frame,
-.controls {
+.controls,
+.annotation-panel {
   width: min(calc(100vw - 56px), calc((100vh - 174px) * 1.5483870968));
 }
 
 .viewer-frame {
+  position: relative;
   height: min(calc(100vh - 174px), calc((100vw - 56px) / 1.5483870968));
   aspect-ratio: 48 / 31;
   border: 2px solid var(--line);
@@ -445,6 +447,52 @@ h3 {
 
 .mp4-preview {
   object-fit: contain;
+}
+
+.annotation-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.annotation-layer.is-annotating {
+  cursor: crosshair;
+  pointer-events: auto;
+}
+
+.annotation-layer.is-annotating::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 248, 226, 0.12);
+}
+
+.annotation-marker,
+.annotation-draft {
+  position: absolute;
+  border: 2px solid oklch(0.46 0.13 38);
+  background: rgba(255, 238, 188, 0.2);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.86),
+    0 4px 12px rgba(31, 29, 24, 0.18);
+}
+
+.annotation-marker::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  width: 13px;
+  height: 13px;
+  border: 2px solid var(--paper);
+  border-radius: 999px;
+  background: oklch(0.46 0.13 38);
+}
+
+.annotation-draft {
+  border-style: dashed;
+  background: rgba(255, 255, 255, 0.22);
 }
 
 .controls {
@@ -520,6 +568,12 @@ h3 {
   border-color: var(--ink);
   background: var(--ink);
   color: var(--paper);
+}
+
+.tool-button.is-active {
+  border-color: oklch(0.46 0.13 38);
+  background: oklch(0.89 0.08 72);
+  color: var(--ink);
 }
 
 .button-text {
@@ -615,6 +669,121 @@ h3 {
   font-size: 0.78rem;
   font-weight: 900;
   appearance: none;
+}
+
+.annotation-panel {
+  display: grid;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border: 2px solid var(--line);
+  background: color-mix(in oklch, var(--panel) 92%, transparent);
+}
+
+.annotation-panel-header,
+.annotation-editor-actions,
+.annotation-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.annotation-panel-header {
+  justify-content: space-between;
+}
+
+.annotation-panel h2 {
+  font-size: 1.05rem;
+}
+
+.annotation-copy,
+.annotation-save {
+  width: auto;
+  min-height: 38px;
+  margin-top: 0;
+  padding: 0 var(--space-md);
+  font-size: 0.82rem;
+}
+
+.annotation-editor {
+  display: grid;
+  gap: var(--space-sm);
+  padding: var(--space-sm);
+  border: 1.5px solid var(--line);
+  background: var(--paper);
+}
+
+.annotation-label {
+  letter-spacing: 0.06em;
+}
+
+.annotation-textarea {
+  min-height: 92px;
+  max-height: 180px;
+}
+
+.annotation-list {
+  display: grid;
+  gap: var(--space-xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.annotation-empty,
+.annotation-item {
+  border: 1.5px solid var(--line-soft);
+  background: var(--paper);
+}
+
+.annotation-empty {
+  padding: var(--space-sm);
+  color: var(--ink-muted);
+  font-size: 0.88rem;
+}
+
+.annotation-item {
+  justify-content: space-between;
+  padding: var(--space-sm);
+}
+
+.annotation-item-body {
+  min-width: 0;
+  display: grid;
+  gap: var(--space-2xs);
+}
+
+.annotation-meta {
+  color: var(--ink-muted);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.annotation-comment {
+  color: var(--ink);
+  font-size: 0.92rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.annotation-item-actions {
+  flex: 0 0 auto;
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.annotation-small-action {
+  min-height: 34px;
+  padding: 0 var(--space-sm);
+  font-size: 0.78rem;
+}
+
+.annotation-prompt-output {
+  max-height: 240px;
+}
+
+.annotation-status {
+  min-height: 18px;
+  color: var(--ink-muted);
 }
 
 .visually-hidden {
@@ -744,6 +913,25 @@ body.export-mode #whiteboard {
   .viewer-frame {
     width: calc(100vw - 32px);
     height: auto;
+  }
+
+  .annotation-panel {
+    width: calc(100vw - 32px);
+  }
+
+  .annotation-panel-header,
+  .annotation-editor-actions,
+  .annotation-item {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .annotation-item-actions {
+    width: 100%;
+  }
+
+  .annotation-small-action {
+    flex: 1 1 0;
   }
 }
 
