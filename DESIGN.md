@@ -174,7 +174,7 @@ Browser annotations are targeted repair requests for the deterministic renderer.
 npm run storyboard:annotation-prompt -- projects/<project-name>
 ```
 
-The generated prompt should invoke `annotation-fix-pipeline`, list each active annotation's frame/time, selected bounds, screenshot path, and user comment, then require rerender, polish, visual diff, inspector, and browser preview verification. Annotation screenshots are evidence only; they must not be pasted, traced, or hidden in final artwork.
+The generated prompt should invoke `annotation-fix-pipeline`, list each active annotation's frame/time, selected bounds, screenshot path, optional reference image paths, and user comment, then require rerender, polish, visual diff, inspector, and browser preview verification. Annotation screenshots are evidence only, and reference images are visual guidance only; neither may be pasted, traced, or hidden in final artwork.
 
 ## Export Library Note
 

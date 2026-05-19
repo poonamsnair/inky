@@ -1172,55 +1172,175 @@ function drawBlueberry(ctx, x, y, r, seed) {
 }
 
 function drawStrawberry(ctx, x, y, scale, seed) {
+  const random = seededRandom(seed);
+  const rotation = (random() - 0.5) * 0.42;
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.rotate(rotation);
   fillShape(
     ctx,
     (p) => {
-      p.moveTo(x, y + 22 * scale);
-      p.bezierCurveTo(x - 26 * scale, y + 6 * scale, x - 18 * scale, y - 22 * scale, x, y - 13 * scale);
-      p.bezierCurveTo(x + 18 * scale, y - 22 * scale, x + 26 * scale, y + 6 * scale, x, y + 22 * scale);
+      strawberryBodyPath(p, scale);
       p.closePath();
     },
-    { x: x - 24 * scale, y: y - 22 * scale, w: 48 * scale, h: 48 * scale },
-    "#d94335",
+    { x: -30 * scale, y: -28 * scale, w: 60 * scale, h: 58 * scale },
+    "#e33b22",
     "oil-crayon",
-    { seed, patternAlpha: 0.46, scumble: 4 },
+    { seed, patternAlpha: 0.5, scumble: 5, stroke: "#651a14", strokeWidth: 1.8 * scale },
   );
+
   ctx.save();
-  ctx.fillStyle = "#e9cf82";
-  for (let i = 0; i < 7; i += 1) {
-    ctx.beginPath();
-    ctx.ellipse(x + ((i % 3) - 1) * 7 * scale, y - 5 * scale + Math.floor(i / 3) * 10 * scale, 1.3 * scale, 2 * scale, 0.4, 0, Math.PI * 2);
-    ctx.fill();
-  }
-  ctx.fillStyle = "#3d7f43";
   ctx.beginPath();
-  ctx.moveTo(x, y - 21 * scale);
-  ctx.lineTo(x - 12 * scale, y - 10 * scale);
-  ctx.lineTo(x, y - 13 * scale);
-  ctx.lineTo(x + 12 * scale, y - 10 * scale);
-  ctx.closePath();
+  strawberryBodyPath(ctx, scale);
+  ctx.clip();
+  ctx.fillStyle = "rgba(136, 25, 17, 0.22)";
+  ctx.beginPath();
+  ctx.ellipse(12 * scale, 3 * scale, 13 * scale, 27 * scale, -0.18, 0, Math.PI * 2);
   ctx.fill();
+  ctx.fillStyle = "rgba(255, 116, 76, 0.22)";
+  ctx.beginPath();
+  ctx.ellipse(-9 * scale, -2 * scale, 9 * scale, 22 * scale, -0.35, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+
+  drawStrawberrySeeds(ctx, scale, seed, "whole");
+  drawStrawberryCrown(ctx, scale, seed);
   ctx.restore();
 }
 
 function drawStrawberryHalf(ctx, x, y, scale, seed) {
+  const random = seededRandom(seed + 31);
+  const rotation = (random() - 0.5) * 0.36;
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.rotate(rotation);
   fillShape(
     ctx,
     (p) => {
-      p.moveTo(x, y + 20 * scale);
-      p.bezierCurveTo(x - 22 * scale, y + 6 * scale, x - 16 * scale, y - 18 * scale, x, y - 12 * scale);
-      p.bezierCurveTo(x + 16 * scale, y - 18 * scale, x + 22 * scale, y + 6 * scale, x, y + 20 * scale);
+      strawberryBodyPath(p, scale * 0.9);
       p.closePath();
     },
-    { x: x - 22 * scale, y: y - 20 * scale, w: 44 * scale, h: 44 * scale },
-    "#e94e43",
+    { x: -26 * scale, y: -25 * scale, w: 52 * scale, h: 52 * scale },
+    "#c92d24",
     "oil-crayon",
-    { seed, patternAlpha: 0.44, scumble: 3 },
+    { seed, patternAlpha: 0.42, scumble: 3, stroke: "#711c16", strokeWidth: 1.5 * scale },
+  );
+  fillShape(
+    ctx,
+    (p) => {
+      p.moveTo(0, 18 * scale);
+      p.bezierCurveTo(-14 * scale, 14 * scale, -18 * scale, 2 * scale, -15 * scale, -9 * scale);
+      p.bezierCurveTo(-10 * scale, -18 * scale, -2 * scale, -16 * scale, 0, -10 * scale);
+      p.bezierCurveTo(4 * scale, -17 * scale, 14 * scale, -16 * scale, 17 * scale, -7 * scale);
+      p.bezierCurveTo(20 * scale, 4 * scale, 15 * scale, 15 * scale, 0, 18 * scale);
+      p.closePath();
+    },
+    { x: -19 * scale, y: -19 * scale, w: 38 * scale, h: 39 * scale },
+    "#ffd9c4",
+    "colored-pencil",
+    { seed: seed + 4, patternAlpha: 0.38, scumble: 2, stroke: "#f0523d", strokeWidth: 1.4 * scale },
   );
   ctx.save();
-  ctx.strokeStyle = "#fff0da";
-  ctx.lineWidth = 2 * scale;
-  line(ctx, x, y - 9 * scale, x, y + 16 * scale);
+  ctx.strokeStyle = "#fff2df";
+  ctx.lineWidth = 1.7 * scale;
+  ctx.lineCap = "round";
+  line(ctx, 0, -8 * scale, 0, 15 * scale);
+  line(ctx, -8 * scale, 3 * scale, 0, 8 * scale);
+  line(ctx, 8 * scale, 1 * scale, 0, 8 * scale);
+  ctx.restore();
+  drawStrawberrySeeds(ctx, scale * 0.86, seed + 9, "half");
+  ctx.restore();
+}
+
+function strawberryBodyPath(ctx, scale) {
+  ctx.moveTo(0, 25 * scale);
+  ctx.bezierCurveTo(-18 * scale, 23 * scale, -29 * scale, 9 * scale, -26 * scale, -7 * scale);
+  ctx.bezierCurveTo(-23 * scale, -23 * scale, -6 * scale, -25 * scale, 0, -14 * scale);
+  ctx.bezierCurveTo(7 * scale, -25 * scale, 24 * scale, -23 * scale, 27 * scale, -7 * scale);
+  ctx.bezierCurveTo(31 * scale, 10 * scale, 20 * scale, 24 * scale, 0, 25 * scale);
+}
+
+function drawStrawberrySeeds(ctx, scale, seed, mode) {
+  const random = seededRandom(seed + 71);
+  const seeds =
+    mode === "half"
+      ? [
+          [-9, -4, -0.24],
+          [1, -5, 0.18],
+          [10, -2, 0.28],
+          [-10, 7, -0.18],
+          [2, 7, 0.16],
+          [10, 9, 0.28],
+        ]
+      : [
+          [-11, -5, -0.34],
+          [1, -7, 0.12],
+          [13, -4, 0.32],
+          [-17, 5, -0.22],
+          [-5, 4, 0.16],
+          [8, 5, 0.28],
+          [18, 7, 0.36],
+          [-15, 15, -0.18],
+          [-3, 14, 0.12],
+          [10, 15, 0.26],
+          [-8, 23, 0.08],
+          [4, 22, 0.2],
+        ];
+
+  ctx.save();
+  ctx.beginPath();
+  strawberryBodyPath(ctx, mode === "half" ? scale * 0.9 : scale);
+  ctx.clip();
+  seeds.forEach(([sx, sy, angle], index) => {
+    const jitterX = (random() - 0.5) * 1.4 * scale;
+    const jitterY = (random() - 0.5) * 1.4 * scale;
+    ctx.beginPath();
+    ctx.fillStyle = mode === "half" ? (index % 2 ? "#f7b594" : "#b43a2b") : "#6f2218";
+    ctx.ellipse(sx * scale + jitterX, sy * scale + jitterY, 1.45 * scale, 3.1 * scale, angle, 0, Math.PI * 2);
+    ctx.fill();
+  });
+  ctx.restore();
+}
+
+function drawStrawberryCrown(ctx, scale, seed) {
+  const random = seededRandom(seed + 93);
+  const leaves = [
+    { angle: -2.55, length: 17, width: 6 },
+    { angle: -2.05, length: 20, width: 6.5 },
+    { angle: -1.48, length: 18, width: 7.2 },
+    { angle: -0.92, length: 21, width: 6.5 },
+    { angle: -0.36, length: 17, width: 6 },
+  ];
+
+  ctx.save();
+  ctx.fillStyle = "#2f7f3b";
+  ctx.strokeStyle = "#123d20";
+  ctx.lineWidth = 1.3 * scale;
+  ctx.lineJoin = "round";
+  leaves.forEach((leaf, index) => {
+    const angle = leaf.angle + (random() - 0.5) * 0.12;
+    const base = { x: 0, y: -15 * scale };
+    const tip = {
+      x: base.x + Math.cos(angle) * leaf.length * scale,
+      y: base.y + Math.sin(angle) * leaf.length * scale,
+    };
+    const normal = { x: Math.cos(angle + Math.PI / 2), y: Math.sin(angle + Math.PI / 2) };
+    const width = leaf.width * scale;
+    ctx.beginPath();
+    ctx.moveTo(base.x, base.y);
+    ctx.quadraticCurveTo(base.x + normal.x * width, base.y + normal.y * width, tip.x, tip.y);
+    ctx.quadraticCurveTo(base.x - normal.x * width * 0.8, base.y - normal.y * width * 0.8, base.x, base.y);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    if (index === 2) {
+      ctx.strokeStyle = "#19592a";
+      ctx.lineWidth = 2 * scale;
+      line(ctx, base.x, base.y - 2 * scale, tip.x, tip.y);
+      ctx.strokeStyle = "#123d20";
+      ctx.lineWidth = 1.3 * scale;
+    }
+  });
   ctx.restore();
 }
 

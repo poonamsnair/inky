@@ -1,7 +1,7 @@
 {
   "version": 1,
   "project": "cutting-fruit",
-  "updatedAt": "2026-05-19T12:22:11.000Z",
+  "updatedAt": "2026-05-19T13:36:00.000Z",
   "annotations": [
     {
       "id": "ann-15eb2254-b91d-46fb-b685-3947d7fa337c",
@@ -14,7 +14,9 @@
         "width": 167.63,
         "height": 140.363
       },
-      "comment": "make hair blonde"
+      "comment": "make hair blonde",
+      "createdAt": "",
+      "updatedAt": "2026-05-19T13:11:06.316Z"
     },
     {
       "id": "ann-b5c34b3c-58ab-47a1-b096-5cf49291ae83",
@@ -27,7 +29,9 @@
         "width": 77.277,
         "height": 52.554
       },
-      "comment": "fix hands to real human looking hands"
+      "comment": "fix hands to real human looking hands",
+      "createdAt": "",
+      "updatedAt": "2026-05-19T13:11:06.316Z"
     },
     {
       "id": "ann-49012ea9-269e-4928-a9c3-7d6e1f3c4520",
@@ -40,7 +44,38 @@
         "width": 191.595,
         "height": 81.831
       },
-      "comment": "tummy is sticking out? looks odd"
+      "comment": "tummy is sticking out? looks odd",
+      "createdAt": "",
+      "updatedAt": "2026-05-19T13:11:06.316Z"
+    },
+    {
+      "id": "ann-04b60bf0-735e-4893-921c-fb5aa760349a",
+      "status": "done",
+      "frame": 0,
+      "time": 0,
+      "rect": {
+        "x": 246.058,
+        "y": 395.759,
+        "width": 248.787,
+        "height": 121.751,
+        "normalized": {
+          "x": 0.256,
+          "y": 0.638,
+          "width": 0.259,
+          "height": 0.196
+        }
+      },
+      "comment": "make the strawberry more realistic in design like this",
+      "createdAt": "2026-05-19T13:11:04.742Z",
+      "updatedAt": "2026-05-19T13:36:00.000Z",
+      "screenshot": "outputs/annotation-screenshots/ann-04b60bf0-735e-4893-921c-fb5aa760349a.png",
+      "references": [
+        {
+          "path": "outputs/annotation-references/ann-04b60bf0-735e-4893-921c-fb5aa760349a-1.jpg",
+          "name": "straw.jpg",
+          "type": "image/jpeg"
+        }
+      ]
     }
   ]
 }

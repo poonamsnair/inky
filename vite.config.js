@@ -8,7 +8,14 @@ const repoRoot = fileURLToPath(new URL(".", import.meta.url));
 const projectsRoot = resolve(repoRoot, "projects");
 const MAX_MP4_UPLOAD_BYTES = 250 * 1024 * 1024;
 const MAX_ANNOTATION_UPLOAD_BYTES = 60 * 1024 * 1024;
+const MAX_REFERENCE_IMAGES = 3;
 const ALLOWED_SPEEDS = new Set(["0.5", "0.75", "1", "1.25", "1.5", "2"]);
+const REFERENCE_IMAGE_EXTENSIONS = {
+  "image/gif": "gif",
+  "image/jpeg": "jpg",
+  "image/png": "png",
+  "image/webp": "webp",
+};
 
 export default defineConfig({
   plugins: [inkyMp4OutputPlugin()],
@@ -182,8 +189,12 @@ function installAnnotationMiddleware(middlewares) {
 
 async function normalizeAnnotationUpload({ annotations, projectDir, slug }) {
   const screenshotDir = resolve(projectDir, "outputs", "annotation-screenshots");
+  const referenceDir = resolve(projectDir, "outputs", "annotation-references");
   if (!isInside(projectDir, screenshotDir)) {
     throw statusError(400, "Invalid screenshot output path.");
+  }
+  if (!isInside(projectDir, referenceDir)) {
+    throw statusError(400, "Invalid reference output path.");
   }
 
   const normalized = [];
@@ -199,6 +210,10 @@ async function normalizeAnnotationUpload({ annotations, projectDir, slug }) {
       createdAt: annotation.createdAt || "",
       updatedAt: new Date().toISOString(),
     };
+
+    const references = normalizeExistingReferences(annotation.references, projectDir).slice(0, MAX_REFERENCE_IMAGES);
+    const remainingReferenceSlots = Math.max(0, MAX_REFERENCE_IMAGES - references.length);
+    const referenceDataUrls = normalizeReferenceDataUrls(annotation.referenceDataUrls).slice(0, remainingReferenceSlots);
 
     if (annotation.screenshot && typeof annotation.screenshot === "string") {
       savedAnnotation.screenshot = annotation.screenshot;
@@ -216,10 +231,89 @@ async function normalizeAnnotationUpload({ annotations, projectDir, slug }) {
       savedAnnotation.screenshot = `outputs/annotation-screenshots/${filename}`;
     }
 
+    if (referenceDataUrls.length) {
+      await mkdir(referenceDir, { recursive: true });
+    }
+
+    const initialReferenceCount = references.length;
+    for (const [referenceIndex, reference] of referenceDataUrls.entries()) {
+      const extension = REFERENCE_IMAGE_EXTENSIONS[reference.type];
+      if (!extension) continue;
+      const filename = `${id}-${initialReferenceCount + referenceIndex + 1}.${extension}`;
+      const referencePath = resolve(referenceDir, filename);
+      if (!isInside(referenceDir, referencePath)) {
+        throw statusError(400, "Invalid reference file path.");
+      }
+      await writeFile(referencePath, reference.buffer);
+      references.push({
+        path: `outputs/annotation-references/${filename}`,
+        name: reference.name,
+        type: reference.type,
+      });
+    }
+
+    if (references.length) savedAnnotation.references = references.slice(0, MAX_REFERENCE_IMAGES);
     normalized.push(savedAnnotation);
   }
 
   return normalized;
+}
+
+function normalizeExistingReferences(value, projectDir) {
+  if (!Array.isArray(value)) return [];
+  return value
+    .map((reference, index) => {
+      if (typeof reference === "string") {
+        return normalizeReferencePath({ path: reference, name: reference.split("/").pop() || `reference-${index + 1}`, type: "" }, projectDir);
+      }
+      if (!reference || typeof reference !== "object") return null;
+      return normalizeReferencePath(
+        {
+          path: reference.path || reference.url || reference.href || "",
+          name: reference.name || reference.filename || String(reference.path || "").split("/").pop() || `reference-${index + 1}`,
+          type: reference.type || reference.mime || "",
+        },
+        projectDir,
+      );
+    })
+    .filter(Boolean);
+}
+
+function normalizeReferencePath(reference, projectDir) {
+  const pathValue = String(reference.path || "").trim();
+  if (!pathValue || pathValue.startsWith("data:") || isAbsolute(pathValue)) return null;
+  const resolved = resolve(projectDir, pathValue);
+  if (!isInside(projectDir, resolved)) return null;
+  return {
+    path: pathValue,
+    name: String(reference.name || pathValue.split("/").pop() || "reference image").trim(),
+    type: String(reference.type || "").trim(),
+  };
+}
+
+function normalizeReferenceDataUrls(value) {
+  if (!Array.isArray(value)) return [];
+  return value
+    .map((reference, index) => {
+      if (typeof reference === "string") {
+        return decodeImageDataUrl(reference, `reference-${index + 1}`);
+      }
+      if (!reference || typeof reference !== "object") return null;
+      return decodeImageDataUrl(reference.dataUrl || reference.data || "", reference.name || `reference-${index + 1}`, reference.type || "");
+    })
+    .filter(Boolean);
+}
+
+function decodeImageDataUrl(dataUrl, name, declaredType = "") {
+  const match = String(dataUrl || "").match(/^data:(image\/(?:png|jpeg|webp|gif));base64,([a-zA-Z0-9+/=]+)$/);
+  if (!match) return null;
+  const type = REFERENCE_IMAGE_EXTENSIONS[declaredType] ? declaredType : match[1];
+  if (!REFERENCE_IMAGE_EXTENSIONS[type]) return null;
+  return {
+    name: String(name || "reference image").trim(),
+    type,
+    buffer: Buffer.from(match[2], "base64"),
+  };
 }
 
 async function readRequestBuffer(req, maxBytes) {

@@ -198,6 +198,17 @@
                 Comment
                 <textarea id="annotationComment" class="text-area annotation-textarea" placeholder="Redraw this area..." required></textarea>
               </label>
+              <div class="annotation-reference-field">
+                <div class="annotation-reference-head">
+                  <span>Reference images</span>
+                  <span id="annotationReferenceCount" class="annotation-reference-count">0 / 3</span>
+                </div>
+                <button id="annotationReferenceDropzone" class="annotation-reference-dropzone" type="button">
+                  Drop, paste, or upload images
+                </button>
+                <input id="annotationReferenceInput" class="visually-hidden" type="file" accept="image/*" multiple />
+                <ul id="annotationReferenceList" class="annotation-reference-list" aria-label="Reference images"></ul>
+              </div>
               <div class="annotation-editor-actions">
                 <button id="saveAnnotation" class="primary-action annotation-save" type="submit">Save note</button>
                 <button id="cancelAnnotation" class="secondary-action" type="button">Cancel</button>

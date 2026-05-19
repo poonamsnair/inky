@@ -1,5 +1,7 @@
 const INACTIVE_STATUSES = new Set(["deleted", "removed", "archived"]);
 const DONE_STATUSES = new Set(["done", "complete", "completed"]);
+const MAX_REFERENCE_IMAGES = 3;
+const REFERENCE_IMAGE_TYPES = new Set(["image/png", "image/jpeg", "image/webp", "image/gif"]);
 
 export function createAnnotationReviewer({
   manifest,
@@ -18,6 +20,10 @@ export function createAnnotationReviewer({
   const editor = document.querySelector("#annotationEditor");
   const editorMeta = document.querySelector("#annotationEditorMeta");
   const commentInput = document.querySelector("#annotationComment");
+  const referenceInput = document.querySelector("#annotationReferenceInput");
+  const referenceDropzone = document.querySelector("#annotationReferenceDropzone");
+  const referenceList = document.querySelector("#annotationReferenceList");
+  const referenceCount = document.querySelector("#annotationReferenceCount");
   const saveButton = document.querySelector("#saveAnnotation");
   const cancelButton = document.querySelector("#cancelAnnotation");
   const list = document.querySelector("#annotationList");
@@ -38,6 +44,7 @@ export function createAnnotationReviewer({
   let isAnnotating = false;
   let currentFrame = 0;
   let draft = null;
+  let draftReferences = [];
   let drawStart = null;
   let saveMode = "project";
 
@@ -53,6 +60,13 @@ export function createAnnotationReviewer({
     layer.addEventListener("pointerup", finishDraw);
     layer.addEventListener("pointercancel", cancelDraft);
     editor.addEventListener("submit", saveDraft);
+    editor.addEventListener("paste", handleReferencePaste);
+    referenceDropzone?.addEventListener("click", () => referenceInput?.click());
+    referenceDropzone?.addEventListener("dragenter", handleReferenceDragEnter);
+    referenceDropzone?.addEventListener("dragover", handleReferenceDragOver);
+    referenceDropzone?.addEventListener("dragleave", handleReferenceDragLeave);
+    referenceDropzone?.addEventListener("drop", handleReferenceDrop);
+    referenceInput?.addEventListener("change", handleReferenceInput);
     cancelButton?.addEventListener("click", cancelDraft);
     copyPromptButton?.addEventListener("click", copyPrompt);
   }
@@ -128,6 +142,8 @@ export function createAnnotationReviewer({
     panel.hidden = false;
     editorMeta.textContent = `Frame ${draft.frame + 1} at ${formatSeconds(draft.time)}s`;
     commentInput.value = "";
+    draftReferences = [];
+    renderDraftReferences();
     window.requestAnimationFrame(() => commentInput.focus());
   }
 
@@ -158,11 +174,14 @@ export function createAnnotationReviewer({
       rect: withNormalizedRect(draft.rect, width, height),
       comment,
       createdAt: new Date().toISOString(),
+      references: draftReferences.map(({ name, type }) => ({ name, type })),
+      referenceDataUrls: draftReferences.map(({ name, type, dataUrl }) => ({ name, type, dataUrl })),
       screenshotDataUrl,
     };
 
     annotations = [...annotations, annotation];
     draft = null;
+    draftReferences = [];
     editor.hidden = true;
     commentInput.value = "";
     await persistAnnotations();
@@ -176,6 +195,8 @@ export function createAnnotationReviewer({
     editor.hidden = true;
     draftEl.hidden = true;
     commentInput.value = "";
+    draftReferences = [];
+    renderDraftReferences();
     renderLayer();
   }
 
@@ -191,15 +212,14 @@ export function createAnnotationReviewer({
     panel.hidden = false;
   }
 
-  async function persistAnnotations() {
-    const prompt = buildAnnotationPrompt(activePromptAnnotations());
+  async function persistAnnotations({ prompt = "", silent = false } = {}) {
     const payload = {
       version: 1,
       project: manifest.slug,
       updatedAt: new Date().toISOString(),
       annotations,
-      prompt,
     };
+    if (prompt) payload.prompt = prompt;
 
     writeLocalAnnotations(annotations);
 
@@ -214,11 +234,13 @@ export function createAnnotationReviewer({
       annotations = normalizeAnnotations(result.annotations || annotations, fps);
       writeLocalAnnotations(annotations);
       saveMode = "project";
-      setStatus(`Saved ${annotations.length} note${annotations.length === 1 ? "" : "s"} to project.`);
+      if (!silent) setStatus(`Saved ${annotations.length} note${annotations.length === 1 ? "" : "s"} to project.`);
     } catch (error) {
       console.warn("Annotation save endpoint unavailable", error);
       saveMode = "browser";
-      setStatus("Saved in this browser. Project save endpoint is unavailable.");
+      if (!silent) {
+        setStatus(hasUnsavedReferenceData(annotations) ? "Saved in this browser. Reference images are not available to the agent until project save works." : "Saved in this browser. Project save endpoint is unavailable.");
+      }
     }
   }
 
@@ -235,13 +257,13 @@ export function createAnnotationReviewer({
 
     try {
       await navigator.clipboard.writeText(prompt);
-      setStatus(saveMode === "project" ? "Agent prompt copied." : "Agent prompt copied. Notes are saved in this browser only.");
+      setStatus(saveMode === "project" ? "Agent prompt copied." : "Agent prompt copied. Reference images need project save before the agent can open them.");
     } catch {
       setStatus("Prompt is shown below. Select it to copy manually.");
     }
 
     if (saveMode === "project") {
-      persistAnnotations();
+      await persistAnnotations({ prompt, silent: true });
     }
   }
 
@@ -309,7 +331,8 @@ export function createAnnotationReviewer({
 
       const meta = document.createElement("p");
       meta.className = "annotation-meta";
-      meta.textContent = `Frame ${annotation.frame + 1} • ${formatSeconds(annotation.time)}s • ${annotation.status}`;
+      const referenceCountText = annotation.references.length ? ` • ${annotation.references.length} ref${annotation.references.length === 1 ? "" : "s"}` : "";
+      meta.textContent = `Frame ${annotation.frame + 1} • ${formatSeconds(annotation.time)}s • ${annotation.status}${referenceCountText}`;
 
       const comment = document.createElement("p");
       comment.className = "annotation-comment";
@@ -387,13 +410,14 @@ export function createAnnotationReviewer({
       "",
       "## Required Workflow",
       "",
-      "1. Read `AGENTS.md`, `DESIGN.md`, the project manifest, requirements, annotation JSON, and referenced screenshots.",
-      "2. For each active annotation, do an applicability sweep: decide whether the marked element is one-off or recurring, find the shared renderer helper/scene data/action mode that owns it, and list the annotated frame plus adjacent/related frames that must be checked.",
-      "3. Fix the root drawing cause in the shared renderer construction when the issue recurs. Do not cover defects with patches, masks, white fills, opacity tricks, or extra texture.",
-      "4. Only use a frame-specific branch when the annotation is truly frame-specific, and state why.",
-      "5. Update annotation statuses to `doing`, then `done` or `needs review`.",
-      "6. Rerender, run polish, visual diff, inspector, and open the updated browser preview.",
-      "7. In the final reply, report the affected frame ranges checked for each annotation.",
+      "1. Read `AGENTS.md`, `DESIGN.md`, the project manifest, requirements, annotation JSON, referenced screenshots, and reference images.",
+      "2. Treat current-frame screenshots as evidence of the problem and reference images as visual guidance only. Do not paste, trace, or hide reference images in final artwork.",
+      "3. For each active annotation, do an applicability sweep: decide whether the marked element is one-off or recurring, find the shared renderer helper/scene data/action mode that owns it, and list the annotated frame plus adjacent/related frames that must be checked.",
+      "4. Fix the root drawing cause in the shared renderer construction when the issue recurs. Do not cover defects with patches, masks, white fills, opacity tricks, or extra texture.",
+      "5. Only use a frame-specific branch when the annotation is truly frame-specific, and state why.",
+      "6. Update annotation statuses to `doing`, then `done` or `needs review`.",
+      "7. Rerender, run polish, visual diff, inspector, and open the updated browser preview.",
+      "8. In the final reply, report the affected frame ranges checked for each annotation and whether the result matches the text comment plus reference images.",
       "",
       "## Verification Commands",
       "",
@@ -415,11 +439,110 @@ export function createAnnotationReviewer({
       lines.push(`- Frame: \`${annotation.frame}\` zero-based / \`${annotation.frame + 1}\` one-based`);
       lines.push(`- Time: \`${formatSeconds(annotation.time)}s\``);
       lines.push(`- Selected bounds: \`${formatRect(annotation.rect)}\``);
-      if (annotation.screenshot) lines.push(`- Screenshot: \`${annotation.screenshot}\``);
+      if (annotation.screenshot) lines.push(`- Current-frame screenshot: \`${annotation.screenshot}\``);
+      const savedReferences = annotation.references.filter((reference) => reference.path);
+      const unsavedReferences = annotation.references.filter((reference) => !reference.path);
+      if (savedReferences.length) {
+        lines.push(`- Reference image${savedReferences.length === 1 ? "" : "s"}: ${savedReferences.map((reference) => `\`${reference.path}\``).join(", ")}`);
+      }
+      if (unsavedReferences.length) {
+        lines.push(`- Unsaved reference image${unsavedReferences.length === 1 ? "" : "s"}: ${unsavedReferences.map((reference) => `\`${reference.name || "browser-only image"}\``).join(", ")}. These must be saved to the project before the agent can open them.`);
+      }
       lines.push("- User comment:", "", blockquote(annotation.comment), "");
     });
 
     return lines.join("\n");
+  }
+
+  async function handleReferenceInput(event) {
+    await addReferenceFiles(event.currentTarget.files || []);
+    event.currentTarget.value = "";
+  }
+
+  async function handleReferencePaste(event) {
+    const files = Array.from(event.clipboardData?.files || []).filter(isSupportedReferenceFile);
+    if (!files.length) return;
+    event.preventDefault();
+    await addReferenceFiles(files);
+  }
+
+  function handleReferenceDragEnter(event) {
+    event.preventDefault();
+    referenceDropzone?.classList.add("is-dragging");
+  }
+
+  function handleReferenceDragOver(event) {
+    event.preventDefault();
+    referenceDropzone?.classList.add("is-dragging");
+  }
+
+  function handleReferenceDragLeave(event) {
+    if (event.currentTarget.contains(event.relatedTarget)) return;
+    referenceDropzone?.classList.remove("is-dragging");
+  }
+
+  async function handleReferenceDrop(event) {
+    event.preventDefault();
+    referenceDropzone?.classList.remove("is-dragging");
+    await addReferenceFiles(event.dataTransfer?.files || []);
+  }
+
+  async function addReferenceFiles(fileList) {
+    const files = Array.from(fileList).filter(isSupportedReferenceFile);
+    if (!files.length) {
+      setStatus("Use PNG, JPEG, WebP, or GIF images as references.");
+      return;
+    }
+
+    const slots = MAX_REFERENCE_IMAGES - draftReferences.length;
+    if (slots <= 0) {
+      setStatus(`Each note can have up to ${MAX_REFERENCE_IMAGES} reference images.`);
+      return;
+    }
+
+    const selected = files.slice(0, slots);
+    const nextReferences = await Promise.all(selected.map(referenceFromFile));
+    draftReferences = [...draftReferences, ...nextReferences];
+    renderDraftReferences();
+
+    if (files.length > selected.length) {
+      setStatus(`Added ${selected.length} reference image${selected.length === 1 ? "" : "s"}. Limit is ${MAX_REFERENCE_IMAGES}.`);
+    } else {
+      setStatus(`Added ${selected.length} reference image${selected.length === 1 ? "" : "s"}.`);
+    }
+  }
+
+  function renderDraftReferences() {
+    if (referenceCount) referenceCount.textContent = `${draftReferences.length} / ${MAX_REFERENCE_IMAGES}`;
+    if (referenceDropzone) referenceDropzone.disabled = draftReferences.length >= MAX_REFERENCE_IMAGES;
+    if (!referenceList) return;
+    referenceList.replaceChildren();
+
+    draftReferences.forEach((reference) => {
+      const item = document.createElement("li");
+      item.className = "annotation-reference-item";
+
+      const image = document.createElement("img");
+      image.className = "annotation-reference-thumb";
+      image.src = reference.dataUrl;
+      image.alt = "";
+
+      const name = document.createElement("span");
+      name.className = "annotation-reference-name";
+      name.textContent = reference.name || "reference image";
+
+      const removeButton = document.createElement("button");
+      removeButton.type = "button";
+      removeButton.className = "secondary-action annotation-reference-remove";
+      removeButton.textContent = "Remove";
+      removeButton.addEventListener("click", () => {
+        draftReferences = draftReferences.filter((candidate) => candidate.id !== reference.id);
+        renderDraftReferences();
+      });
+
+      item.append(image, name, removeButton);
+      referenceList.append(item);
+    });
   }
 
   function readLocalAnnotations() {
@@ -470,10 +593,59 @@ function normalizeAnnotations(rawAnnotations, fpsValue = 12) {
       rect,
       comment: String(annotation.comment || annotation.note || annotation.text || "").trim(),
       screenshot: annotation.screenshot || annotation.screenshotPath || "",
+      references: normalizeReferences(annotation),
+      referenceDataUrls: normalizeReferenceDataUrls(annotation.referenceDataUrls),
       createdAt: annotation.createdAt || "",
       updatedAt: annotation.updatedAt || "",
     };
   });
+}
+
+function normalizeReferences(annotation) {
+  const references = Array.isArray(annotation.references) ? annotation.references : [];
+  const referenceDataUrls = normalizeReferenceDataUrls(annotation.referenceDataUrls);
+  const normalized = references
+    .map((reference, index) => {
+      if (typeof reference === "string") {
+        return { path: reference, name: reference.split("/").pop() || `reference-${index + 1}`, type: "" };
+      }
+      if (!reference || typeof reference !== "object") return null;
+      return {
+        path: String(reference.path || reference.url || reference.href || "").trim(),
+        name: String(reference.name || reference.filename || reference.path?.split?.("/")?.pop?.() || `reference-${index + 1}`).trim(),
+        type: String(reference.type || reference.mime || "").trim(),
+      };
+    })
+    .filter(Boolean);
+
+  referenceDataUrls.forEach((reference, index) => {
+    if (normalized.length >= MAX_REFERENCE_IMAGES) return;
+    normalized.push({
+      name: reference.name || `browser-reference-${index + 1}`,
+      type: reference.type || "",
+      dataUrl: reference.dataUrl,
+    });
+  });
+
+  return normalized.slice(0, MAX_REFERENCE_IMAGES);
+}
+
+function normalizeReferenceDataUrls(value) {
+  if (!Array.isArray(value)) return [];
+  return value
+    .map((reference, index) => {
+      if (typeof reference === "string") {
+        return { name: `browser-reference-${index + 1}`, type: "", dataUrl: reference };
+      }
+      if (!reference || typeof reference !== "object") return null;
+      return {
+        name: String(reference.name || `browser-reference-${index + 1}`).trim(),
+        type: String(reference.type || "").trim(),
+        dataUrl: String(reference.dataUrl || reference.data || "").trim(),
+      };
+    })
+    .filter((reference) => reference?.dataUrl?.startsWith("data:image/"))
+    .slice(0, MAX_REFERENCE_IMAGES);
 }
 
 function normalizeRect(rect = {}) {
@@ -539,6 +711,30 @@ function blockquote(value) {
     .split(/\r?\n/)
     .map((line) => `> ${line}`)
     .join("\n");
+}
+
+function isSupportedReferenceFile(file) {
+  return file && REFERENCE_IMAGE_TYPES.has(file.type);
+}
+
+function referenceFromFile(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.addEventListener("load", () => {
+      resolve({
+        id: createAnnotationId(),
+        name: file.name || "reference image",
+        type: file.type,
+        dataUrl: String(reader.result || ""),
+      });
+    });
+    reader.addEventListener("error", () => reject(reader.error || new Error("Could not read reference image.")));
+    reader.readAsDataURL(file);
+  });
+}
+
+function hasUnsavedReferenceData(annotations) {
+  return annotations.some((annotation) => Array.isArray(annotation.referenceDataUrls) && annotation.referenceDataUrls.length > 0);
 }
 
 function createAnnotationId() {

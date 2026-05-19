@@ -151,6 +151,7 @@ function normalizeAnnotation(annotation, index, fpsValue, frameCount) {
   const status = normalizeStatus(annotation.status || annotation.state || "to do");
   const rect = normalizeRect(annotation);
   const screenshots = normalizeScreenshots(annotation);
+  const references = normalizeReferences(annotation);
 
   return {
     id: String(annotation.id || annotation.annotationId || annotation.taskId || `annotation-${String(index + 1).padStart(2, "0")}`),
@@ -161,6 +162,7 @@ function normalizeAnnotation(annotation, index, fpsValue, frameCount) {
     comment: normalizeComment(annotation),
     rect,
     screenshots,
+    references,
   };
 }
 
@@ -277,6 +279,28 @@ function normalizeScreenshots(annotation) {
   return [...new Set(values.filter((value) => value != null && String(value).trim()).map((value) => String(value).trim()))];
 }
 
+function normalizeReferences(annotation) {
+  const values = [];
+  if (Array.isArray(annotation.references)) values.push(...annotation.references);
+  if (annotation.reference) values.push(annotation.reference);
+  if (annotation.referenceImage) values.push(annotation.referenceImage);
+  if (annotation.referencePath) values.push(annotation.referencePath);
+
+  return values
+    .map((reference, index) => {
+      if (typeof reference === "string") {
+        return { path: reference, name: reference.split("/").pop() || `reference-${index + 1}`, type: "" };
+      }
+      if (!reference || typeof reference !== "object") return null;
+      return {
+        path: String(reference.path || reference.url || reference.href || "").trim(),
+        name: String(reference.name || reference.filename || reference.path?.split?.("/")?.pop?.() || `reference-${index + 1}`).trim(),
+        type: String(reference.type || reference.mime || "").trim(),
+      };
+    })
+    .filter((reference) => reference && reference.path);
+}
+
 function buildPrompt({ projectDir, projectSlug, projectTitle, manifest, annotations, annotationData, annotationsPath, inputLabel }) {
   const projectRelative = relativePath(projectDir);
   const manifestRelative = relativePath(path.join(projectDir, "project.json"));
@@ -303,15 +327,16 @@ function buildPrompt({ projectDir, projectSlug, projectTitle, manifest, annotati
     "",
     "## Required Workflow",
     "",
-    "1. Read `AGENTS.md`, `DESIGN.md`, this project manifest, requirements, annotation JSON, and referenced screenshots.",
-    "2. For each active annotation, inspect the frame/time, selected bounds, screenshot, and user comment.",
-    "3. Before editing, do an applicability sweep: decide whether the marked element is one-off or recurring, find the shared renderer helper/scene data/action mode that owns it, and list the annotated frame plus adjacent/related frames that must be checked.",
-    "4. Fix the root drawing cause in the shared renderer construction when the issue recurs. Do not cover defects with patches, masks, white fills, opacity tricks, or extra texture.",
-    "5. Only use a frame-specific branch when the annotation is truly frame-specific, and state why.",
-    "6. Keep fixes project-scoped unless the annotation reveals a reusable Inky tooling bug.",
-    "7. Update each active annotation status in `storyboard/annotations.json` to `doing`, then `done` or `needs review`.",
-    "8. Rerender frames, run polish, visual diff, inspector, and open the updated browser preview.",
-    "9. In the final reply, report the affected frame ranges checked for each annotation.",
+    "1. Read `AGENTS.md`, `DESIGN.md`, this project manifest, requirements, annotation JSON, referenced screenshots, and reference images.",
+    "2. Treat current-frame screenshots as evidence of the problem and reference images as visual guidance only. Do not paste, trace, or hide reference images in final artwork.",
+    "3. For each active annotation, inspect the frame/time, selected bounds, screenshot, reference images, and user comment.",
+    "4. Before editing, do an applicability sweep: decide whether the marked element is one-off or recurring, find the shared renderer helper/scene data/action mode that owns it, and list the annotated frame plus adjacent/related frames that must be checked.",
+    "5. Fix the root drawing cause in the shared renderer construction when the issue recurs. Do not cover defects with patches, masks, white fills, opacity tricks, or extra texture.",
+    "6. Only use a frame-specific branch when the annotation is truly frame-specific, and state why.",
+    "7. Keep fixes project-scoped unless the annotation reveals a reusable Inky tooling bug.",
+    "8. Update each active annotation status in `storyboard/annotations.json` to `doing`, then `done` or `needs review`.",
+    "9. Rerender frames, run polish, visual diff, inspector, and open the updated browser preview.",
+    "10. In the final reply, report the affected frame ranges checked for each annotation and whether the result matches the text comment plus reference images.",
     "",
     "## Verification Commands",
     "",
@@ -339,7 +364,10 @@ function buildPrompt({ projectDir, projectSlug, projectTitle, manifest, annotati
     lines.push(`- Time: \`${formatSeconds(annotation.time)}s\``);
     lines.push(`- Selected bounds: ${formatRect(annotation.rect)}`);
     if (annotation.screenshots.length) {
-      lines.push(`- Screenshot${annotation.screenshots.length === 1 ? "" : "s"}: ${annotation.screenshots.map((item) => `\`${item}\``).join(", ")}`);
+      lines.push(`- Current-frame screenshot${annotation.screenshots.length === 1 ? "" : "s"}: ${annotation.screenshots.map((item) => `\`${item}\``).join(", ")}`);
+    }
+    if (annotation.references.length) {
+      lines.push(`- Reference image${annotation.references.length === 1 ? "" : "s"}: ${annotation.references.map((reference) => `\`${reference.path}\``).join(", ")}`);
     }
     lines.push("- User comment:");
     lines.push("");
@@ -368,6 +396,7 @@ function trimAnnotationSource(value, activeAnnotations) {
       time: annotation.time,
       rect: annotation.rect,
       screenshot: annotation.screenshots[0],
+      references: annotation.references,
       comment: annotation.comment,
     })),
   };
