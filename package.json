@@ -52,7 +52,7 @@
     "pngjs": "^7.0.0",
     "roughjs": "^4.6.6",
     "simplex-noise": "^4.0.3",
-    "vite": "^7.1.12"
+    "vite": "^8.0.13"
   },
   "devDependencies": {
     "playwright": "^1.60.0"
