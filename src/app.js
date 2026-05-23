@@ -3,7 +3,7 @@ import { loadProject } from "./project-loader.js";
 import { createPreviewPlayer } from "./preview-player.js";
 
 const DEFAULT_PROMPT =
-  "Match the storyboard unless I request changes. Remove storyboard-only panel numbers, borders, long arrows, and construction marks. Keep characters, props, speech bubbles, captions, clothing, limbs, and backgrounds readable and consistent.";
+  "Use the reference image to plan the composition. Draw the animation with src/inky-canvas.js primitives, choosing brush and timing parameters by eye during preview.";
 
 const GRID_PRESETS = {
   "3x4": { columns: 3, rows: 4 },
@@ -78,7 +78,8 @@ async function loadSelectedProject(elements, projectSlug, params, exportMode) {
     exposePreviewApp(bundle, player);
   } catch (error) {
     console.warn(error);
-    const fallbackManifest = {
+    const inkyError = error?.inky;
+    const fallbackManifest = inkyError?.manifest || {
       slug: projectSlug,
       title: `Project not ready: ${projectSlug}`,
       width: 960,
@@ -88,9 +89,12 @@ async function loadSelectedProject(elements, projectSlug, params, exportMode) {
       outputs: {},
     };
     elements.previewTitle.textContent = fallbackManifest.title;
+    const renderer = inkyError
+      ? createErrorRenderer(fallbackManifest, inkyError)
+      : createEmptyRenderer(`Project "${projectSlug}" is not ready yet`);
     const player = createPreviewPlayer({
       manifest: fallbackManifest,
-      renderer: createEmptyRenderer(`Project "${projectSlug}" is not ready yet`),
+      renderer,
       params,
       exportMode,
     });
@@ -105,13 +109,18 @@ function wireCreator(elements) {
   elements.projectNameInput.value = "";
   elements.promptInput.value = "";
 
-  elements.form.addEventListener("submit", (event) => {
+  elements.form.addEventListener("submit", async (event) => {
     event.preventDefault();
-    renderProjectPlan(elements);
+    await createProjectFromStoryboard(elements);
   });
 
   elements.form.addEventListener("input", () => {
-    if (!elements.projectPlanOutput.hidden) renderProjectPlan(elements);
+    if (!elements.projectPlanOutput.hidden) {
+      renderProjectPlan(elements, {
+        status: "Project details changed. Create or update the local project files when ready.",
+        buttonText: "Update project files",
+      });
+    }
   });
 
   elements.gridSelect.addEventListener("change", () => {
@@ -125,13 +134,13 @@ function wireCreator(elements) {
 
     const file = elements.imageInput.files?.[0];
     if (!file) {
-      elements.imageMeta.textContent = "No storyboard image selected.";
+      elements.imageMeta.textContent = "No reference image selected.";
       elements.imagePreview.hidden = true;
       elements.imagePreview.removeAttribute("src");
       return;
     }
 
-    elements.imageMeta.textContent = `${file.name} selected. The app has not loaded it as an animation.`;
+    elements.imageMeta.textContent = `${file.name} selected. Create project files to save it into the repo.`;
     previewUrl = URL.createObjectURL(file);
     elements.imagePreview.src = previewUrl;
     elements.imagePreview.alt = `Preview of ${file.name}`;
@@ -141,7 +150,12 @@ function wireCreator(elements) {
       elements.projectNameInput.value = titleFromFileName(file.name);
     }
 
-    if (!elements.projectPlanOutput.hidden) renderProjectPlan(elements);
+    if (!elements.projectPlanOutput.hidden) {
+      renderProjectPlan(elements, {
+        status: "Storyboard changed. Create or update the local project files when ready.",
+        buttonText: "Update project files",
+      });
+    }
   });
 
   elements.copyButton.addEventListener("click", async () => {
@@ -168,23 +182,71 @@ function resetCreator(elements) {
   elements.projectNameInput.value = "";
   elements.promptInput.value = "";
   elements.projectPlanOutput.hidden = true;
-  elements.createProjectPlanButton.textContent = "Create project plan";
+  elements.createProjectPlanButton.textContent = "Create project files";
   elements.setupStatus.textContent = "";
-  elements.imageMeta.textContent = "No storyboard image selected.";
+  elements.imageMeta.textContent = "No reference image selected.";
   elements.imagePreview.hidden = true;
   elements.imagePreview.removeAttribute("src");
   updateCustomGridVisibility(elements);
 }
 
-function renderProjectPlan(elements) {
+async function createProjectFromStoryboard(elements) {
+  const draft = currentDraft(elements);
+  const file = elements.imageInput.files?.[0];
+
+  renderProjectPlan(elements, {
+    status: file ? `Preparing project files for ${draft.slug}...` : "Choose a reference image before creating project files.",
+    buttonText: "Create project files",
+  });
+
+  if (!file) return;
+
+  elements.createProjectPlanButton.disabled = true;
+  elements.createProjectPlanButton.textContent = "Creating project files...";
+
+  try {
+    const imageDataUrl = await readFileAsDataUrl(file);
+    const response = await fetch("/api/projects/from-storyboard", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        projectName: draft.projectName,
+        slug: draft.slug,
+        grid: draft.grid,
+        prompt: draft.prompt,
+        imageName: file.name,
+        imageDataUrl,
+      }),
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || !result.ok) {
+      throw new Error(result.error || "Local project save is unavailable.");
+    }
+
+    elements.commandOutput.textContent = result.command || generateProjectPlan(draft).command;
+    elements.agentPromptOutput.textContent = result.agentPrompt || generateProjectPlan(draft).agentPrompt;
+    elements.projectPlanOutput.hidden = false;
+    elements.setupStatus.textContent = `Project files created at ${result.projectPath}. Preview: ${result.previewPath}`;
+    elements.createProjectPlanButton.textContent = "Update project files";
+  } catch (error) {
+    renderProjectPlan(elements, {
+      status: `${error.message} The copyable CLI command and agent prompt are still ready.`,
+      buttonText: "Create project files",
+    });
+  } finally {
+    elements.createProjectPlanButton.disabled = false;
+  }
+}
+
+function renderProjectPlan(elements, options = {}) {
   const draft = currentDraft(elements);
   const plan = generateProjectPlan(draft);
 
   elements.commandOutput.textContent = plan.command;
   elements.agentPromptOutput.textContent = plan.agentPrompt;
   elements.projectPlanOutput.hidden = false;
-  elements.setupStatus.textContent = `Project plan ready for ${draft.slug}.`;
-  elements.createProjectPlanButton.textContent = "Update project plan";
+  elements.setupStatus.textContent = options.status || `Project plan ready for ${draft.slug}. Create project files to save it locally.`;
+  elements.createProjectPlanButton.textContent = options.buttonText || "Create project files";
 }
 
 function currentDraft(elements) {
@@ -222,12 +284,13 @@ function generateProjectPlan(draft) {
   const agentPrompt = [
     `# Build Inky animation: ${draft.slug}`,
     "",
-    "Use the source storyboard as a lighthouse.",
+    "Use Inky as a Canvas API for agents.",
+    "Look at the reference, write drawing code, preview, compare, and tune the brush/timing values by eye.",
     "Do not paste the source image into the final animation.",
     "",
     "## Source",
-    `- Original storyboard: projects/${draft.slug}/image/storyboard.${extensionFor(draft.imageName)}`,
-    `- Extracted frames: projects/${draft.slug}/storyboard/`,
+    `- Reference image: projects/${draft.slug}/image/storyboard.${extensionFor(draft.imageName)}`,
+    `- Optional extracted frames: projects/${draft.slug}/storyboard/`,
     `- Grid: ${draft.grid.columns} x ${draft.grid.rows}`,
     "",
     "## User request",
@@ -237,10 +300,12 @@ function generateProjectPlan(draft) {
     "1. Read AGENTS.md, DESIGN.md, and the relevant skills.",
     "2. Use project.json as the source of truth.",
     `3. Build projects/${draft.slug}/renderer.js.`,
-    "4. Use material tools from src/material-tools.js.",
-    "5. Add speech/caption tracks only when required.",
-    `6. Preview with /?project=${draft.slug}.`,
-    "7. Render frames and update outputs.",
+    "4. Import createBrush, keyframe, timeline, and easings from src/inky-canvas.js.",
+    "5. Import optional companions from src/companion-tools.js only when the panel needs Rough.js, Atrament replay, irregular geometry, svg2roughjs, Vivus, or p5.brush.",
+    "6. Use window.inky.showReference('image/storyboard.<ext>', { opacity: 0.3 }) in the browser while aligning, then hide it before judging exports.",
+    "7. Add speech/caption tracks only when required.",
+    `8. Preview with /?project=${draft.slug}.`,
+    "9. Render frames and update outputs.",
   ].join("\n");
 
   return { command, agentPrompt };
@@ -264,12 +329,26 @@ function updateCustomGridVisibility(elements) {
 }
 
 function exposePreviewApp(bundle, player) {
+  const previewApi = {
+    activeProject: bundle.manifest.slug,
+    manifest: bundle.manifest,
+    showReference: player.showReference,
+    hideReference: player.hideReference,
+    setReferenceOpacity: player.setReferenceOpacity,
+    captureFrameDataUrl: player.captureFrameDataUrl,
+    goToFrame: player.goToFrame,
+    inspectFrame: player.inspectFrame,
+  };
+
   window.inkyApp = {
     mode: "preview",
     activeProject: bundle.manifest.slug,
     manifest: bundle.manifest,
     player,
+    inky: previewApi,
   };
+
+  window.inky = previewApi;
 
   window.storyboardApp = {
     activeProject: bundle.manifest.slug,
@@ -279,6 +358,32 @@ function exposePreviewApp(bundle, player) {
     drawFrame: player.drawFrame,
     setPlaybackSpeed: player.setPlaybackSpeed,
     mp4PathForSpeed: player.mp4PathForSpeed,
+  };
+}
+
+function createErrorRenderer(manifest, loadError) {
+  return {
+    project: {
+      width: manifest.width || 960,
+      height: manifest.height || 620,
+      fps: manifest.fps || 12,
+      totalFrames: manifest.totalFrames || 1,
+    },
+    rendererPath: loadError.renderer,
+    exportNames: ["drawFrame"],
+    loadError,
+    getFrameDebug() {
+      return { loadError };
+    },
+    drawFrame(ctx, frame, helpers = {}) {
+      if (helpers.drawRendererError) {
+        helpers.drawRendererError(ctx, loadError, manifest);
+      } else {
+        ctx.fillStyle = "#fff5ee";
+        ctx.fillRect(0, 0, manifest.width || 960, manifest.height || 620);
+        helpers.drawLabel?.(ctx, loadError.message || "Renderer error", (manifest.width || 960) / 2, (manifest.height || 620) / 2);
+      }
+    },
   };
 }
 
@@ -317,4 +422,13 @@ function clampInteger(value, min, max, fallback) {
   const parsed = Number.parseInt(value, 10);
   if (!Number.isFinite(parsed)) return fallback;
   return Math.min(max, Math.max(min, parsed));
+}
+
+function readFileAsDataUrl(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.addEventListener("load", () => resolve(String(reader.result || "")));
+    reader.addEventListener("error", () => reject(new Error("Could not read the selected storyboard image.")));
+    reader.readAsDataURL(file);
+  });
 }

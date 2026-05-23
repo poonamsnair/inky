@@ -1,0 +1,33 @@
+{
+  "slug": "inky-promo",
+  "title": "Inky Promo",
+  "status": "draft",
+  "width": 960,
+  "height": 620,
+  "fps": 12,
+  "totalFrames": 96,
+  "grid": {
+    "columns": 3,
+    "rows": 4
+  },
+  "storyboard": {
+    "sourceImage": "image/storyboard.png",
+    "framesDir": "storyboard"
+  },
+  "prompt": {
+    "requirements": "storyboard/requirements.md",
+    "agentPrompt": "prompt/agent-prompt.md"
+  },
+  "tracks": {
+    "speechBubbles": null,
+    "captions": "storyboard/captions.json"
+  },
+  "renderer": "renderer.js",
+  "outputs": {
+    "frames": "outputs/frames",
+    "video": "outputs/inky-promo-1x.mp4",
+    "videoBySpeed": {
+      "1": "outputs/inky-promo-1x.mp4"
+    }
+  }
+}

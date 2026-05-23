@@ -48,6 +48,8 @@ Do not draw clothing as independent decorations. Garments inherit their position
 If a constructed shape fails after rendering, return to this stage and redraw the shape from anchors. Do not cover a construction failure with white patches, eraser strokes, masks, texture, or extra outlines.
 Do not use organic brush-stroke helpers for rigid closed decorative borders, labels, frames, nameplates, certificates, desks, or paper edges. Stroke those with closed canvas paths or straight segments so they cannot balloon into stray curves.
 
+When building renderer code, prefer `src/illustration-tools.js` for repeated construction work before writing custom drawing code. Use helpers such as `fillConstructedShape`, `drawExpressiveHead`, `drawJointedLimb`, `drawConstructedHand`, `drawInkDoodleHand`, `drawApronTorso`, `drawShortsChain`, and prop helpers to encode the attachment chain directly in the renderer.
+
 ## Attachment Rules
 
 - A head must visibly connect to a neck, shoulder bridge, torso, or body mass. Do not let separate head and body ellipses sit near each other with a blank gap.

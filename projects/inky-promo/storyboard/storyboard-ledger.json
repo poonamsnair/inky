@@ -1,0 +1,311 @@
+{
+  "name": "inky-promo",
+  "source": "projects/inky-promo/image/storyboard.png",
+  "outputDir": "projects/inky-promo/storyboard",
+  "requirements": "Create an animated illustration style script with captions. Use a black-and-white pen ink storyboard drawing style.",
+  "requirementsDocument": "projects/inky-promo/storyboard/requirements.md",
+  "columns": 3,
+  "rows": 4,
+  "frames": [
+    {
+      "index": 0,
+      "sourceFrame": "projects/inky-promo/storyboard/frame-00.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create an animated illustration style script with captions. Use a black-and-white pen ink storyboard drawing style.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "first-frame-anchor"
+    },
+    {
+      "index": 1,
+      "sourceFrame": "projects/inky-promo/storyboard/frame-01.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create an animated illustration style script with captions. Use a black-and-white pen ink storyboard drawing style.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 2,
+      "sourceFrame": "projects/inky-promo/storyboard/frame-02.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create an animated illustration style script with captions. Use a black-and-white pen ink storyboard drawing style.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 3,
+      "sourceFrame": "projects/inky-promo/storyboard/frame-03.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create an animated illustration style script with captions. Use a black-and-white pen ink storyboard drawing style.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 4,
+      "sourceFrame": "projects/inky-promo/storyboard/frame-04.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create an animated illustration style script with captions. Use a black-and-white pen ink storyboard drawing style.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 5,
+      "sourceFrame": "projects/inky-promo/storyboard/frame-05.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create an animated illustration style script with captions. Use a black-and-white pen ink storyboard drawing style.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 6,
+      "sourceFrame": "projects/inky-promo/storyboard/frame-06.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create an animated illustration style script with captions. Use a black-and-white pen ink storyboard drawing style.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 7,
+      "sourceFrame": "projects/inky-promo/storyboard/frame-07.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create an animated illustration style script with captions. Use a black-and-white pen ink storyboard drawing style.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 8,
+      "sourceFrame": "projects/inky-promo/storyboard/frame-08.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create an animated illustration style script with captions. Use a black-and-white pen ink storyboard drawing style.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 9,
+      "sourceFrame": "projects/inky-promo/storyboard/frame-09.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create an animated illustration style script with captions. Use a black-and-white pen ink storyboard drawing style.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 10,
+      "sourceFrame": "projects/inky-promo/storyboard/frame-10.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create an animated illustration style script with captions. Use a black-and-white pen ink storyboard drawing style.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    },
+    {
+      "index": 11,
+      "sourceFrame": "projects/inky-promo/storyboard/frame-11.png",
+      "drawnFrame": "",
+      "status": "not-started",
+      "plan": {
+        "poseAndAction": "",
+        "userChanges": "Create an animated illustration style script with captions. Use a black-and-white pen ink storyboard drawing style.",
+        "sharedAnchors": [
+          "character identity",
+          "head/hair",
+          "face details",
+          "clothing/body",
+          "hands/limbs",
+          "primary props",
+          "environment/background"
+        ],
+        "lighthouseEvidence": "",
+        "attachmentChains": "",
+        "semanticRisks": "",
+        "densePenZones": "",
+        "softWatercolorZones": ""
+      },
+      "consistencyAudit": "pending"
+    }
+  ]
+}

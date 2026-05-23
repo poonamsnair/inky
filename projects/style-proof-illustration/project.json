@@ -1,0 +1,33 @@
+{
+  "slug": "style-proof-illustration",
+  "title": "Style Proof Illustration",
+  "status": "draft",
+  "width": 960,
+  "height": 620,
+  "fps": 12,
+  "totalFrames": 72,
+  "grid": {
+    "columns": 1,
+    "rows": 1
+  },
+  "storyboard": {
+    "sourceImage": "image/reference-1.png",
+    "framesDir": "storyboard"
+  },
+  "prompt": {
+    "requirements": "storyboard/requirements.md",
+    "agentPrompt": "prompt/user-prompt.md"
+  },
+  "tracks": {
+    "speechBubbles": null,
+    "captions": null
+  },
+  "renderer": "renderer.js",
+  "outputs": {
+    "frames": "outputs/frames",
+    "video": "outputs/style-proof-illustration-1x.mp4",
+    "videoBySpeed": {
+      "1": "outputs/style-proof-illustration-1x.mp4"
+    }
+  }
+}

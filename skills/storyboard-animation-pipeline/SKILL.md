@@ -20,6 +20,7 @@ Use this with:
 - `caption-subtitle-tooling` when captions, subtitles, scripts, or timed text are requested.
 - `comic-speech-bubble-tooling` when comic dialogue balloons, thought bubbles, or spoken text are part of the artwork.
 - `browser-quality-check` before handoff.
+- `doodle-style-designer` when the requested style is doodle-like, black-ink, sketchy, marker-drawn, or similar to loose illustration references.
 
 ## Required Order
 
@@ -85,6 +86,7 @@ For every frame, make a short plan before editing code:
 - Lighthouse mark guidance for contour emphasis, hatching direction, and soft watercolor zones.
 - Motion-mark triage: which source marks are removed, which become animation timing, and which are redrawn as final local accents.
 - Material kit: which code brush tools from `src/material-tools.js` are used and why.
+- Construction helpers: which `src/illustration-tools.js` helpers are used for body chains, hands, clothing, props, progressive draw-on strokes, and paper/style setup.
 - Material preview: if the project asks for a new brush look, render `npm run storyboard:materials` and confirm the chosen tools look materially different before final frames are approved.
 - Polish plan: what will be checked again after the first pass before texture/detail is increased.
 - Attachment chains, especially for hands, sleeves, wrists, facial details, and props.

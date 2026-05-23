@@ -18,11 +18,17 @@ export async function loadProject(slug) {
 async function loadRenderer(slug, manifest) {
   if (!manifest.renderer) return createEmptyRenderer("Renderer not built yet");
 
+  const rendererUrl = `/projects/${slug}/${manifest.renderer}`;
+  const rendererPath = `projects/${slug}/${manifest.renderer}`;
+  const exists = await rendererExists(rendererUrl);
+  if (!exists) return createEmptyRenderer("Renderer not built yet");
+
   try {
-    const rendererUrl = `/projects/${slug}/${manifest.renderer}`;
-    const module = await import(/* @vite-ignore */ rendererUrl);
+    const module = await import(/* @vite-ignore */ `${rendererUrl}?v=${Date.now()}`);
     return {
       ...module,
+      rendererPath,
+      exportNames: Object.keys(module),
       project: {
         ...manifest,
         ...(module.project || {}),
@@ -30,9 +36,33 @@ async function loadRenderer(slug, manifest) {
       drawFrame: module.drawFrame,
     };
   } catch (error) {
-    console.warn("Falling back to empty renderer", error);
-    return createEmptyRenderer("Renderer not built yet");
+    throw decorateRendererLoadError(error, {
+      slug,
+      manifest,
+      rendererPath,
+    });
   }
+}
+
+async function rendererExists(rendererUrl) {
+  try {
+    const response = await fetch(rendererUrl, { cache: "no-store" });
+    return response.ok;
+  } catch {
+    return false;
+  }
+}
+
+function decorateRendererLoadError(error, { slug, manifest, rendererPath }) {
+  error.inky = {
+    kind: "renderer-import",
+    project: slug,
+    renderer: rendererPath,
+    manifest,
+    message: error?.message || "The renderer module could not be imported.",
+    suggestion: `Fix ${rendererPath}, then refresh the preview. Syntax and import errors are no longer hidden by the empty renderer.`,
+  };
+  return error;
 }
 
 function normalizeManifest(raw, fallbackSlug) {

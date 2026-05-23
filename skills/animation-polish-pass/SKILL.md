@@ -55,6 +55,7 @@ npm run storyboard:polish -- projects/<project-name> projects/<project-name>/sto
 - Use the material preview contact sheet after brush recipe changes: `npm run storyboard:materials`.
 - Ink, pencil, charcoal, crayon, marker, watercolor, gouache, acrylic, oil paint, airbrush, sponge, and screen-tone should look materially distinct before they are used to polish a video.
 - Keep important text readable after texture is added.
+- If frame-to-frame texture shimmer appears, confirm material calls use stable seeds. Shared helpers in `src/illustration-tools.js` and seeded material calls in `src/material-tools.js` should be used for locked paper, backgrounds, bodies, clothes, and props.
 
 ## Tool Choice
 

@@ -1,0 +1,127 @@
+{
+  "fps": 12,
+  "totalFrames": 96,
+  "style": {
+    "position": "bottom",
+    "margin": 14,
+    "maxWidthRatio": 0.82,
+    "font": "700 24px Chalkboard SE, Comic Sans MS, Avenir Next, sans-serif",
+    "lineHeight": 30,
+    "paddingX": 18,
+    "paddingY": 12,
+    "radius": 5,
+    "textColor": "#111111",
+    "backgroundColor": "rgba(255, 255, 250, 0.94)",
+    "outlineColor": "rgba(17, 17, 17, 0.72)"
+  },
+  "cues": [
+    {
+      "id": "caption-01",
+      "frameStart": 0,
+      "frameEnd": 7,
+      "start": 0,
+      "end": 0.6666666666666666,
+      "text": "I wanted to make animated videos.",
+      "position": "bottom"
+    },
+    {
+      "id": "caption-02",
+      "frameStart": 8,
+      "frameEnd": 15,
+      "start": 0.6666666666666666,
+      "end": 1.3333333333333333,
+      "text": "LLMs could almost help.",
+      "position": "bottom"
+    },
+    {
+      "id": "caption-03",
+      "frameStart": 16,
+      "frameEnd": 23,
+      "start": 1.3333333333333333,
+      "end": 2,
+      "text": "But the results never felt alive.",
+      "position": "bottom"
+    },
+    {
+      "id": "caption-04",
+      "frameStart": 24,
+      "frameEnd": 31,
+      "start": 2,
+      "end": 2.6666666666666665,
+      "text": "The workflow had too much friction.",
+      "position": "bottom"
+    },
+    {
+      "id": "caption-05",
+      "frameStart": 32,
+      "frameEnd": 39,
+      "start": 2.6666666666666665,
+      "end": 3.3333333333333335,
+      "text": "Prompt, tweak, wait, repeat.",
+      "position": "bottom"
+    },
+    {
+      "id": "caption-06",
+      "frameStart": 40,
+      "frameEnd": 47,
+      "start": 3.3333333333333335,
+      "end": 4,
+      "text": "And somehow it still felt stiff.",
+      "position": "bottom"
+    },
+    {
+      "id": "caption-07",
+      "frameStart": 48,
+      "frameEnd": 55,
+      "start": 4,
+      "end": 4.666666666666667,
+      "text": "I liked drawing it more than generating it.",
+      "position": "bottom"
+    },
+    {
+      "id": "caption-08",
+      "frameStart": 56,
+      "frameEnd": 63,
+      "start": 4.666666666666667,
+      "end": 5.333333333333333,
+      "text": "I wanted something handmade.",
+      "position": "bottom"
+    },
+    {
+      "id": "caption-09",
+      "frameStart": 64,
+      "frameEnd": 71,
+      "start": 5.333333333333333,
+      "end": 6,
+      "text": "Sketch, colour, and animate in one place.",
+      "position": "bottom"
+    },
+    {
+      "id": "caption-10",
+      "frameStart": 72,
+      "frameEnd": 79,
+      "start": 6,
+      "end": 6.666666666666667,
+      "text": "That first spark became Inky.",
+      "position": "bottom"
+    },
+    {
+      "id": "caption-11",
+      "frameStart": 80,
+      "frameEnd": 87,
+      "start": 6.666666666666667,
+      "end": 7.333333333333333,
+      "text": "AI helps, but the artist still leads.",
+      "position": "bottom"
+    },
+    {
+      "id": "caption-12",
+      "frameStart": 88,
+      "frameEnd": 95,
+      "start": 7.333333333333333,
+      "end": 8,
+      "text": "That is why I built Inky.",
+      "position": "bottom"
+    }
+  ]
+}

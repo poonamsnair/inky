@@ -39,6 +39,19 @@ export const MATERIAL_TOOLKITS = {
     hatchLength: 34,
     hatchWidth: 1.1,
   },
+  "doodle-ink": {
+    useWhen: "bold black doodle outlines, cartoon hands, loose portrait contours, dry filled ink accents",
+    size: 4.8,
+    thinning: 0.48,
+    smoothing: 0.24,
+    streamline: 0.12,
+    jitter: 1.55,
+    passes: 2,
+    alpha: 0.9,
+    hatchLength: 30,
+    hatchWidth: 1.25,
+    patternSize: 86,
+  },
   "fountain-pen": {
     useWhen: "elegant variable-width ink lines, handwriting, delicate contours, fine hair strands",
     size: 2.3,
@@ -276,6 +289,18 @@ export const MATERIAL_PRESSURE_PROFILES = {
     endTaper: 2,
     capStart: true,
     capEnd: true,
+    pressureFlow: {
+      enabled: true,
+      base: 0.62,
+      amplitude: 0.04,
+      frequency: 1.5,
+      noise: 0.025,
+      midSwell: 0.03,
+      min: 0.42,
+      max: 0.82,
+      startRamp: 0.04,
+      endRamp: 0.05,
+    },
   },
   "dip-ink": {
     easing: (t) => t * t * (3 - 2 * t),
@@ -283,6 +308,30 @@ export const MATERIAL_PRESSURE_PROFILES = {
     endTaper: 18,
     capStart: true,
     capEnd: true,
+    pressureFlow: {
+      enabled: true,
+      base: 0.55,
+      amplitude: 0.16,
+      frequency: 1.35,
+      noise: 0.07,
+      midSwell: 0.2,
+      min: 0.22,
+      max: 0.96,
+      startRamp: 0.08,
+      endRamp: 0.14,
+    },
+    inkFlow: {
+      enabled: true,
+      startAlpha: 1,
+      endAlpha: 0.78,
+      amplitude: 0.06,
+      frequency: 1.8,
+      dryness: 0.1,
+      dryStart: 0.62,
+      min: 0.58,
+      max: 1.05,
+      segments: 8,
+    },
   },
   "brush-pen": {
     easing: (t) => 1 - (1 - t) ** 2,
@@ -290,6 +339,61 @@ export const MATERIAL_PRESSURE_PROFILES = {
     endTaper: 24,
     capStart: true,
     capEnd: true,
+    pressureFlow: {
+      enabled: true,
+      base: 0.62,
+      amplitude: 0.18,
+      frequency: 1.1,
+      noise: 0.08,
+      midSwell: 0.28,
+      min: 0.2,
+      max: 1,
+      startRamp: 0.1,
+      endRamp: 0.18,
+    },
+    inkFlow: {
+      enabled: true,
+      startAlpha: 1,
+      endAlpha: 0.82,
+      amplitude: 0.05,
+      frequency: 1.35,
+      dryness: 0.07,
+      dryStart: 0.68,
+      min: 0.64,
+      max: 1.05,
+      segments: 7,
+    },
+  },
+  "doodle-ink": {
+    easing: (t) => t * t * (3 - 2 * t),
+    startTaper: 10,
+    endTaper: 13,
+    capStart: true,
+    capEnd: true,
+    pressureFlow: {
+      enabled: true,
+      base: 0.58,
+      amplitude: 0.13,
+      frequency: 1.7,
+      noise: 0.09,
+      midSwell: 0.14,
+      min: 0.24,
+      max: 0.94,
+      startRamp: 0.07,
+      endRamp: 0.1,
+    },
+    inkFlow: {
+      enabled: true,
+      startAlpha: 1,
+      endAlpha: 0.86,
+      amplitude: 0.08,
+      frequency: 2.2,
+      dryness: 0.06,
+      dryStart: 0.7,
+      min: 0.68,
+      max: 1.08,
+      segments: 7,
+    },
   },
   "fountain-pen": {
     easing: (t) => t * t * (3 - 2 * t),
@@ -297,6 +401,30 @@ export const MATERIAL_PRESSURE_PROFILES = {
     endTaper: 16,
     capStart: true,
     capEnd: true,
+    pressureFlow: {
+      enabled: true,
+      base: 0.52,
+      amplitude: 0.18,
+      frequency: 1.45,
+      noise: 0.055,
+      midSwell: 0.16,
+      min: 0.18,
+      max: 0.94,
+      startRamp: 0.08,
+      endRamp: 0.14,
+    },
+    inkFlow: {
+      enabled: true,
+      startAlpha: 1,
+      endAlpha: 0.74,
+      amplitude: 0.08,
+      frequency: 2.5,
+      dryness: 0.14,
+      dryStart: 0.56,
+      min: 0.5,
+      max: 1.06,
+      segments: 9,
+    },
   },
   "ballpoint-pen": {
     easing: (t) => t,
@@ -304,6 +432,30 @@ export const MATERIAL_PRESSURE_PROFILES = {
     endTaper: 5,
     capStart: false,
     capEnd: false,
+    pressureFlow: {
+      enabled: true,
+      base: 0.48,
+      amplitude: 0.08,
+      frequency: 3.2,
+      noise: 0.09,
+      midSwell: 0.04,
+      min: 0.18,
+      max: 0.76,
+      startRamp: 0.03,
+      endRamp: 0.05,
+    },
+    inkFlow: {
+      enabled: true,
+      startAlpha: 0.92,
+      endAlpha: 0.72,
+      amplitude: 0.12,
+      frequency: 4.2,
+      dryness: 0.12,
+      dryStart: 0.45,
+      min: 0.36,
+      max: 1,
+      segments: 10,
+    },
   },
   marker: {
     easing: (t) => t,
@@ -318,6 +470,18 @@ export const MATERIAL_PRESSURE_PROFILES = {
     endTaper: 7,
     capStart: false,
     capEnd: false,
+    pressureFlow: {
+      enabled: true,
+      base: 0.44,
+      amplitude: 0.1,
+      frequency: 2.4,
+      noise: 0.14,
+      midSwell: 0.06,
+      min: 0.14,
+      max: 0.82,
+      startRamp: 0.04,
+      endRamp: 0.08,
+    },
   },
   "colored-pencil": {
     easing: (t) => t,
@@ -325,6 +489,18 @@ export const MATERIAL_PRESSURE_PROFILES = {
     endTaper: 8,
     capStart: false,
     capEnd: false,
+    pressureFlow: {
+      enabled: true,
+      base: 0.48,
+      amplitude: 0.09,
+      frequency: 2,
+      noise: 0.11,
+      midSwell: 0.08,
+      min: 0.18,
+      max: 0.84,
+      startRamp: 0.04,
+      endRamp: 0.08,
+    },
   },
   "wax-crayon": {
     easing: (t) => t,
@@ -353,6 +529,18 @@ export const MATERIAL_PRESSURE_PROFILES = {
     endTaper: 16,
     capStart: false,
     capEnd: false,
+    pressureFlow: {
+      enabled: true,
+      base: 0.54,
+      amplitude: 0.17,
+      frequency: 1.8,
+      noise: 0.16,
+      midSwell: 0.18,
+      min: 0.16,
+      max: 1,
+      startRamp: 0.1,
+      endRamp: 0.14,
+    },
   },
   watercolor: {
     easing: (t) => t * t * (3 - 2 * t),
@@ -420,6 +608,7 @@ export const MATERIAL_PRESSURE_PROFILES = {
 };
 
 const patternCache = new Map();
+const TAU = Math.PI * 2;
 
 export function materialToolNames() {
   return Object.keys(MATERIAL_TOOLKITS);
@@ -442,18 +631,141 @@ function clamp01(value) {
   return Math.min(1, Math.max(0, value));
 }
 
+function lerp(a, b, t) {
+  return a + (b - a) * clamp01(t);
+}
+
+function smoothstep(value) {
+  const t = clamp01(value);
+  return t * t * (3 - 2 * t);
+}
+
+function pointDistance(a, b) {
+  const dx = (b?.[0] ?? 0) - (a?.[0] ?? 0);
+  const dy = (b?.[1] ?? 0) - (a?.[1] ?? 0);
+  return Math.hypot(dx, dy);
+}
+
+function pointProgress(points) {
+  if (points.length <= 1) return points.map(() => 0);
+  const distances = [0];
+  let total = 0;
+  for (let index = 1; index < points.length; index += 1) {
+    total += pointDistance(points[index - 1], points[index]);
+    distances.push(total);
+  }
+  if (total <= 0.0001) return points.map((_, index) => index / Math.max(1, points.length - 1));
+  return distances.map((distance) => distance / total);
+}
+
+function resolvePressureFlow(toolName, options = {}) {
+  const profile = MATERIAL_PRESSURE_PROFILES[toolName] || MATERIAL_PRESSURE_PROFILES["dip-ink"];
+  const override = options.pressureFlow || options.pressure?.flow || {};
+  return {
+    ...(profile.pressureFlow || {}),
+    ...override,
+  };
+}
+
+function resolveInkFlow(toolName, options = {}) {
+  const profile = MATERIAL_PRESSURE_PROFILES[toolName] || MATERIAL_PRESSURE_PROFILES["dip-ink"];
+  const override = options.inkFlow || {};
+  return {
+    ...(profile.inkFlow || {}),
+    ...override,
+  };
+}
+
+function shouldUsePressureFlow(toolName, options = {}) {
+  if (options.pressureFlow === false || options.variablePressure === false) return false;
+  const flow = resolvePressureFlow(toolName, options);
+  return flow.enabled === true;
+}
+
+function shouldUseInkFlow(toolName, options = {}) {
+  if (options.inkFlow === false || options.variableOpacity === false) return false;
+  const flow = resolveInkFlow(toolName, options);
+  return flow.enabled === true;
+}
+
+function pressureFlowAt(t, flow, noise, seed = 0) {
+  const phase = ((seed % 997) / 997) * TAU;
+  const base = flow.base ?? 0.55;
+  const wave = Math.sin(t * TAU * (flow.frequency ?? 1.4) + phase) * (flow.amplitude ?? 0.1);
+  const paperNoise = noise(t * (flow.noiseScale ?? 2.6) + seed * 0.001, seed * 0.0007) * (flow.noise ?? 0.04);
+  const midSwell = Math.sin(Math.PI * t) * (flow.midSwell ?? 0.1);
+  const startRamp = smoothstep(t / Math.max(0.001, flow.startRamp ?? 0.06));
+  const endRamp = smoothstep((1 - t) / Math.max(0.001, flow.endRamp ?? 0.1));
+  const lifted = lerp(flow.liftPressure ?? 0.42, 1, Math.min(startRamp, endRamp));
+  return clampValue((base + wave + paperNoise + midSwell) * lifted, flow.min ?? 0.15, flow.max ?? 1);
+}
+
+function withPressureFlow(points, toolName, options = {}) {
+  if (!shouldUsePressureFlow(toolName, options)) return points;
+  const flow = resolvePressureFlow(toolName, options);
+  const seed = options.seed ?? hashString(`${toolName}:${points.length}:${points[0]?.join(",") || ""}`);
+  const progress = pointProgress(points);
+  const noise = options.pressureNoise || seededNoise(seed + 7187);
+  return points.map((point, index) => [
+    point[0],
+    point[1],
+    pressureFlowAt(progress[index] ?? 0, flow, noise, seed),
+  ]);
+}
+
+function inkFlowAt(t, toolName, options = {}, pass = 0) {
+  const flow = resolveInkFlow(toolName, options);
+  const seed = (options.seed ?? hashString(`${toolName}:ink-flow`)) + pass * 101;
+  const phase = ((seed % 991) / 991) * TAU;
+  const drift = lerp(flow.startAlpha ?? 1, flow.endAlpha ?? 0.82, t);
+  const wave = Math.sin(t * TAU * (flow.frequency ?? 2) + phase) * (flow.amplitude ?? 0.06);
+  const drynessStart = flow.dryStart ?? 0.65;
+  const dry = smoothstep((t - drynessStart) / Math.max(0.001, 1 - drynessStart)) * (flow.dryness ?? 0);
+  return clampValue(drift + wave - dry, flow.min ?? 0.5, flow.max ?? 1.1);
+}
+
+function flowWindows(points, toolName, options = {}) {
+  const flow = resolveInkFlow(toolName, options);
+  const segmentCount = Math.min(
+    flow.segments ?? 7,
+    Math.max(1, Math.floor(points.length / 2)),
+  );
+  if (segmentCount <= 1 || points.length < 5) {
+    return [{ points, t: 0.5 }];
+  }
+
+  const windows = [];
+  const lastIndex = points.length - 1;
+  for (let index = 0; index < segmentCount; index += 1) {
+    const start = Math.max(0, Math.floor((index / segmentCount) * lastIndex) - 1);
+    const end = Math.min(lastIndex, Math.ceil(((index + 1) / segmentCount) * lastIndex) + 1);
+    const segment = points.slice(start, end + 1);
+    if (segment.length < 2) continue;
+    windows.push({
+      points: segment,
+      t: (index + 0.5) / segmentCount,
+    });
+  }
+  return windows;
+}
+
+function clampValue(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
 function pressureOptions(toolName, tool, options = {}) {
   const profile = {
     ...(MATERIAL_PRESSURE_PROFILES[toolName] || MATERIAL_PRESSURE_PROFILES["dip-ink"]),
     ...(options.pressure || {}),
   };
+  const usesPressureFlow = shouldUsePressureFlow(toolName, options);
 
   return {
     size: tool.size,
     thinning: tool.thinning,
     smoothing: tool.smoothing,
     streamline: tool.streamline,
-    simulatePressure: options.simulatePressure ?? true,
+    simulatePressure: options.simulatePressure ?? !usesPressureFlow,
     easing: profile.easing || ((t) => t),
     start: {
       taper: profile.startTaper ?? false,
@@ -469,7 +781,8 @@ function pressureOptions(toolName, tool, options = {}) {
 }
 
 function strokePath(points, tool, toolName, options = {}) {
-  const stroke = getStroke(points, {
+  const pressurePoints = withPressureFlow(points, toolName, options);
+  const stroke = getStroke(pressurePoints, {
     ...pressureOptions(toolName, tool, options),
   });
   if (!stroke.length) return "";
@@ -1051,6 +1364,18 @@ function materialBrushProfile(toolName, tool, options = {}) {
       smear: 2.2,
       composite: "source-over",
     },
+    "doodle-ink": {
+      vectorStroke: true,
+      patternStroke: true,
+      spacing: 2.2,
+      bristles: 3,
+      grain: 0.12,
+      coherentGrain: 0.78,
+      dabW: 4.4,
+      dabH: 1.25,
+      smear: 2.9,
+      composite: "source-over",
+    },
     "fountain-pen": {
       vectorStroke: true,
       spacing: 2.1,
@@ -1357,28 +1682,44 @@ function dab(target, sample, profile, tool, toolName, base, alpha, random, noise
 
 export function drawMaterialStroke(target, points, toolName, options = {}) {
   const tool = { ...resolveMaterialTool(toolName), ...options.tool };
-  const random = options.random || Math.random;
+  const random = options.random || (options.seed !== undefined ? seededRandom(options.seed) : Math.random);
   const base = options.color || "#17120d";
   const passes = options.passes ?? tool.passes;
+  const hasInkFlow = shouldUseInkFlow(toolName, options);
 
   target.save();
   for (let pass = 0; pass < passes; pass += 1) {
     const jittered = points.map((point) => jitterPoint(point, tool.jitter * (0.8 + pass * 0.25), random));
-    const path = strokePath(jittered, tool, toolName, options);
-    if (!path) continue;
-    target.fillStyle = color(base, (options.alpha ?? tool.alpha) / Math.max(1, passes * 0.72), {
+    const alpha = (options.alpha ?? tool.alpha) / Math.max(1, passes * 0.72);
+    const fillAdjust = {
       brighten: pass % 2 === 0 ? 0 : 0.2,
       darken: pass % 2 === 0 ? 0.1 : 0,
       desaturate: toolName === "graphite-pencil" || toolName === "charcoal" ? 0.6 : 0,
-    });
-    target.fill(new Path2D(path));
+    };
+
+    if (hasInkFlow) {
+      flowWindows(jittered, toolName, options).forEach((window) => {
+        const path = strokePath(window.points, tool, toolName, {
+          ...options,
+          seed: (options.seed ?? hashString(`${toolName}:${base}`)) + pass * 1009 + Math.round(window.t * 997),
+        });
+        if (!path) return;
+        target.fillStyle = color(base, alpha * inkFlowAt(window.t, toolName, options, pass), fillAdjust);
+        target.fill(new Path2D(path));
+      });
+    } else {
+      const path = strokePath(jittered, tool, toolName, options);
+      if (!path) continue;
+      target.fillStyle = color(base, alpha, fillAdjust);
+      target.fill(new Path2D(path));
+    }
   }
   target.restore();
 }
 
 export function drawMaterialBrushStroke(target, points, toolName, options = {}) {
   const tool = { ...resolveMaterialTool(toolName), ...options.tool };
-  const random = options.random || Math.random;
+  const random = options.random || (options.seed !== undefined ? seededRandom(options.seed) : Math.random);
   const base = options.color || "#17120d";
   const alpha = options.alpha ?? tool.alpha;
   const profile = materialBrushProfile(toolName, tool, options);
@@ -1432,7 +1773,7 @@ export function drawMaterialBrushStroke(target, points, toolName, options = {}) 
 
 export function drawMaterialScumble(target, bounds, toolName, count, options = {}) {
   const tool = { ...resolveMaterialTool(toolName), ...options.tool };
-  const random = options.random || Math.random;
+  const random = options.random || (options.seed !== undefined ? seededRandom(options.seed) : Math.random);
   const base = options.color || "#17120d";
   const profile = materialBrushProfile(toolName, tool, options);
   const lengthBase = options.length ?? Math.max(tool.hatchLength, Math.min(bounds.w, bounds.h) * 0.42);
@@ -1472,7 +1813,7 @@ export function drawMaterialScumble(target, bounds, toolName, count, options = {
 
 export function drawMaterialHatch(target, bounds, toolName, count, options = {}) {
   const tool = { ...resolveMaterialTool(toolName), ...options.tool };
-  const random = options.random || Math.random;
+  const random = options.random || (options.seed !== undefined ? seededRandom(options.seed) : Math.random);
   const base = options.color || "#17120d";
 
   target.save();
@@ -1495,7 +1836,7 @@ export function drawMaterialHatch(target, bounds, toolName, count, options = {})
 
 export function scatterMaterialTexture(target, bounds, toolName, count, options = {}) {
   const tool = { ...resolveMaterialTool(toolName), ...options.tool };
-  const random = options.random || Math.random;
+  const random = options.random || (options.seed !== undefined ? seededRandom(options.seed) : Math.random);
   const base = options.color || "#17120d";
 
   target.save();

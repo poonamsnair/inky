@@ -20,7 +20,7 @@ description: Draw a cohesive handmade canvas illustration using watercolor, ink,
 Choose a small material kit for each project and record it in the project requirements. Do not mix every available medium by default.
 
 - `technical-pen`: crisp contour, small hatching, clean prop edges, fine facial details.
-- `dip-ink`, `fountain-pen`, or `brush-pen`: expressive line weight, character silhouettes, hair, clothing folds, handwriting, lively motion ticks.
+- `dip-ink`, `fountain-pen`, `brush-pen`, or `doodle-ink`: expressive line weight, character silhouettes, hair, clothing folds, handwriting, cartoon hands, lively motion ticks.
 - `ballpoint-pen`: scratchy office doodles, fine crosshatching, tiny notes, subtle pen shading.
 - `marker`: broad translucent cartoon color, poster strokes, and smooth but visibly hand-filled areas.
 - `graphite-pencil`: light construction texture, soft shadows, delicate pose corrections, subtle fabric folds.
@@ -38,7 +38,19 @@ These choices can live entirely in the drawing code. Do not add brush controls t
 
 ## Code Tooling
 
-Use `src/material-tools.js` when implementing or revising canvas drawings. It exposes:
+Use `src/material-tools.js` when implementing or revising canvas material marks. Use `src/illustration-tools.js` when implementing reference-style illustration structure before those material marks are added.
+
+`src/illustration-tools.js` exposes:
+
+- `ILLUSTRATION_STYLE_KITS` and `resolveIllustrationStyle()` for reusable reference-style palettes and material choices.
+- `drawPaperScene()` for stable handmade paper, warm wash, and grain.
+- `fillConstructedShape()` for closed, named shapes filled with a base color, clipped material texture, and a clean outline.
+- `drawProgressiveContour()` and `drawProgressivePolyline()` for animated draw-on ink strokes.
+- `drawExpressiveHead()`, `drawApronTorso()`, `drawJointedLimb()`, `drawConstructedHand()`, `drawInkDoodleHand()`, and `drawShortsChain()` for connected body and clothing chains. Use `drawInkDoodleHand()` for loose black-ink cartoon hands; it builds a continuous hand silhouette instead of separate capsule fingers.
+- `drawWoodBoard()`, `drawSimpleFruit()`, `drawReadableLabel()`, and `drawMotionTicks()` for common story props and accents.
+- `hashString()`, `seededRandom()`, `lerpObject()`, `lerpPoint()`, `smoothstep()`, `easeOutCubic()`, and `rotateAround()` for deterministic frame timing and anchor movement.
+
+`src/material-tools.js` exposes:
 
 - `MATERIAL_TOOLKITS`: named material presets and when to use them.
 - `drawMaterialStroke(ctx, points, toolName, options)`: pressure strokes for pens, brush, pencil, crayon, charcoal, paint-like marks.
@@ -62,6 +74,7 @@ Prefer these helpers over one-off stroke code when a project asks for a material
 - Use `technical-pen` for tiny readable details: eyes, fingers, prop edges, seams, buttons.
 - Use `dip-ink` or `fountain-pen` for general hand-drawn outlines when the style should stay lively but controlled.
 - Use `brush-pen` for bold silhouettes, hair, folds, and expressive close-up line weight.
+- Use `doodle-ink` for bold black doodle outlines, cartoon hands, loose portrait contours, dry filled ink accents, and styles that should feel marker-inked rather than painterly.
 - Use `ballpoint-pen` for scratchy pen shading, office-comic notes, or hatching that should feel thin and dry.
 - Use `marker` for broad translucent cartoon color where wax texture would feel too childish.
 - Use `graphite-pencil` before or under detail when construction, soft shading, or delicate corrections matter.

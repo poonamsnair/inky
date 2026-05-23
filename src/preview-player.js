@@ -16,6 +16,9 @@ export function createPreviewPlayer({ manifest, renderer, params = new URLSearch
   const exportPngButton = document.querySelector("#exportPng");
   const exportMp4Button = document.querySelector("#exportMp4");
   const statusOutput = document.querySelector("#paintStatus");
+  const referenceOverlay = document.querySelector("#referenceOverlay");
+  const frameDebugger = document.querySelector("#frameDebugger");
+  const frameDebuggerOutput = document.querySelector("#frameDebuggerOutput");
 
   const width = numberOr(renderer.project?.width, manifest.width);
   const height = numberOr(renderer.project?.height, manifest.height);
@@ -33,6 +36,8 @@ export function createPreviewPlayer({ manifest, renderer, params = new URLSearch
   let playbackSpeed = nearestPlaybackSpeed(requestedSpeed ?? Number(speedSelect.value));
   let isExportingMp4 = false;
   let previewVideo = mp4PreviewForSpeed(playbackSpeed);
+  let referenceState = null;
+  let lastRenderError = renderer.loadError || null;
   const hasVideoPreview = !exportMode && Boolean(mp4Preview && previewVideo?.path);
   const annotationReviewer = exportMode
     ? null
@@ -49,6 +54,7 @@ export function createPreviewPlayer({ manifest, renderer, params = new URLSearch
 
   canvas.width = width;
   canvas.height = height;
+  if (referenceOverlay) referenceOverlay.hidden = true;
   timeline.max = String(totalFrames - 1);
   timeline.value = String(currentFrame);
   speedSelect.value = String(playbackSpeed);
@@ -67,17 +73,35 @@ export function createPreviewPlayer({ manifest, renderer, params = new URLSearch
 
   const helpers = {
     drawLabel,
+    drawRendererError,
     manifest,
+    inky: {
+      captureFrameDataUrl,
+      inspectFrame,
+    },
   };
 
   function paintFrame(targetCtx, frame = currentFrame) {
     const safeFrame = clamp(Math.round(frame), 0, totalFrames - 1);
     targetCtx.save();
     targetCtx.clearRect(0, 0, width, height);
-    if (typeof renderer.drawFrame === "function") {
-      renderer.drawFrame(targetCtx, safeFrame, helpers);
-    } else {
-      drawMissingRenderer(targetCtx, manifest, safeFrame);
+    try {
+      if (typeof renderer.drawFrame === "function") {
+        renderer.drawFrame(targetCtx, safeFrame, helpers);
+        if (lastRenderError?.kind === "renderer-draw") setRenderError(null);
+      } else {
+        drawMissingRenderer(targetCtx, manifest, safeFrame);
+      }
+    } catch (error) {
+      const renderError = normalizePreviewError(error, {
+        kind: "renderer-draw",
+        project: manifest.slug,
+        renderer: renderer.rendererPath || manifest.renderer || "renderer.js",
+        frame: safeFrame,
+      });
+      console.error("[inky-renderer] Draw failed", renderError.raw || error);
+      setRenderError(renderError);
+      drawRendererError(targetCtx, renderError, manifest);
     }
     targetCtx.restore();
     return safeFrame;
@@ -93,6 +117,7 @@ export function createPreviewPlayer({ manifest, renderer, params = new URLSearch
   function start() {
     bindControls();
     annotationReviewer?.start();
+    if (lastRenderError) setRenderError(lastRenderError);
     if (hasVideoPreview) {
       bindVideoEvents();
       isPlaying = false;
@@ -286,6 +311,7 @@ export function createPreviewPlayer({ manifest, renderer, params = new URLSearch
     playButton.setAttribute("aria-pressed", String(isPlaying));
     pauseButton.setAttribute("aria-pressed", String(!isPlaying));
     annotationReviewer?.setFrame(frame);
+    updateDebugPanel(frame);
   }
 
   function goToFrame(frame) {
@@ -307,17 +333,134 @@ export function createPreviewPlayer({ manifest, renderer, params = new URLSearch
     updateUi(currentFrame);
   }
 
-  function captureFrameDataUrl() {
+  function captureFrameDataUrl(frame = currentFrame) {
+    const safeFrame = clamp(Math.round(frame), 0, totalFrames - 1);
     const captureCanvas = document.createElement("canvas");
     captureCanvas.width = width;
     captureCanvas.height = height;
     const captureCtx = captureCanvas.getContext("2d", { alpha: false });
-    if (hasVideoPreview && mp4Preview.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+    if (frame === currentFrame && hasVideoPreview && mp4Preview.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
       captureCtx.drawImage(mp4Preview, 0, 0, width, height);
     } else {
-      paintFrame(captureCtx, currentFrame);
+      paintFrame(captureCtx, safeFrame);
     }
     return captureCanvas.toDataURL("image/png");
+  }
+
+  function showReference(src, options = {}) {
+    if (!referenceOverlay || exportMode) return null;
+    const opacity = clampValue(Number(options.opacity ?? referenceState?.opacity ?? 0.3), 0, 1);
+    const offset = normalizeOffset(options.offset ?? referenceState?.offset);
+    referenceState = {
+      src: resolveReferenceSource(src),
+      opacity,
+      align: options.align || referenceState?.align || "center",
+      fit: options.fit || referenceState?.fit || "contain",
+      offset,
+      scale: Number(options.scale ?? referenceState?.scale ?? 1) || 1,
+    };
+
+    referenceOverlay.src = referenceState.src;
+    referenceOverlay.alt = "Reference overlay";
+    referenceOverlay.hidden = false;
+    applyReferenceState();
+    statusOutput.textContent = "Reference overlay shown for visual checking.";
+    updateDebugPanel(currentFrame);
+    return { ...referenceState, offset: { ...referenceState.offset } };
+  }
+
+  function hideReference() {
+    if (!referenceOverlay) return null;
+    referenceOverlay.hidden = true;
+    statusOutput.textContent = "Reference overlay hidden.";
+    updateDebugPanel(currentFrame);
+    return referenceState ? { ...referenceState, hidden: true } : null;
+  }
+
+  function setReferenceOpacity(value) {
+    if (!referenceState) return null;
+    referenceState.opacity = clampValue(Number(value), 0, 1);
+    applyReferenceState();
+    updateDebugPanel(currentFrame);
+    return referenceState.opacity;
+  }
+
+  function applyReferenceState() {
+    if (!referenceOverlay || !referenceState) return;
+    referenceOverlay.style.opacity = String(referenceState.opacity);
+    referenceOverlay.style.objectFit = referenceState.fit;
+    referenceOverlay.style.objectPosition = alignToObjectPosition(referenceState.align);
+    referenceOverlay.style.transform = `translate(${referenceState.offset.x}px, ${referenceState.offset.y}px) scale(${referenceState.scale})`;
+  }
+
+  function inspectFrame(frame = currentFrame) {
+    const safeFrame = clamp(Math.round(frame), 0, totalFrames - 1);
+    const normalizedTime = totalFrames <= 1 ? 1 : safeFrame / (totalFrames - 1);
+    const debug = {
+      project: manifest.slug,
+      title: manifest.title,
+      frame: safeFrame,
+      frameLabel: `${safeFrame + 1} / ${totalFrames}`,
+      normalizedTime,
+      seconds: safeFrame / fps,
+      fps,
+      totalFrames,
+      width,
+      height,
+      playbackSpeed,
+      isPlaying,
+      hasVideoPreview,
+      reference: referenceState
+        ? {
+            ...referenceState,
+            hidden: Boolean(referenceOverlay?.hidden),
+          }
+        : null,
+      renderer: {
+        path: renderer.rendererPath || manifest.renderer || "renderer.js",
+        exports: renderer.exportNames || Object.keys(renderer).filter((key) => key !== "project"),
+        hasDrawFrame: typeof renderer.drawFrame === "function",
+        hasGetFrameDebug: typeof renderer.getFrameDebug === "function",
+      },
+      error: lastRenderError ? previewErrorSummary(lastRenderError) : null,
+    };
+
+    if (typeof renderer.getFrameDebug === "function") {
+      try {
+        debug.rendererDebug = renderer.getFrameDebug(safeFrame, {
+          manifest,
+          frame: safeFrame,
+          time: normalizedTime,
+          totalFrames,
+          fps,
+        });
+      } catch (error) {
+        debug.rendererDebugError = previewErrorSummary(normalizePreviewError(error, { kind: "renderer-debug", frame: safeFrame }));
+      }
+    }
+
+    return debug;
+  }
+
+  function updateDebugPanel(frame = currentFrame) {
+    if (!frameDebugger || !frameDebuggerOutput || exportMode) return;
+    const debug = inspectFrame(frame);
+    frameDebuggerOutput.textContent = JSON.stringify(debug, null, 2);
+  }
+
+  function setRenderError(error) {
+    lastRenderError = error ? normalizePreviewError(error) : null;
+    if (lastRenderError) {
+      statusOutput.textContent = formatPreviewError(lastRenderError);
+    }
+    updateDebugPanel(currentFrame);
+  }
+
+  function resolveReferenceSource(src) {
+    const value = String(src || "").trim();
+    if (!value) return "";
+    if (/^(?:data:|blob:|https?:\/\/|\/)/i.test(value)) return value;
+    return projectAssetUrl(manifest.slug, value.replace(/^\.?\//, ""));
   }
 
   function setPlaybackSpeed(value) {
@@ -395,6 +538,12 @@ export function createPreviewPlayer({ manifest, renderer, params = new URLSearch
     start,
     stop,
     setPlaybackSpeed,
+    showReference,
+    hideReference,
+    setReferenceOpacity,
+    captureFrameDataUrl,
+    goToFrame,
+    inspectFrame,
     mp4PathForSpeed: mp4ExportPathForSpeed,
   };
 }
@@ -455,6 +604,35 @@ function drawMissingRenderer(ctx, manifest) {
   drawLabel(ctx, "Renderer not built yet", manifest.width / 2, manifest.height / 2);
 }
 
+function drawRendererError(ctx, error, manifest) {
+  const details = previewErrorSummary(error);
+  ctx.save();
+  ctx.fillStyle = "#fff5ee";
+  ctx.fillRect(0, 0, manifest.width, manifest.height);
+  ctx.strokeStyle = "#5f1f1a";
+  ctx.lineWidth = 3;
+  ctx.strokeRect(24, 24, manifest.width - 48, manifest.height - 48);
+
+  ctx.fillStyle = "#3a1613";
+  ctx.font = "900 30px Avenir Next, Trebuchet MS, Verdana, sans-serif";
+  ctx.textAlign = "left";
+  ctx.textBaseline = "top";
+  ctx.fillText("Renderer error", 54, 54);
+
+  ctx.font = "700 17px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace";
+  const lines = [
+    `Project: ${details.project || manifest.slug || "unknown"}`,
+    `Renderer: ${details.renderer || manifest.renderer || "renderer.js"}`,
+    Number.isFinite(details.frame) ? `Frame: ${details.frame + 1}` : "",
+    `Message: ${details.message}`,
+    details.suggestion ? `Suggestion: ${details.suggestion}` : "",
+    ...(details.stack || []).slice(0, 3),
+  ].filter(Boolean);
+
+  wrapCanvasText(ctx, lines.join("\n"), 54, 104, manifest.width - 108, 23);
+  ctx.restore();
+}
+
 function drawLabel(ctx, text, x, y) {
   ctx.save();
   ctx.font = "800 28px Avenir Next, Trebuchet MS, Verdana, sans-serif";
@@ -463,6 +641,28 @@ function drawLabel(ctx, text, x, y) {
   ctx.textBaseline = "middle";
   ctx.fillText(text, x, y);
   ctx.restore();
+}
+
+function wrapCanvasText(ctx, text, x, y, maxWidth, lineHeight) {
+  const paragraphs = String(text).split("\n");
+  for (const paragraph of paragraphs) {
+    const words = paragraph.split(/\s+/).filter(Boolean);
+    let line = "";
+    for (const word of words) {
+      const nextLine = line ? `${line} ${word}` : word;
+      if (ctx.measureText(nextLine).width > maxWidth && line) {
+        ctx.fillText(line, x, y);
+        line = word;
+        y += lineHeight;
+      } else {
+        line = nextLine;
+      }
+    }
+    if (line) {
+      ctx.fillText(line, x, y);
+      y += lineHeight;
+    }
+  }
 }
 
 function nearestPlaybackSpeed(value) {
@@ -481,6 +681,74 @@ function projectAssetUrl(slug, path) {
   return `/projects/${slug}/${path}`;
 }
 
+function normalizeOffset(value = {}) {
+  return {
+    x: Number(value.x ?? value[0] ?? 0) || 0,
+    y: Number(value.y ?? value[1] ?? 0) || 0,
+  };
+}
+
+function alignToObjectPosition(align = "center") {
+  const value = String(align || "center").replace(/-/g, " ");
+  const positions = new Set([
+    "center",
+    "top",
+    "bottom",
+    "left",
+    "right",
+    "top left",
+    "top right",
+    "bottom left",
+    "bottom right",
+  ]);
+  return positions.has(value) ? value : "center";
+}
+
+function normalizePreviewError(error, fallback = {}) {
+  const source = error?.inky || error || {};
+  const stackSource = Array.isArray(source.stack) ? source.stack.join("\n") : error?.stack || source.stack || "";
+  const stack = String(stackSource)
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .slice(0, 6);
+
+  return {
+    kind: source.kind || fallback.kind || "renderer-error",
+    project: source.project || fallback.project || "",
+    renderer: source.renderer || fallback.renderer || "",
+    frame: Number.isFinite(source.frame) ? source.frame : fallback.frame,
+    message: source.message || error?.message || fallback.message || "The renderer failed.",
+    stack,
+    suggestion:
+      source.suggestion ||
+      fallback.suggestion ||
+      "Open the renderer file, fix the reported line, then refresh the preview.",
+    raw: error,
+  };
+}
+
+function previewErrorSummary(error) {
+  const normalized = normalizePreviewError(error);
+  return {
+    kind: normalized.kind,
+    project: normalized.project,
+    renderer: normalized.renderer,
+    frame: normalized.frame,
+    message: normalized.message,
+    suggestion: normalized.suggestion,
+    stack: normalized.stack,
+  };
+}
+
+function formatPreviewError(error) {
+  const summary = previewErrorSummary(error);
+  const location = [summary.project, summary.renderer, Number.isFinite(summary.frame) ? `frame ${summary.frame + 1}` : ""]
+    .filter(Boolean)
+    .join(" / ");
+  return `Renderer error${location ? ` (${location})` : ""}: ${summary.message}`;
+}
+
 function numberOr(value, fallback) {
   const parsed = Number(value);
   return Number.isFinite(parsed) ? parsed : fallback;
@@ -488,4 +756,10 @@ function numberOr(value, fallback) {
 
 function clamp(value, min, max) {
   return Math.min(max, Math.max(min, value));
+}
+
+function clampValue(value, min, max) {
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed)) return min;
+  return Math.min(max, Math.max(min, parsed));
 }

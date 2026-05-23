@@ -1,0 +1,3951 @@
+{
+  "project": "storyboard",
+  "source": "/Users/poonamnairrmit/Downloads/inky/projects/inky-promo/storyboard",
+  "outputDir": "/Users/poonamnairrmit/Downloads/inky/projects/inky-promo/storyboard/inbetweens",
+  "sceneCount": 12,
+  "fps": 12,
+  "keyHold": 2,
+  "baseInbetweens": 6,
+  "loop": false,
+  "totalFrames": 90,
+  "durationSeconds": 7.5,
+  "lockedLayers": [
+    "paper grain",
+    "panel border",
+    "wall notes/posters",
+    "table/desk",
+    "static background lighting"
+  ],
+  "anchoredLayers": [
+    "laptop",
+    "mug",
+    "notebooks",
+    "papers",
+    "phone",
+    "lamp",
+    "plant",
+    "recurring desk props"
+  ],
+  "animatedLayers": [
+    "head",
+    "torso",
+    "shoulders",
+    "arms",
+    "wrists",
+    "hands",
+    "facial expression",
+    "hair droop",
+    "dream/sleep/motion marks"
+  ],
+  "transitions": [
+    {
+      "fromScene": 0,
+      "toScene": 1,
+      "sourceAction": "Scene 1",
+      "targetAction": "Scene 2",
+      "complexity": 1,
+      "inbetweenCount": 6,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "transitionFrames": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "anchorsToInterpolate": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ],
+      "anchorsToHold": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "clarityRisks": []
+    },
+    {
+      "fromScene": 1,
+      "toScene": 2,
+      "sourceAction": "Scene 2",
+      "targetAction": "Scene 3",
+      "complexity": 1,
+      "inbetweenCount": 6,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "transitionFrames": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "anchorsToInterpolate": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ],
+      "anchorsToHold": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "clarityRisks": []
+    },
+    {
+      "fromScene": 2,
+      "toScene": 3,
+      "sourceAction": "Scene 3",
+      "targetAction": "Scene 4",
+      "complexity": 1,
+      "inbetweenCount": 6,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "transitionFrames": [
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "anchorsToInterpolate": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ],
+      "anchorsToHold": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "clarityRisks": []
+    },
+    {
+      "fromScene": 3,
+      "toScene": 4,
+      "sourceAction": "Scene 4",
+      "targetAction": "Scene 5",
+      "complexity": 1,
+      "inbetweenCount": 6,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "transitionFrames": [
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "anchorsToInterpolate": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ],
+      "anchorsToHold": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "clarityRisks": []
+    },
+    {
+      "fromScene": 4,
+      "toScene": 5,
+      "sourceAction": "Scene 5",
+      "targetAction": "Scene 6",
+      "complexity": 1,
+      "inbetweenCount": 6,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "transitionFrames": [
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "anchorsToInterpolate": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ],
+      "anchorsToHold": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "clarityRisks": []
+    },
+    {
+      "fromScene": 5,
+      "toScene": 6,
+      "sourceAction": "Scene 6",
+      "targetAction": "Scene 7",
+      "complexity": 1,
+      "inbetweenCount": 6,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "transitionFrames": [
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "anchorsToInterpolate": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ],
+      "anchorsToHold": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "clarityRisks": []
+    },
+    {
+      "fromScene": 6,
+      "toScene": 7,
+      "sourceAction": "Scene 7",
+      "targetAction": "Scene 8",
+      "complexity": 1,
+      "inbetweenCount": 6,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "transitionFrames": [
+        50,
+        51,
+        52,
+        53,
+        54,
+        55
+      ],
+      "anchorsToInterpolate": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ],
+      "anchorsToHold": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "clarityRisks": []
+    },
+    {
+      "fromScene": 7,
+      "toScene": 8,
+      "sourceAction": "Scene 8",
+      "targetAction": "Scene 9",
+      "complexity": 1,
+      "inbetweenCount": 6,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "transitionFrames": [
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "anchorsToInterpolate": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ],
+      "anchorsToHold": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "clarityRisks": []
+    },
+    {
+      "fromScene": 8,
+      "toScene": 9,
+      "sourceAction": "Scene 9",
+      "targetAction": "Scene 10",
+      "complexity": 1,
+      "inbetweenCount": 6,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "transitionFrames": [
+        66,
+        67,
+        68,
+        69,
+        70,
+        71
+      ],
+      "anchorsToInterpolate": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ],
+      "anchorsToHold": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "clarityRisks": []
+    },
+    {
+      "fromScene": 9,
+      "toScene": 10,
+      "sourceAction": "Scene 10",
+      "targetAction": "Scene 11",
+      "complexity": 1,
+      "inbetweenCount": 6,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "transitionFrames": [
+        74,
+        75,
+        76,
+        77,
+        78,
+        79
+      ],
+      "anchorsToInterpolate": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ],
+      "anchorsToHold": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "clarityRisks": []
+    },
+    {
+      "fromScene": 10,
+      "toScene": 11,
+      "sourceAction": "Scene 11",
+      "targetAction": "Scene 12",
+      "complexity": 1,
+      "inbetweenCount": 6,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "transitionFrames": [
+        82,
+        83,
+        84,
+        85,
+        86,
+        87
+      ],
+      "anchorsToInterpolate": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ],
+      "anchorsToHold": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "clarityRisks": []
+    }
+  ],
+  "timeline": [
+    {
+      "globalFrame": 0,
+      "kind": "key",
+      "scene": 0,
+      "t": 0,
+      "linearT": 0,
+      "easedT": 0,
+      "timeMs": 0,
+      "sourceScene": 0,
+      "targetScene": 0,
+      "note": "story beat hold"
+    },
+    {
+      "globalFrame": 1,
+      "kind": "key",
+      "scene": 0,
+      "t": 0,
+      "linearT": 0,
+      "easedT": 0,
+      "timeMs": 83.33,
+      "sourceScene": 0,
+      "targetScene": 0,
+      "note": "held key frame"
+    },
+    {
+      "globalFrame": 2,
+      "kind": "inbetween",
+      "sourceScene": 0,
+      "targetScene": 1,
+      "t": 0.1429,
+      "linearT": 0.1429,
+      "easedT": 0.0117,
+      "motionT": 0.0117,
+      "timeMs": 166.67,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 3,
+      "kind": "inbetween",
+      "sourceScene": 0,
+      "targetScene": 1,
+      "t": 0.2857,
+      "linearT": 0.2857,
+      "easedT": 0.0933,
+      "motionT": 0.0933,
+      "timeMs": 250,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 4,
+      "kind": "inbetween",
+      "sourceScene": 0,
+      "targetScene": 1,
+      "t": 0.4286,
+      "linearT": 0.4286,
+      "easedT": 0.3149,
+      "motionT": 0.3149,
+      "timeMs": 333.33,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 5,
+      "kind": "inbetween",
+      "sourceScene": 0,
+      "targetScene": 1,
+      "t": 0.5714,
+      "linearT": 0.5714,
+      "easedT": 0.6851,
+      "motionT": 0.6851,
+      "timeMs": 416.67,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 6,
+      "kind": "inbetween",
+      "sourceScene": 0,
+      "targetScene": 1,
+      "t": 0.7143,
+      "linearT": 0.7143,
+      "easedT": 0.9067,
+      "motionT": 0.9067,
+      "timeMs": 500,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 7,
+      "kind": "inbetween",
+      "sourceScene": 0,
+      "targetScene": 1,
+      "t": 0.8571,
+      "linearT": 0.8571,
+      "easedT": 0.9883,
+      "motionT": 0.9883,
+      "timeMs": 583.33,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 8,
+      "kind": "key",
+      "scene": 1,
+      "t": 0,
+      "linearT": 0,
+      "easedT": 0,
+      "timeMs": 666.67,
+      "sourceScene": 1,
+      "targetScene": 1,
+      "note": "story beat hold"
+    },
+    {
+      "globalFrame": 9,
+      "kind": "key",
+      "scene": 1,
+      "t": 0,
+      "linearT": 0,
+      "easedT": 0,
+      "timeMs": 750,
+      "sourceScene": 1,
+      "targetScene": 1,
+      "note": "held key frame"
+    },
+    {
+      "globalFrame": 10,
+      "kind": "inbetween",
+      "sourceScene": 1,
+      "targetScene": 2,
+      "t": 0.1429,
+      "linearT": 0.1429,
+      "easedT": 0.3703,
+      "motionT": 0.3703,
+      "timeMs": 833.33,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 11,
+      "kind": "inbetween",
+      "sourceScene": 1,
+      "targetScene": 2,
+      "t": 0.2857,
+      "linearT": 0.2857,
+      "easedT": 0.6356,
+      "motionT": 0.6356,
+      "timeMs": 916.67,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 12,
+      "kind": "inbetween",
+      "sourceScene": 1,
+      "targetScene": 2,
+      "t": 0.4286,
+      "linearT": 0.4286,
+      "easedT": 0.8134,
+      "motionT": 0.8134,
+      "timeMs": 1000,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 13,
+      "kind": "inbetween",
+      "sourceScene": 1,
+      "targetScene": 2,
+      "t": 0.5714,
+      "linearT": 0.5714,
+      "easedT": 0.9213,
+      "motionT": 0.9213,
+      "timeMs": 1083.33,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 14,
+      "kind": "inbetween",
+      "sourceScene": 1,
+      "targetScene": 2,
+      "t": 0.7143,
+      "linearT": 0.7143,
+      "easedT": 0.9767,
+      "motionT": 0.9767,
+      "timeMs": 1166.67,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 15,
+      "kind": "inbetween",
+      "sourceScene": 1,
+      "targetScene": 2,
+      "t": 0.8571,
+      "linearT": 0.8571,
+      "easedT": 0.9971,
+      "motionT": 0.9971,
+      "timeMs": 1250,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 16,
+      "kind": "key",
+      "scene": 2,
+      "t": 0,
+      "linearT": 0,
+      "easedT": 0,
+      "timeMs": 1333.33,
+      "sourceScene": 2,
+      "targetScene": 2,
+      "note": "story beat hold"
+    },
+    {
+      "globalFrame": 17,
+      "kind": "key",
+      "scene": 2,
+      "t": 0,
+      "linearT": 0,
+      "easedT": 0,
+      "timeMs": 1416.67,
+      "sourceScene": 2,
+      "targetScene": 2,
+      "note": "held key frame"
+    },
+    {
+      "globalFrame": 18,
+      "kind": "inbetween",
+      "sourceScene": 2,
+      "targetScene": 3,
+      "t": 0.1429,
+      "linearT": 0.1429,
+      "easedT": 0.0117,
+      "motionT": 0.0117,
+      "timeMs": 1500,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 19,
+      "kind": "inbetween",
+      "sourceScene": 2,
+      "targetScene": 3,
+      "t": 0.2857,
+      "linearT": 0.2857,
+      "easedT": 0.0933,
+      "motionT": 0.0933,
+      "timeMs": 1583.33,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 20,
+      "kind": "inbetween",
+      "sourceScene": 2,
+      "targetScene": 3,
+      "t": 0.4286,
+      "linearT": 0.4286,
+      "easedT": 0.3149,
+      "motionT": 0.3149,
+      "timeMs": 1666.67,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 21,
+      "kind": "inbetween",
+      "sourceScene": 2,
+      "targetScene": 3,
+      "t": 0.5714,
+      "linearT": 0.5714,
+      "easedT": 0.6851,
+      "motionT": 0.6851,
+      "timeMs": 1750,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 22,
+      "kind": "inbetween",
+      "sourceScene": 2,
+      "targetScene": 3,
+      "t": 0.7143,
+      "linearT": 0.7143,
+      "easedT": 0.9067,
+      "motionT": 0.9067,
+      "timeMs": 1833.33,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 23,
+      "kind": "inbetween",
+      "sourceScene": 2,
+      "targetScene": 3,
+      "t": 0.8571,
+      "linearT": 0.8571,
+      "easedT": 0.9883,
+      "motionT": 0.9883,
+      "timeMs": 1916.67,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 24,
+      "kind": "key",
+      "scene": 3,
+      "t": 0,
+      "linearT": 0,
+      "easedT": 0,
+      "timeMs": 2000,
+      "sourceScene": 3,
+      "targetScene": 3,
+      "note": "story beat hold"
+    },
+    {
+      "globalFrame": 25,
+      "kind": "key",
+      "scene": 3,
+      "t": 0,
+      "linearT": 0,
+      "easedT": 0,
+      "timeMs": 2083.33,
+      "sourceScene": 3,
+      "targetScene": 3,
+      "note": "held key frame"
+    },
+    {
+      "globalFrame": 26,
+      "kind": "inbetween",
+      "sourceScene": 3,
+      "targetScene": 4,
+      "t": 0.1429,
+      "linearT": 0.1429,
+      "easedT": 0.3703,
+      "motionT": 0.3703,
+      "timeMs": 2166.67,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 27,
+      "kind": "inbetween",
+      "sourceScene": 3,
+      "targetScene": 4,
+      "t": 0.2857,
+      "linearT": 0.2857,
+      "easedT": 0.6356,
+      "motionT": 0.6356,
+      "timeMs": 2250,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 28,
+      "kind": "inbetween",
+      "sourceScene": 3,
+      "targetScene": 4,
+      "t": 0.4286,
+      "linearT": 0.4286,
+      "easedT": 0.8134,
+      "motionT": 0.8134,
+      "timeMs": 2333.33,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 29,
+      "kind": "inbetween",
+      "sourceScene": 3,
+      "targetScene": 4,
+      "t": 0.5714,
+      "linearT": 0.5714,
+      "easedT": 0.9213,
+      "motionT": 0.9213,
+      "timeMs": 2416.67,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 30,
+      "kind": "inbetween",
+      "sourceScene": 3,
+      "targetScene": 4,
+      "t": 0.7143,
+      "linearT": 0.7143,
+      "easedT": 0.9767,
+      "motionT": 0.9767,
+      "timeMs": 2500,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 31,
+      "kind": "inbetween",
+      "sourceScene": 3,
+      "targetScene": 4,
+      "t": 0.8571,
+      "linearT": 0.8571,
+      "easedT": 0.9971,
+      "motionT": 0.9971,
+      "timeMs": 2583.33,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 32,
+      "kind": "key",
+      "scene": 4,
+      "t": 0,
+      "linearT": 0,
+      "easedT": 0,
+      "timeMs": 2666.67,
+      "sourceScene": 4,
+      "targetScene": 4,
+      "note": "story beat hold"
+    },
+    {
+      "globalFrame": 33,
+      "kind": "key",
+      "scene": 4,
+      "t": 0,
+      "linearT": 0,
+      "easedT": 0,
+      "timeMs": 2750,
+      "sourceScene": 4,
+      "targetScene": 4,
+      "note": "held key frame"
+    },
+    {
+      "globalFrame": 34,
+      "kind": "inbetween",
+      "sourceScene": 4,
+      "targetScene": 5,
+      "t": 0.1429,
+      "linearT": 0.1429,
+      "easedT": 0.0117,
+      "motionT": 0.0117,
+      "timeMs": 2833.33,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 35,
+      "kind": "inbetween",
+      "sourceScene": 4,
+      "targetScene": 5,
+      "t": 0.2857,
+      "linearT": 0.2857,
+      "easedT": 0.0933,
+      "motionT": 0.0933,
+      "timeMs": 2916.67,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 36,
+      "kind": "inbetween",
+      "sourceScene": 4,
+      "targetScene": 5,
+      "t": 0.4286,
+      "linearT": 0.4286,
+      "easedT": 0.3149,
+      "motionT": 0.3149,
+      "timeMs": 3000,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 37,
+      "kind": "inbetween",
+      "sourceScene": 4,
+      "targetScene": 5,
+      "t": 0.5714,
+      "linearT": 0.5714,
+      "easedT": 0.6851,
+      "motionT": 0.6851,
+      "timeMs": 3083.33,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 38,
+      "kind": "inbetween",
+      "sourceScene": 4,
+      "targetScene": 5,
+      "t": 0.7143,
+      "linearT": 0.7143,
+      "easedT": 0.9067,
+      "motionT": 0.9067,
+      "timeMs": 3166.67,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 39,
+      "kind": "inbetween",
+      "sourceScene": 4,
+      "targetScene": 5,
+      "t": 0.8571,
+      "linearT": 0.8571,
+      "easedT": 0.9883,
+      "motionT": 0.9883,
+      "timeMs": 3250,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 40,
+      "kind": "key",
+      "scene": 5,
+      "t": 0,
+      "linearT": 0,
+      "easedT": 0,
+      "timeMs": 3333.33,
+      "sourceScene": 5,
+      "targetScene": 5,
+      "note": "story beat hold"
+    },
+    {
+      "globalFrame": 41,
+      "kind": "key",
+      "scene": 5,
+      "t": 0,
+      "linearT": 0,
+      "easedT": 0,
+      "timeMs": 3416.67,
+      "sourceScene": 5,
+      "targetScene": 5,
+      "note": "held key frame"
+    },
+    {
+      "globalFrame": 42,
+      "kind": "inbetween",
+      "sourceScene": 5,
+      "targetScene": 6,
+      "t": 0.1429,
+      "linearT": 0.1429,
+      "easedT": 0.3703,
+      "motionT": 0.3703,
+      "timeMs": 3500,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 43,
+      "kind": "inbetween",
+      "sourceScene": 5,
+      "targetScene": 6,
+      "t": 0.2857,
+      "linearT": 0.2857,
+      "easedT": 0.6356,
+      "motionT": 0.6356,
+      "timeMs": 3583.33,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 44,
+      "kind": "inbetween",
+      "sourceScene": 5,
+      "targetScene": 6,
+      "t": 0.4286,
+      "linearT": 0.4286,
+      "easedT": 0.8134,
+      "motionT": 0.8134,
+      "timeMs": 3666.67,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 45,
+      "kind": "inbetween",
+      "sourceScene": 5,
+      "targetScene": 6,
+      "t": 0.5714,
+      "linearT": 0.5714,
+      "easedT": 0.9213,
+      "motionT": 0.9213,
+      "timeMs": 3750,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 46,
+      "kind": "inbetween",
+      "sourceScene": 5,
+      "targetScene": 6,
+      "t": 0.7143,
+      "linearT": 0.7143,
+      "easedT": 0.9767,
+      "motionT": 0.9767,
+      "timeMs": 3833.33,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 47,
+      "kind": "inbetween",
+      "sourceScene": 5,
+      "targetScene": 6,
+      "t": 0.8571,
+      "linearT": 0.8571,
+      "easedT": 0.9971,
+      "motionT": 0.9971,
+      "timeMs": 3916.67,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 48,
+      "kind": "key",
+      "scene": 6,
+      "t": 0,
+      "linearT": 0,
+      "easedT": 0,
+      "timeMs": 4000,
+      "sourceScene": 6,
+      "targetScene": 6,
+      "note": "story beat hold"
+    },
+    {
+      "globalFrame": 49,
+      "kind": "key",
+      "scene": 6,
+      "t": 0,
+      "linearT": 0,
+      "easedT": 0,
+      "timeMs": 4083.33,
+      "sourceScene": 6,
+      "targetScene": 6,
+      "note": "held key frame"
+    },
+    {
+      "globalFrame": 50,
+      "kind": "inbetween",
+      "sourceScene": 6,
+      "targetScene": 7,
+      "t": 0.1429,
+      "linearT": 0.1429,
+      "easedT": 0.0117,
+      "motionT": 0.0117,
+      "timeMs": 4166.67,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 51,
+      "kind": "inbetween",
+      "sourceScene": 6,
+      "targetScene": 7,
+      "t": 0.2857,
+      "linearT": 0.2857,
+      "easedT": 0.0933,
+      "motionT": 0.0933,
+      "timeMs": 4250,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 52,
+      "kind": "inbetween",
+      "sourceScene": 6,
+      "targetScene": 7,
+      "t": 0.4286,
+      "linearT": 0.4286,
+      "easedT": 0.3149,
+      "motionT": 0.3149,
+      "timeMs": 4333.33,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 53,
+      "kind": "inbetween",
+      "sourceScene": 6,
+      "targetScene": 7,
+      "t": 0.5714,
+      "linearT": 0.5714,
+      "easedT": 0.6851,
+      "motionT": 0.6851,
+      "timeMs": 4416.67,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 54,
+      "kind": "inbetween",
+      "sourceScene": 6,
+      "targetScene": 7,
+      "t": 0.7143,
+      "linearT": 0.7143,
+      "easedT": 0.9067,
+      "motionT": 0.9067,
+      "timeMs": 4500,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 55,
+      "kind": "inbetween",
+      "sourceScene": 6,
+      "targetScene": 7,
+      "t": 0.8571,
+      "linearT": 0.8571,
+      "easedT": 0.9883,
+      "motionT": 0.9883,
+      "timeMs": 4583.33,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 56,
+      "kind": "key",
+      "scene": 7,
+      "t": 0,
+      "linearT": 0,
+      "easedT": 0,
+      "timeMs": 4666.67,
+      "sourceScene": 7,
+      "targetScene": 7,
+      "note": "story beat hold"
+    },
+    {
+      "globalFrame": 57,
+      "kind": "key",
+      "scene": 7,
+      "t": 0,
+      "linearT": 0,
+      "easedT": 0,
+      "timeMs": 4750,
+      "sourceScene": 7,
+      "targetScene": 7,
+      "note": "held key frame"
+    },
+    {
+      "globalFrame": 58,
+      "kind": "inbetween",
+      "sourceScene": 7,
+      "targetScene": 8,
+      "t": 0.1429,
+      "linearT": 0.1429,
+      "easedT": 0.3703,
+      "motionT": 0.3703,
+      "timeMs": 4833.33,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 59,
+      "kind": "inbetween",
+      "sourceScene": 7,
+      "targetScene": 8,
+      "t": 0.2857,
+      "linearT": 0.2857,
+      "easedT": 0.6356,
+      "motionT": 0.6356,
+      "timeMs": 4916.67,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 60,
+      "kind": "inbetween",
+      "sourceScene": 7,
+      "targetScene": 8,
+      "t": 0.4286,
+      "linearT": 0.4286,
+      "easedT": 0.8134,
+      "motionT": 0.8134,
+      "timeMs": 5000,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 61,
+      "kind": "inbetween",
+      "sourceScene": 7,
+      "targetScene": 8,
+      "t": 0.5714,
+      "linearT": 0.5714,
+      "easedT": 0.9213,
+      "motionT": 0.9213,
+      "timeMs": 5083.33,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 62,
+      "kind": "inbetween",
+      "sourceScene": 7,
+      "targetScene": 8,
+      "t": 0.7143,
+      "linearT": 0.7143,
+      "easedT": 0.9767,
+      "motionT": 0.9767,
+      "timeMs": 5166.67,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 63,
+      "kind": "inbetween",
+      "sourceScene": 7,
+      "targetScene": 8,
+      "t": 0.8571,
+      "linearT": 0.8571,
+      "easedT": 0.9971,
+      "motionT": 0.9971,
+      "timeMs": 5250,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 64,
+      "kind": "key",
+      "scene": 8,
+      "t": 0,
+      "linearT": 0,
+      "easedT": 0,
+      "timeMs": 5333.33,
+      "sourceScene": 8,
+      "targetScene": 8,
+      "note": "story beat hold"
+    },
+    {
+      "globalFrame": 65,
+      "kind": "key",
+      "scene": 8,
+      "t": 0,
+      "linearT": 0,
+      "easedT": 0,
+      "timeMs": 5416.67,
+      "sourceScene": 8,
+      "targetScene": 8,
+      "note": "held key frame"
+    },
+    {
+      "globalFrame": 66,
+      "kind": "inbetween",
+      "sourceScene": 8,
+      "targetScene": 9,
+      "t": 0.1429,
+      "linearT": 0.1429,
+      "easedT": 0.0117,
+      "motionT": 0.0117,
+      "timeMs": 5500,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 67,
+      "kind": "inbetween",
+      "sourceScene": 8,
+      "targetScene": 9,
+      "t": 0.2857,
+      "linearT": 0.2857,
+      "easedT": 0.0933,
+      "motionT": 0.0933,
+      "timeMs": 5583.33,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 68,
+      "kind": "inbetween",
+      "sourceScene": 8,
+      "targetScene": 9,
+      "t": 0.4286,
+      "linearT": 0.4286,
+      "easedT": 0.3149,
+      "motionT": 0.3149,
+      "timeMs": 5666.67,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 69,
+      "kind": "inbetween",
+      "sourceScene": 8,
+      "targetScene": 9,
+      "t": 0.5714,
+      "linearT": 0.5714,
+      "easedT": 0.6851,
+      "motionT": 0.6851,
+      "timeMs": 5750,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 70,
+      "kind": "inbetween",
+      "sourceScene": 8,
+      "targetScene": 9,
+      "t": 0.7143,
+      "linearT": 0.7143,
+      "easedT": 0.9067,
+      "motionT": 0.9067,
+      "timeMs": 5833.33,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 71,
+      "kind": "inbetween",
+      "sourceScene": 8,
+      "targetScene": 9,
+      "t": 0.8571,
+      "linearT": 0.8571,
+      "easedT": 0.9883,
+      "motionT": 0.9883,
+      "timeMs": 5916.67,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 72,
+      "kind": "key",
+      "scene": 9,
+      "t": 0,
+      "linearT": 0,
+      "easedT": 0,
+      "timeMs": 6000,
+      "sourceScene": 9,
+      "targetScene": 9,
+      "note": "story beat hold"
+    },
+    {
+      "globalFrame": 73,
+      "kind": "key",
+      "scene": 9,
+      "t": 0,
+      "linearT": 0,
+      "easedT": 0,
+      "timeMs": 6083.33,
+      "sourceScene": 9,
+      "targetScene": 9,
+      "note": "held key frame"
+    },
+    {
+      "globalFrame": 74,
+      "kind": "inbetween",
+      "sourceScene": 9,
+      "targetScene": 10,
+      "t": 0.1429,
+      "linearT": 0.1429,
+      "easedT": 0.3703,
+      "motionT": 0.3703,
+      "timeMs": 6166.67,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 75,
+      "kind": "inbetween",
+      "sourceScene": 9,
+      "targetScene": 10,
+      "t": 0.2857,
+      "linearT": 0.2857,
+      "easedT": 0.6356,
+      "motionT": 0.6356,
+      "timeMs": 6250,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 76,
+      "kind": "inbetween",
+      "sourceScene": 9,
+      "targetScene": 10,
+      "t": 0.4286,
+      "linearT": 0.4286,
+      "easedT": 0.8134,
+      "motionT": 0.8134,
+      "timeMs": 6333.33,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 77,
+      "kind": "inbetween",
+      "sourceScene": 9,
+      "targetScene": 10,
+      "t": 0.5714,
+      "linearT": 0.5714,
+      "easedT": 0.9213,
+      "motionT": 0.9213,
+      "timeMs": 6416.67,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 78,
+      "kind": "inbetween",
+      "sourceScene": 9,
+      "targetScene": 10,
+      "t": 0.7143,
+      "linearT": 0.7143,
+      "easedT": 0.9767,
+      "motionT": 0.9767,
+      "timeMs": 6500,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 79,
+      "kind": "inbetween",
+      "sourceScene": 9,
+      "targetScene": 10,
+      "t": 0.8571,
+      "linearT": 0.8571,
+      "easedT": 0.9971,
+      "motionT": 0.9971,
+      "timeMs": 6583.33,
+      "easing": "ease-out",
+      "easingDescription": "fast pickup, gentle arrival",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 80,
+      "kind": "key",
+      "scene": 10,
+      "t": 0,
+      "linearT": 0,
+      "easedT": 0,
+      "timeMs": 6666.67,
+      "sourceScene": 10,
+      "targetScene": 10,
+      "note": "story beat hold"
+    },
+    {
+      "globalFrame": 81,
+      "kind": "key",
+      "scene": 10,
+      "t": 0,
+      "linearT": 0,
+      "easedT": 0,
+      "timeMs": 6750,
+      "sourceScene": 10,
+      "targetScene": 10,
+      "note": "held key frame"
+    },
+    {
+      "globalFrame": 82,
+      "kind": "inbetween",
+      "sourceScene": 10,
+      "targetScene": 11,
+      "t": 0.1429,
+      "linearT": 0.1429,
+      "easedT": 0.0117,
+      "motionT": 0.0117,
+      "timeMs": 6833.33,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 83,
+      "kind": "inbetween",
+      "sourceScene": 10,
+      "targetScene": 11,
+      "t": 0.2857,
+      "linearT": 0.2857,
+      "easedT": 0.0933,
+      "motionT": 0.0933,
+      "timeMs": 6916.67,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 84,
+      "kind": "inbetween",
+      "sourceScene": 10,
+      "targetScene": 11,
+      "t": 0.4286,
+      "linearT": 0.4286,
+      "easedT": 0.3149,
+      "motionT": 0.3149,
+      "timeMs": 7000,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 85,
+      "kind": "inbetween",
+      "sourceScene": 10,
+      "targetScene": 11,
+      "t": 0.5714,
+      "linearT": 0.5714,
+      "easedT": 0.6851,
+      "motionT": 0.6851,
+      "timeMs": 7083.33,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 86,
+      "kind": "inbetween",
+      "sourceScene": 10,
+      "targetScene": 11,
+      "t": 0.7143,
+      "linearT": 0.7143,
+      "easedT": 0.9067,
+      "motionT": 0.9067,
+      "timeMs": 7166.67,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 87,
+      "kind": "inbetween",
+      "sourceScene": 10,
+      "targetScene": 11,
+      "t": 0.8571,
+      "linearT": 0.8571,
+      "easedT": 0.9883,
+      "motionT": 0.9883,
+      "timeMs": 7250,
+      "easing": "ease-in-out",
+      "easingDescription": "slow start, quicker middle, slow settle",
+      "redrawInk": true,
+      "keepAttached": [
+        "head-face-details",
+        "shoulder-sleeve-forearm-wrist-hand",
+        "props-contact-surface"
+      ],
+      "lockedLayers": [
+        "paper grain",
+        "panel border",
+        "wall notes/posters",
+        "table/desk",
+        "static background lighting"
+      ],
+      "anchoredLayers": [
+        "laptop",
+        "mug",
+        "notebooks",
+        "papers",
+        "phone",
+        "lamp",
+        "plant",
+        "recurring desk props"
+      ],
+      "animatedLayers": [
+        "head",
+        "torso",
+        "shoulders",
+        "arms",
+        "wrists",
+        "hands",
+        "facial expression",
+        "hair droop",
+        "dream/sleep/motion marks"
+      ]
+    },
+    {
+      "globalFrame": 88,
+      "kind": "key",
+      "scene": 11,
+      "t": 0,
+      "linearT": 0,
+      "easedT": 0,
+      "timeMs": 7333.33,
+      "sourceScene": 11,
+      "targetScene": 11,
+      "note": "story beat hold"
+    },
+    {
+      "globalFrame": 89,
+      "kind": "key",
+      "scene": 11,
+      "t": 0,
+      "linearT": 0,
+      "easedT": 0,
+      "timeMs": 7416.67,
+      "sourceScene": 11,
+      "targetScene": 11,
+      "note": "held key frame"
+    }
+  ]
+}

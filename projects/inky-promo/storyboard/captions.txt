@@ -1,0 +1,12 @@
+0-7 | I wanted to make animated videos.
+8-15 | LLMs could almost help.
+16-23 | But the results never felt alive.
+24-31 | The workflow had too much friction.
+32-39 | Prompt, tweak, wait, repeat.
+40-47 | And somehow it still felt stiff.
+48-55 | I liked drawing it more than generating it.
+56-63 | I wanted something handmade.
+64-71 | Sketch, colour, and animate in one place.
+72-79 | That first spark became Inky.
+80-87 | AI helps, but the artist still leads.
+88-95 | That is why I built Inky.

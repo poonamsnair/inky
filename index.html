@@ -16,17 +16,17 @@
           <div class="intro-copy-block">
             <h1 id="creatorTitle">Create a new animation</h1>
             <p class="intro-copy">
-              Start with a storyboard, then hand the generated project plan to a coding agent. No example animation loads unless you select one.
+              Start with a reference image, save the local project files, then let a coding agent draw directly against the canvas.
             </p>
           </div>
         </header>
 
         <form id="newProjectForm" class="setup-form" autocomplete="off">
           <label class="field-label">
-            Storyboard image
+            Reference image
             <input id="storyboardImage" class="file-input" type="file" accept="image/*" />
           </label>
-          <p id="imageMeta" class="image-meta" aria-live="polite">No storyboard image selected.</p>
+          <p id="imageMeta" class="image-meta" aria-live="polite">No reference image selected.</p>
           <img id="imagePreview" class="image-preview" alt="" hidden />
 
           <label class="field-label">
@@ -60,11 +60,11 @@
               id="projectPrompt"
               class="text-area"
               autocomplete="off"
-              placeholder="Animate this cat playing with yarn in ink and watercolor."
+              placeholder="Animate this scene with hand-drawn brush choices tuned in preview."
             ></textarea>
           </label>
 
-          <button id="createProjectPlan" class="primary-action" type="submit">Create project plan</button>
+          <button id="createProjectPlan" class="primary-action" type="submit">Create project files</button>
           <output id="setupStatus" class="status-output" aria-live="polite"></output>
         </form>
 
@@ -72,12 +72,12 @@
           <section class="workflow-panel">
             <h2>Workflow</h2>
             <ol class="workflow-list">
-              <li><span>1</span>Add a 12-panel storyboard image</li>
-              <li><span>2</span>Choose grid: 3x4 / 4x3 / custom</li>
-              <li><span>3</span>Describe the animation style and fixes</li>
-              <li><span>4</span>Create project scaffold with the CLI</li>
-              <li><span>5</span>Use the generated project files with a coding agent</li>
-              <li><span>6</span>Preview and export the finished animation</li>
+              <li><span>1</span>Add a storyboard or reference image</li>
+              <li><span>2</span>Choose an optional frame grid</li>
+              <li><span>3</span>Describe the subject and motion</li>
+              <li><span>4</span>Save the local project scaffold</li>
+              <li><span>5</span>Code with brush, keyframe, and overlay helpers</li>
+              <li><span>6</span>Preview, compare, tune, and export</li>
             </ol>
             <p class="workflow-route">
               Preview route
@@ -114,6 +114,7 @@
           <div class="viewer-frame">
             <canvas id="whiteboard" width="960" height="620" aria-label="Animation canvas"></canvas>
             <video id="mp4Preview" class="mp4-preview" preload="metadata" playsinline hidden></video>
+            <img id="referenceOverlay" class="reference-overlay" alt="" hidden />
             <div id="annotationLayer" class="annotation-layer" aria-label="Annotation layer" hidden>
               <div id="annotationDraft" class="annotation-draft" hidden></div>
             </div>
@@ -218,6 +219,10 @@
             <pre id="annotationPromptOutput" class="code-output annotation-prompt-output" hidden></pre>
             <output id="annotationStatus" class="status-output annotation-status" aria-live="polite"></output>
           </section>
+          <details id="frameDebugger" class="frame-debugger">
+            <summary>Frame debugger</summary>
+            <pre id="frameDebuggerOutput" class="code-output frame-debugger-output"></pre>
+          </details>
         </section>
       </section>
     </main>

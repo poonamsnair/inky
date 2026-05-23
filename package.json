@@ -2,7 +2,7 @@
   "name": "inky-storyboard-animation",
   "version": "1.0.0",
   "private": true,
-  "description": "Canvas animation app for turning storyboard references into hand-drawn animated videos by a coding agent.",
+  "description": "Canvas API and preview loop for agents drawing animated illustrations in code.",
   "type": "module",
   "scripts": {
     "new": "node tools/create-animation-project.mjs",
@@ -27,6 +27,9 @@
     "storyboard:semantic": "node tools/make-semantic-review-board.mjs",
     "storyboard:review": "node tools/make-adjacent-review-sheets.mjs",
     "storyboard:materials": "node tools/render-material-preview.mjs",
+    "storyboard:doodle-style": "node tools/check-doodle-style.mjs",
+    "canvas:brushes": "node tools/render-brush-preview.mjs",
+    "canvas:companions": "node tools/render-companion-preview.mjs",
     "vite:preview": "vite preview --host 127.0.0.1"
   },
   "keywords": [
@@ -41,18 +44,23 @@
   },
   "license": "MIT",
   "dependencies": {
+    "atrament": "^5.1.0",
     "chroma-js": "^3.2.0",
     "d3-ease": "^3.0.1",
     "jszip": "^3.10.1",
     "mediabunny": "^1.45.2",
     "mp4-muxer": "^5.2.2",
+    "p5": "^2.2.3",
+    "p5.brush": "^2.1.9-beta",
     "paper": "^0.12.18",
     "perfect-freehand": "^1.2.2",
     "pixelmatch": "^7.2.0",
     "pngjs": "^7.0.0",
     "roughjs": "^4.6.6",
     "simplex-noise": "^4.0.3",
-    "vite": "^7.1.12"
+    "svg2roughjs": "^3.2.3",
+    "vite": "^7.1.12",
+    "vivus": "^0.4.6"
   },
   "devDependencies": {
     "playwright": "^1.60.0"

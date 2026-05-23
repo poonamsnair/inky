@@ -423,7 +423,8 @@ h3 {
 
 .viewer-frame,
 .controls,
-.annotation-panel {
+.annotation-panel,
+.frame-debugger {
   width: min(calc(100vw - 56px), calc((100vh - 174px) * 1.5483870968));
 }
 
@@ -447,6 +448,19 @@ h3 {
 
 .mp4-preview {
   object-fit: contain;
+}
+
+.reference-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  pointer-events: none;
+  transform-origin: center;
+  mix-blend-mode: multiply;
 }
 
 .annotation-layer {
@@ -867,6 +881,28 @@ h3 {
   color: var(--ink-muted);
 }
 
+.frame-debugger {
+  padding: var(--space-sm) var(--space-md);
+  border: 2px solid var(--line);
+  background: color-mix(in oklch, var(--panel) 92%, transparent);
+}
+
+.frame-debugger summary {
+  cursor: pointer;
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.frame-debugger-output {
+  max-height: 260px;
+  margin-top: var(--space-sm);
+  background: var(--paper);
+  color: var(--ink);
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -894,7 +930,9 @@ body.export-mode .stage-shell {
 }
 
 body.export-mode .preview-header,
-body.export-mode .controls {
+body.export-mode .controls,
+body.export-mode .frame-debugger,
+body.export-mode .reference-overlay {
   display: none;
 }
 

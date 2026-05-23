@@ -55,7 +55,7 @@ const args = process.argv.slice(2);
 const imageArg = readFlag(args, "--image");
 const nameArg = readFlag(args, "--name");
 const gridArg = readFlag(args, "--grid", "3x4");
-const promptArg = readFlag(args, "--prompt", "Match the storyboard unless I request changes.");
+const promptArg = readFlag(args, "--prompt", "Use the reference image to plan the composition, then draw with Inky canvas primitives.");
 const fps = Number(readFlag(args, "--fps", "12"));
 const totalFrames = Number(readFlag(args, "--frames", "96"));
 const width = Number(readFlag(args, "--width", "960"));
@@ -106,12 +106,13 @@ execFileSync(
 
 const agentPrompt = `# Build Inky animation: ${slug}
 
-Use the source storyboard as a lighthouse.
+Use Inky as a Canvas API for agents.
+Look at the reference, write drawing code, preview, compare, and tune brush/timing values by eye.
 Do not paste the source image into the final animation.
 
 ## Source
-- Original storyboard: projects/${slug}/image/storyboard${extension}
-- Extracted frames: projects/${slug}/storyboard/
+- Reference image: projects/${slug}/image/storyboard${extension}
+- Optional extracted frames: projects/${slug}/storyboard/
 - Grid: ${grid.columns} x ${grid.rows}
 
 ## User request
@@ -121,10 +122,12 @@ ${promptArg}
 1. Read AGENTS.md, DESIGN.md, and the relevant skills.
 2. Use project.json as the source of truth.
 3. Build projects/${slug}/renderer.js.
-4. Use material tools from src/material-tools.js.
-5. Add speech/caption tracks only when required.
-6. Preview with /?project=${slug}.
-7. Render frames and update outputs.
+4. Import createBrush, keyframe, timeline, and easings from src/inky-canvas.js.
+5. Import optional companions from src/companion-tools.js only when the panel needs Rough.js, Atrament replay, irregular geometry, svg2roughjs, Vivus, or p5.brush.
+6. Use window.inky.showReference('image/storyboard${extension}', { opacity: 0.3 }) in the browser while aligning, then hide it before judging exports.
+7. Add speech/caption tracks only when required.
+8. Preview with /?project=${slug}.
+9. Render frames and update outputs.
 `;
 
 writeFileSync(join(promptDir, "agent-prompt.md"), agentPrompt);
@@ -161,23 +164,64 @@ writeFileSync(join(projectRoot, "project.json"), `${JSON.stringify(manifest, nul
 
 writeFileSync(
   join(projectRoot, "renderer.js"),
-  `export const project = {
+  `import { createBrush, easings, keyframe, timeline } from "../../src/inky-canvas.js";
+
+export const project = {
   width: ${width},
   height: ${height},
   fps: ${fps},
   totalFrames: ${totalFrames},
 };
 
-export function drawFrame(ctx, frame, helpers) {
-  ctx.fillStyle = "#f6ead5";
+const ink = createBrush({
+  type: "agent-pen",
+  color: "#17120d",
+  size: 3.2,
+  thinning: 0.5,
+  smoothing: 0.34,
+  streamline: 0.18,
+  jitter: 0.35,
+  seed: 42,
+  inkFlow: { enabled: true, endOpacity: 0.76, segments: 7 },
+});
+
+const accent = ink.clone({
+  color: "#9f4f38",
+  size: 1.8,
+  opacity: 0.5,
+  jitter: 0.55,
+  seed: 84,
+});
+
+export function drawFrame(ctx, frame, helpers = {}) {
+  const cursor = { x: 0 };
+  timeline(frame, project.totalFrames, [
+    keyframe(cursor, { x: [0, 1] }, { from: 0, to: 1, easing: easings.easeInOut }),
+  ]);
+
+  ctx.fillStyle = "#fbf6ea";
   ctx.fillRect(0, 0, project.width, project.height);
 
-  helpers.drawLabel?.(
-    ctx,
-    "Renderer not built yet",
-    project.width / 2,
-    project.height / 2,
-  );
+  ink.stroke(ctx, [
+    [project.width * 0.24, project.height * 0.58],
+    [project.width * 0.38, project.height * (0.44 + Math.sin(cursor.x * Math.PI) * 0.04)],
+    [project.width * 0.55, project.height * 0.52],
+    [project.width * 0.74, project.height * 0.4],
+  ]);
+  accent.stroke(ctx, [
+    [project.width * 0.3, project.height * 0.67],
+    [project.width * 0.7, project.height * 0.67],
+  ]);
+
+  helpers.drawLabel?.(ctx, "Build this renderer with Inky canvas primitives", project.width / 2, project.height * 0.78);
+}
+
+export function getFrameDebug(frame) {
+  return {
+    hint: "Tune brush config and keyframes by inspecting the preview.",
+    frame,
+    referenceOverlay: "window.inky.showReference('image/storyboard${extension}', { opacity: 0.3 })",
+  };
 }
 `,
 );
