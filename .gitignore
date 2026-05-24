@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+
+# Build and test output
+dist/
+coverage/
+test-results/
+playwright-report/
+.cache/
+
+# Local/generated previews and agent caches
+outputs/
+.playwright-cli/
+.playwright-mcp/
+.firecrawl/
+.cursorignore
+.vscode/
+.idea/
+
+# Paper working folder: keep only the final PDF in Git.
+paper/**
+!paper/
+!paper/paper.pdf
+
+# Local Inky animation projects.
+# These can contain user prompts, source images, generated frames, local paths,
+# and review/debug notes. Keep curated public examples in docs/assets instead.
+projects/**
+!projects/
+!projects/README.md
+
+# Local machine files
+.DS_Store
+*.log
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Root-level scratch screenshots and rendered frame checks
+/*.png
+/*.jpg
+/*.jpeg
+/*.gif
+/*.webp
+/*.mp4
+/*.mov

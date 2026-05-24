@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inky</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <nav id="appNav" class="app-nav" aria-label="Main navigation">
+        <a class="app-nav-home" href="/" aria-label="Go to main">Inky</a>
+        <div class="project-jump">
+          <label class="project-jump-label" for="projectJump">Projects</label>
+          <select id="projectJump" class="project-jump-select" aria-label="Jump to project">
+            <option value="">Loading projects...</option>
+          </select>
+          <span id="projectJumpStatus" class="project-jump-status" aria-live="polite"></span>
+        </div>
+      </nav>
+
+      <section id="newProjectPanel" class="creator-shell" aria-labelledby="creatorTitle">
+        <header class="intro">
+          <div class="intro-topline">
+            <p class="brand">Inky</p>
+          </div>
+          <div class="intro-copy-block">
+            <h1 id="creatorTitle">Create a new animation</h1>
+            <p class="intro-copy">
+              Start with a reference image, save the local project files, then let a coding agent draw directly against the canvas.
+            </p>
+          </div>
+        </header>
+
+        <form id="newProjectForm" class="setup-form" autocomplete="off">
+          <label class="field-label">
+            Image to draw
+            <input id="storyboardImage" class="file-input" type="file" accept="image/*" />
+          </label>
+          <p id="imageMeta" class="image-meta" aria-live="polite">No reference image selected.</p>
+          <img id="imagePreview" class="image-preview" alt="" hidden />
+
+          <div class="field-label">
+            Reference styles
+            <div id="styleDropZone" class="style-drop-zone" role="button" tabindex="0" aria-controls="styleReferenceImages">
+              <input id="styleReferenceImages" class="style-file-input" type="file" accept="image/*" multiple />
+              <span>Drop style photos here</span>
+              <strong>Choose files</strong>
+            </div>
+          </div>
+          <p id="styleMeta" class="image-meta" aria-live="polite">No style references selected.</p>
+          <ul id="stylePreviewList" class="style-preview-list" aria-label="Selected style references"></ul>
+
+          <label class="field-label">
+            Project name
+            <input id="projectName" class="text-input" type="text" placeholder="cat-yarn-watercolor" autocomplete="off" />
+          </label>
+
+          <label class="field-label">
+            Style / animation request
+            <div id="promptCommandBar" class="prompt-command-bar" aria-label="Prompt reference commands"></div>
+            <textarea
+              id="projectPrompt"
+              class="text-area"
+              autocomplete="off"
+              placeholder="Animate this scene with /image image/storyboard.png and borrow the rough color treatment from /style insp/crayon-sketch.png."
+            ></textarea>
+          </label>
+
+          <button id="createProjectPlan" class="primary-action" type="submit">Create project files</button>
+          <output id="setupStatus" class="status-output" aria-live="polite"></output>
+        </form>
+
+        <aside class="side-column" aria-label="Project creation output">
+          <section class="workflow-panel">
+            <h2>Workflow</h2>
+            <ol class="workflow-list">
+              <li><span>1</span>Add a storyboard or reference image</li>
+              <li><span>2</span>Add style photos when the look matters</li>
+              <li><span>3</span>Describe the subject, motion, and slash references</li>
+              <li><span>4</span>Save the local project scaffold</li>
+              <li><span>5</span>Code with brush, keyframe, and overlay helpers</li>
+              <li><span>6</span>Preview, compare, tune, and export</li>
+            </ol>
+            <p class="workflow-route">
+              Preview route
+              <code>/?project=&lt;slug&gt;</code>
+            </p>
+            <figure class="workflow-logo">
+              <img src="/inky-banner.png" alt="Inky" />
+            </figure>
+          </section>
+
+          <section id="projectPlanOutput" class="output-panel" aria-label="Generated project plan" hidden>
+            <div class="output-header">
+              <h2>Project plan</h2>
+              <button id="copyProjectPlan" class="secondary-action" type="button">Copy</button>
+            </div>
+            <h3>CLI command</h3>
+            <pre id="commandOutput" class="code-output"></pre>
+            <h3>Agent prompt</h3>
+            <pre id="agentPromptOutput" class="code-output brief-output"></pre>
+          </section>
+        </aside>
+      </section>
+
+      <section id="previewPanel" class="preview-shell" aria-label="Animation preview" hidden>
+        <header class="preview-header">
+          <div>
+            <p class="brand">Inky Preview</p>
+            <h1 id="previewTitle">Untitled animation</h1>
+          </div>
+          <a id="backToCreator" class="secondary-link" href="/">Main</a>
+        </header>
+
+        <section id="scenePanel" class="scene-panel" aria-label="Scene library" hidden>
+          <div class="scene-picker">
+            <label class="scene-label" for="sceneSelect">Scene</label>
+            <select id="sceneSelect" class="scene-select" aria-label="Switch scene"></select>
+          </div>
+          <div class="scene-actions">
+            <button id="renameScene" class="secondary-action scene-action" type="button">Rename</button>
+            <button id="deleteScene" class="secondary-action danger-action scene-action" type="button">Delete</button>
+            <button id="newScene" class="primary-action scene-action" type="button">New scene from current</button>
+          </div>
+          <div id="sceneRenameEditor" class="scene-rename-editor" hidden>
+            <label class="scene-label" for="sceneName">Rename scene</label>
+            <input id="sceneName" class="scene-name-input" type="text" maxlength="90" autocomplete="off" />
+            <button id="applyRenameScene" class="secondary-action scene-action" type="button">Apply</button>
+            <button id="cancelRenameScene" class="secondary-action scene-action" type="button">Cancel</button>
+          </div>
+          <div id="newSceneEditor" class="scene-new-editor" hidden>
+            <label class="scene-reference-field" for="sceneReferenceImage">
+              Image to draw
+              <input id="sceneReferenceImage" class="file-input scene-file-input" type="file" accept="image/*" />
+            </label>
+            <p id="sceneImageMeta" class="scene-helper-text" aria-live="polite">
+              No new scene image selected. The copied scene image stays in place.
+            </p>
+            <img id="sceneImagePreview" class="scene-image-preview" alt="" hidden />
+            <div class="scene-style-field">
+              <span class="scene-field-title">Reference styles</span>
+              <div id="sceneStyleDropZone" class="style-drop-zone scene-style-drop-zone" role="button" tabindex="0" aria-controls="sceneStyleReferenceImages">
+                <input id="sceneStyleReferenceImages" class="style-file-input" type="file" accept="image/*" multiple />
+                <span>Drop scene style photos here</span>
+                <strong>Choose files</strong>
+              </div>
+            </div>
+            <p id="sceneStyleMeta" class="scene-helper-text" aria-live="polite">
+              No new scene style references selected. The copied scene style stays in place.
+            </p>
+            <ul id="sceneStylePreviewList" class="style-preview-list scene-style-preview-list" aria-label="Selected scene style references"></ul>
+            <label class="scene-brief-field" for="newSceneBrief">
+              Scene prompt
+              <div id="scenePromptCommandBar" class="prompt-command-bar" aria-label="Scene prompt reference commands"></div>
+              <textarea
+                id="newSceneBrief"
+                class="scene-brief-input"
+                rows="3"
+                placeholder="Describe what should change from the copied scene, including any new image reference or /style choice."
+              ></textarea>
+            </label>
+            <div class="scene-create-actions">
+              <button id="generateScene" class="primary-action scene-action" type="button">Generate scene files</button>
+              <button id="cancelNewScene" class="secondary-action scene-action" type="button">Cancel</button>
+            </div>
+            <section id="scenePlanOutput" class="scene-plan-output" aria-label="Generated scene agent prompt" hidden>
+              <div class="output-header">
+                <h3>Agent prompt</h3>
+                <button id="copyScenePrompt" class="secondary-action scene-action" type="button">Copy</button>
+              </div>
+              <pre id="sceneAgentPromptOutput" class="code-output scene-agent-prompt-output"></pre>
+            </section>
+          </div>
+          <output id="sceneStatus" class="scene-status" aria-live="polite"></output>
+        </section>
+
+        <section class="stage-shell">
+          <div class="viewer-frame">
+            <canvas id="whiteboard" width="960" height="620" aria-label="Animation canvas"></canvas>
+            <video id="mp4Preview" class="mp4-preview" preload="metadata" playsinline hidden></video>
+            <img id="referenceOverlay" class="reference-overlay" alt="" hidden />
+            <div id="sceneGraphEditorLayer" class="scene-graph-editor-layer" aria-label="Editable scene objects" hidden></div>
+            <div id="annotationLayer" class="annotation-layer" aria-label="Annotation layer" hidden>
+              <div id="annotationDraft" class="annotation-draft" hidden></div>
+            </div>
+          </div>
+          <div class="controls timeline-controls" aria-label="Animation timeline controls">
+            <div class="control-group playback-group" aria-label="Playback">
+              <button id="play" class="tool-button" type="button" aria-label="Play" title="Play">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+                <span class="button-text">Play</span>
+              </button>
+              <button id="pause" class="tool-button" type="button" aria-label="Pause" title="Pause">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 5v14" />
+                  <path d="M17 5v14" />
+                </svg>
+                <span class="button-text">Pause</span>
+              </button>
+            </div>
+            <div class="timeline-group">
+              <label class="timeline-wrap">
+                <span class="visually-hidden">Timeline</span>
+                <input id="timeline" type="range" min="0" max="0" value="0" step="1" />
+              </label>
+              <output id="frameCounter" class="frame-counter" aria-label="Current frame">0 / 0</output>
+              <label class="speed-wrap">
+                <span class="visually-hidden">Playback speed</span>
+                <select id="playbackSpeed" class="speed-select" aria-label="Playback speed" title="Playback speed">
+                  <option value="0.5">0.5x</option>
+                  <option value="0.75">0.75x</option>
+                  <option value="1" selected>1x</option>
+                  <option value="1.25">1.25x</option>
+                  <option value="1.5">1.5x</option>
+                  <option value="2">2x</option>
+                </select>
+              </label>
+            </div>
+            <div class="control-group export-group" aria-label="Export">
+              <button
+                id="toggleSceneGraphEdit"
+                class="tool-button"
+                type="button"
+                aria-label="Edit objects"
+                aria-pressed="false"
+                title="Edit objects"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 6h16" />
+                  <path d="M4 12h10" />
+                  <path d="M4 18h7" />
+                  <path d="m15 19 4-4 2 2-4 4h-2z" />
+                </svg>
+                <span class="button-text">Edit</span>
+              </button>
+              <button id="undoSceneGraphEdit" class="tool-button" type="button" aria-label="Undo object edit" title="Undo edit" disabled>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m9 14-5-5 5-5" />
+                  <path d="M4 9h10a6 6 0 0 1 0 12h-2" />
+                </svg>
+                <span class="button-text">Undo</span>
+              </button>
+              <button id="redoSceneGraphEdit" class="tool-button" type="button" aria-label="Redo object edit" title="Redo edit" disabled>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m15 14 5-5-5-5" />
+                  <path d="M20 9H10a6 6 0 0 0 0 12h2" />
+                </svg>
+                <span class="button-text">Redo</span>
+              </button>
+              <button id="deleteSceneGraphObject" class="tool-button" type="button" aria-label="Delete selected object" title="Delete selected object" disabled>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 7h16" />
+                  <path d="M10 11v6" />
+                  <path d="M14 11v6" />
+                  <path d="M6 7l1 14h10l1-14" />
+                  <path d="M9 7V4h6v3" />
+                </svg>
+                <span class="button-text">Delete</span>
+              </button>
+              <button id="saveSceneGraphEdits" class="tool-button" type="button" aria-label="Save object edits" title="Save object edits" disabled>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 4h12l2 2v14H5z" />
+                  <path d="M8 4v6h8" />
+                  <path d="M8 18h8" />
+                </svg>
+                <span class="button-text">Save</span>
+              </button>
+              <button
+                id="toggleAnnotations"
+                class="tool-button"
+                type="button"
+                aria-label="Annotate frame"
+                aria-pressed="false"
+                title="Annotate frame"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 5h16v14H4z" />
+                  <path d="M8 9h5" />
+                  <path d="M8 13h8" />
+                  <path d="m15 18 4 3v-3" />
+                </svg>
+                <span class="button-text">Annotate</span>
+              </button>
+              <button id="exportPng" class="tool-button" type="button" aria-label="Export current frame as PNG" title="Export PNG">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3v12" />
+                  <path d="m7 10 5 5 5-5" />
+                  <path d="M5 21h14" />
+                </svg>
+                <span class="button-text">PNG</span>
+              </button>
+              <button id="exportMp4" class="tool-button" type="button" aria-label="Export MP4" title="Export MP4">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 5h16v14H4z" />
+                  <path d="m10 9 5 3-5 3z" />
+                </svg>
+                <span class="button-text">MP4</span>
+              </button>
+            </div>
+            <output id="paintStatus" class="export-status" aria-live="polite">Ready</output>
+          </div>
+          <section id="annotationPanel" class="annotation-panel" aria-label="Frame annotations" hidden>
+            <header class="annotation-panel-header">
+              <h2>Frame notes</h2>
+              <button id="copyAnnotationPrompt" class="secondary-action annotation-copy" type="button">Copy agent prompt</button>
+            </header>
+            <form id="annotationEditor" class="annotation-editor" autocomplete="off" hidden>
+              <p id="annotationEditorMeta" class="annotation-meta"></p>
+              <label class="field-label annotation-label">
+                Comment
+                <textarea id="annotationComment" class="text-area annotation-textarea" placeholder="Redraw this area..." required></textarea>
+              </label>
+              <div class="annotation-reference-field">
+                <div class="annotation-reference-head">
+                  <span>Reference images</span>
+                  <span id="annotationReferenceCount" class="annotation-reference-count">0 / 3</span>
+                </div>
+                <button id="annotationReferenceDropzone" class="annotation-reference-dropzone" type="button">
+                  Drop, paste, or upload images
+                </button>
+                <input id="annotationReferenceInput" class="visually-hidden" type="file" accept="image/*" multiple />
+                <ul id="annotationReferenceList" class="annotation-reference-list" aria-label="Reference images"></ul>
+              </div>
+              <div class="annotation-editor-actions">
+                <button id="saveAnnotation" class="primary-action annotation-save" type="submit">Save note</button>
+                <button id="cancelAnnotation" class="secondary-action" type="button">Cancel</button>
+              </div>
+            </form>
+            <ol id="annotationList" class="annotation-list"></ol>
+            <pre id="annotationPromptOutput" class="code-output annotation-prompt-output" hidden></pre>
+            <output id="annotationStatus" class="status-output annotation-status" aria-live="polite"></output>
+          </section>
+          <details id="frameDebugger" class="frame-debugger">
+            <summary>Frame debugger</summary>
+            <pre id="frameDebuggerOutput" class="code-output frame-debugger-output"></pre>
+          </details>
+        </section>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

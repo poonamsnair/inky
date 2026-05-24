@@ -1,0 +1,72 @@
+{
+  "name": "inky-storyboard-animation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Canvas API and preview loop for agents drawing animated illustrations in code.",
+  "type": "module",
+  "scripts": {
+    "new": "node tools/create-animation-project.mjs",
+    "dev": "vite --host 127.0.0.1",
+    "preview": "vite --host 127.0.0.1",
+    "render": "node tools/render-project.mjs",
+    "inspect": "node tools/inspect-project.mjs",
+    "build": "vite build",
+    "check": "node tools/check-js-syntax.mjs",
+    "extract:storyboard": "node tools/extract-storyboard-frames.mjs",
+    "storyboard:start": "node tools/start-storyboard-project.mjs",
+    "storyboard:blueprint": "node tools/make-construction-blueprints.mjs",
+    "storyboard:construction": "node tools/make-reference-construction.mjs",
+    "storyboard:reference-bounds": "node tools/make-reference-bounds-review.mjs",
+    "storyboard:capture": "node tools/capture-canvas-scenes.mjs",
+    "storyboard:render-frames": "node tools/render-canvas-frames.mjs",
+    "storyboard:inspect": "node tools/inspect-project.mjs",
+    "storyboard:inbetween": "node tools/make-inbetween-plan.mjs",
+    "storyboard:captions": "node tools/make-caption-track.mjs",
+    "storyboard:speech-bubbles": "node tools/make-speech-bubble-track.mjs",
+    "storyboard:annotation-prompt": "node tools/make-annotation-prompt.mjs",
+    "storyboard:polish": "node tools/make-polish-pass.mjs",
+    "storyboard:visual-diff": "node tools/make-visual-diff-review.mjs",
+    "storyboard:semantic": "node tools/make-semantic-review-board.mjs",
+    "storyboard:review": "node tools/make-adjacent-review-sheets.mjs",
+    "canvas:brushes": "node tools/render-brush-preview.mjs",
+    "canvas:paths": "node tools/render-path-extraction-preview.mjs",
+    "canvas:companions": "node tools/render-companion-preview.mjs",
+    "style:tokens": "node tools/make-style-tokens.mjs",
+    "vite:preview": "vite preview --host 127.0.0.1"
+  },
+  "keywords": [
+    "animation",
+    "canvas",
+    "storyboard",
+    "hand-drawn",
+    "coding-agents"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "atrament": "^5.1.0",
+    "chroma-js": "^3.2.0",
+    "d3-ease": "^3.0.1",
+    "imagetracerjs": "^1.2.6",
+    "jszip": "^3.10.1",
+    "konva": "^10.3.0",
+    "mediabunny": "^1.45.2",
+    "mp4-muxer": "^5.2.2",
+    "p5": "^2.2.3",
+    "p5.brush": "^2.1.9-beta",
+    "paper": "^0.12.18",
+    "perfect-freehand": "^1.2.2",
+    "pixelmatch": "^7.2.0",
+    "pngjs": "^7.0.0",
+    "roughjs": "^4.6.6",
+    "simplex-noise": "^4.0.3",
+    "svg2roughjs": "^3.2.3",
+    "vite": "^7.1.12",
+    "vivus": "^0.4.6"
+  },
+  "devDependencies": {
+    "playwright": "^1.60.0"
+  }
+}

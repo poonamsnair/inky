@@ -1,0 +1,36 @@
+name: Feature Request
+description: Suggest a new workflow, material, renderer improvement, or app feature.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: What do you want to do?
+      description: Describe the creative or technical outcome.
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples or references
+      description: Link images, videos, projects, or screenshots that show the desired result.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Animation renderer
+        - Brush/material texture
+        - Storyboard tooling
+        - Browser preview/export
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Any constraints, tradeoffs, or implementation ideas?

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frame Consistency Auditor"
+  short_description: "Checks adjacent drawn frames for drift."
+  default_prompt: "Compare these drawn storyboard frames and list consistency fixes before animation."
