@@ -8,6 +8,8 @@ Start with a reference image: a finished scene, a key character pose, or a multi
 
 Inky is a small Canvas API and preview loop for agents drawing animated illustrations in code.
 
+Tutorial: https://www.youtube.com/watch?v=L1N4a_5yUS8
+
 ## Start With A Reference Image
 
 You can use a single finished scene, a character pose, a prop sheet, lettering, or another visual target. Inky asks the agent to inspect the image first and decide whether it is one scene or a storyboard.
