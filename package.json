@@ -52,9 +52,9 @@
     "imagetracerjs": "^1.2.6",
     "jszip": "^3.10.1",
     "konva": "^10.3.0",
-    "mediabunny": "^1.45.2",
+    "mediabunny": "^1.45.4",
     "mp4-muxer": "^5.2.2",
-    "p5": "^2.2.3",
+    "p5": "^2.3.0",
     "p5.brush": "^2.1.9-beta",
     "paper": "^0.12.18",
     "perfect-freehand": "^1.2.2",
@@ -63,7 +63,7 @@
     "roughjs": "^4.6.6",
     "simplex-noise": "^4.0.3",
     "svg2roughjs": "^3.2.3",
-    "vite": "^7.1.12",
+    "vite": "^8.0.14",
     "vivus": "^0.4.6"
   },
   "devDependencies": {
